@@ -3,1208 +3,1042 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Blackstart by Babel Drive. 256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, and North America maps. Offline.">
-<meta property="og:title" content="Babel Drive Blackstart">
-<meta property="og:description" content="English Wikipedia, wikiHow, books, manuals and maps on a solid-steel USB-C drive. Offline.">
-<meta property="og:image" content="https://babel.petersenventures.com/life-slate.jpg">
+<title>Blackstart · Babel Drive</title>
+<meta name="description" content="Blackstart is a 256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, maps of the world, and more. Works offline on any computer.">
+<link rel="canonical" href="https://babel.petersenventures.com/">
+<meta property="og:type" content="product">
+<meta property="og:title" content="Blackstart · Babel Drive">
+<meta property="og:description" content="English Wikipedia, wikiHow, 2,000+ books and manuals, world maps and more. 256 GB. Solid steel. Offline.">
+<meta property="og:image" content="https://babel.petersenventures.com/img/og.jpg">
 <meta property="og:url" content="https://babel.petersenventures.com/">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='4' y='9' width='24' height='14' rx='3' fill='%23121314'/%3E%3C/svg%3E">
-<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
-</head>
-<body>
-<title>Babel Drive Blackstart</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23050506'/%3E%3Crect x='5' y='11' width='22' height='10' rx='2' fill='%23c9c9c6'/%3E%3Ccircle cx='24.5' cy='8' r='2' fill='%23ff5b1f'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,300;125,700&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="img/hero/poster-2560.jpg" imagesrcset="img/hero/poster-1280.jpg 1280w, img/hero/poster-2560.jpg 2560w" imagesizes="(min-width: 900px) 90vw, 100vw" fetchpriority="high">
+<script>document.documentElement.classList.add("js");if(/[?&]static/.test(location.search)){document.documentElement.classList.add("static");document.documentElement.style.setProperty("--shotvh",((location.search.match(/vh=(\d+)/)||[])[1]||900)+"px")}</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Blackstart","brand":{"@type":"Brand","name":"Babel Drive"},
+"description":"256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, maps of the world, and more. Works offline.",
+"image":"https://babel.petersenventures.com/img/hero/poster-2560.jpg",
+"offers":[{"@type":"Offer","name":"Blackstart 256 GB drive","price":"199","priceCurrency":"USD","availability":"https://schema.org/PreOrder"},
+{"@type":"Offer","name":"Blackstart download","price":"49","priceCurrency":"USD","availability":"https://schema.org/PreOrder"}]}
+</script>
 <style>
-/* Layout: one white room with the drive pinned in it. The page scrolls past it in eight stops
-   (each stop turns or opens the drive), then FAQ. Deliberately light only, like a product studio. */
 :root{
-  --paper:#ffffff;
-  --ink:#121314;
-  --steel:#74787d;      /* captions */
-  --rule:#e3e4e6;
-  --signal:#e8611a;     /* the maps card */
-  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
-  --label:"Barlow","Helvetica Neue",Arial,sans-serif;
-  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;
-  color-scheme:light;
+  --bg:#000; --bg2:#09090a; --bg3:#111113;
+  --fg:#f1f0ec; --fg2:#b3b2ae; --mute:#77777a; --dim:#4a4a4e;
+  --line:rgba(255,255,255,.085); --line2:rgba(255,255,255,.16);
+  --signal:#ff5b1f;
+  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --wide:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --gut:max(20px,4vw); --max:1360px; --head:64px;
+  --ease:cubic-bezier(.2,.7,.1,1);
+  color-scheme:dark;
 }
-html{scroll-behavior:auto;scroll-snap-type:y proximity}
-html.co-open{overflow:hidden}
-.step{scroll-snap-align:start}
-.faq{scroll-snap-align:start}
-footer{scroll-snap-align:end}
-body{background:var(--paper);color:var(--ink);font:400 15px/1.55 var(--display);-webkit-font-smoothing:antialiased}
-button{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--head) + 12px);background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--fg2);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+img,svg,video,canvas{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+[hidden]{display:none!important}
+::selection{background:var(--signal);color:#000}
+:focus-visible{outline:2px solid var(--fg);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px))}
+.sec{padding-block:clamp(96px,12vw,184px)}
+.eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 26px;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.eyebrow::before{content:"";width:18px;height:1px;background:var(--dim)}
+h1,h2,h3{color:var(--fg);font-family:var(--sans);margin:0;text-wrap:balance}
+h2{font-weight:400;font-size:clamp(36px,5.2vw,76px);line-height:1;letter-spacing:-.045em;max-width:14ch}
+h2 em{font-style:normal;color:var(--mute)}
+.lede{margin:26px 0 0;max-width:44ch;font-size:clamp(17px,1.35vw,19px);line-height:1.55;color:var(--fg2);text-wrap:pretty}
+.wordmark{font-family:var(--wide);font-stretch:125%;font-weight:300;text-transform:uppercase;letter-spacing:.02em;line-height:.8;color:var(--fg)}
 
 /* header */
-.top{position:fixed;inset:0 0 auto;z-index:6;display:flex;justify-content:space-between;align-items:center;
-  padding-top:calc(20px + env(safe-area-inset-top,0px));padding-bottom:16px;
-  padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));pointer-events:none}
-.top > *{pointer-events:auto}
-.mark{font:700 13px/1 var(--display);font-stretch:125%;letter-spacing:.22em;color:var(--ink);text-decoration:none}
-.nav{display:flex;gap:28px}
-.nav a,.nav button{font:600 11px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;background:none;border:0;padding:4px 0;cursor:pointer}
-.count{font-variant-numeric:tabular-nums}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:40}
+.top{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:40;border-bottom:1px solid transparent;transition:background .35s,border-color .35s,-webkit-backdrop-filter .35s,backdrop-filter .35s}
+.top.lined{background:rgba(0,0,0,.7);-webkit-backdrop-filter:saturate(1.4) blur(18px);backdrop-filter:saturate(1.4) blur(18px);border-bottom-color:var(--line)}
+.top .wrap{height:var(--head);display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:none}
+.mark{font:700 12px/1 var(--wide);font-stretch:125%;letter-spacing:.28em;color:var(--fg);text-decoration:none;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a{font-size:14px;color:var(--fg2);text-decoration:none;transition:color .2s}
+.nav a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:46px;padding:0 22px;border:0;border-radius:999px;background:var(--fg);color:#050506;font:500 15px/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s,transform .15s,box-shadow .3s}
+.btn:hover{background:#fff;box-shadow:0 0 0 6px rgba(255,255,255,.06)}
+.btn:active{transform:translateY(1px)}
+.btn.sm{height:36px;padding:0 16px;font-size:14px}
+.nav a.btn,.nav a.btn:hover{color:#050506}
+@media (max-width:899px){.nav a:not(.btn){display:none}}
 
-/* the pinned drive */
-.story{position:relative}
-.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
-.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block;opacity:0;transition:opacity .6s ease;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
-.stage canvas.ready{opacity:1}
-.stage canvas.drag{cursor:grabbing}
-.stage canvas:focus-visible{outline:none}
-.fail[hidden]{display:none}
-.fail{position:absolute;inset:0;display:grid;place-items:center;margin:0;color:var(--steel);font:500 12px var(--label);letter-spacing:.14em;text-transform:uppercase}
-/* part labels, shown only on the exploded stop */
-.labels{position:absolute;inset:0;pointer-events:none;opacity:0}
-.labels svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
-.labels line{stroke:var(--ink);stroke-width:1;opacity:.45}
-.labels circle{fill:var(--signal)}
-.lab{position:absolute;top:0;transform:translateY(-50%);font:600 10.5px/1.25 var(--label);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
-.lab small{display:block;margin-top:2px;font:500 10.5px/1.3 var(--label);letter-spacing:.04em;text-transform:none;color:var(--steel)}
-.lab.l{text-align:right}
+/* status light */
+.live{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--fg2)}
+.live i{position:relative;width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px 1px rgba(255,91,31,.7)}
+.live i::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--signal);opacity:0;animation:ping 2.8s ease-out infinite}
+@keyframes ping{0%{transform:scale(.4);opacity:.8}70%,100%{transform:scale(1.6);opacity:0}}
 
-/* scroll spacers: one screen per stop */
-.steps{position:relative;margin-top:-100vh;margin-top:-100svh;pointer-events:none}
-.step{height:100vh;height:100svh}
-
-/* captions sit under the drive and swap in place as the stop changes */
-.captions{position:absolute;left:0;right:0;bottom:calc(7vh + env(safe-area-inset-bottom,0px));display:grid;justify-items:center;pointer-events:none;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.layer{grid-area:1/1;align-self:end;max-width:30rem;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;
-  opacity:0;transform:translateY(12px);visibility:hidden;transition:opacity .35s ease,transform .35s ease,visibility 0s linear .35s}
-.layer.on{opacity:1;transform:none;visibility:visible;transition:opacity .45s ease .12s,transform .45s ease .12s,visibility 0s}
-.layer.on > *{pointer-events:auto}
-.eyebrow{margin:0;font:600 11px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
-.layer h2{margin:2px 0 0;font:500 clamp(24px,2.6vw,34px)/1.1 var(--display);font-stretch:108%;letter-spacing:-.005em;text-wrap:balance}
-.layer p.body{margin:0;color:var(--steel);text-wrap:pretty}
-.layer.end h2{font-size:clamp(28px,4.2vw,52px);font-weight:500;font-stretch:112%}
-
-/* buy block (first stop) */
-.buy{gap:10px}
-.name{margin:0;font:600 12px/1 var(--label);letter-spacing:.18em;text-transform:uppercase}
-.price{margin:0;font:400 14px/1.3 var(--display);color:var(--steel);font-variant-numeric:tabular-nums}
-.opts{display:flex;gap:22px;margin-top:6px}
-.opts button{background:none;border:0;border-bottom:1px solid transparent;padding:6px 0;font:600 11px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--steel);cursor:pointer}
-.opts button[aria-checked="true"]{color:var(--ink);border-bottom-color:var(--ink)}
-.add{margin-top:8px;width:min(300px,82vw);height:48px;border:0;border-radius:0;background:var(--ink);color:var(--paper);font:600 11px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;cursor:pointer}
-.add:active{transform:translateY(1px)}
-.h-touch{display:none}
-@media (pointer:coarse){.h-fine{display:none}.h-touch{display:inline}}
-.hint{margin:6px 0 0;font:500 10.5px/1 var(--label);letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
-
-/* stop dots */
-.dots{position:fixed;z-index:6;top:50%;right:calc(18px + env(safe-area-inset-right,0px));transform:translateY(-50%);display:flex;flex-direction:column;gap:2px;transition:opacity .3s}
-.dots.off{opacity:0;pointer-events:none}
-.dots button{width:22px;height:22px;display:grid;place-items:center;background:none;border:0;padding:0;cursor:pointer}
-.dots button::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--rule);transition:background .2s,transform .2s}
-.dots button[aria-current="true"]::before{background:var(--ink);transform:scale(1.25)}
-
-/* after the story */
-.faq{border-top:1px solid var(--rule);padding-block:96px 120px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.faq-in{max-width:760px;margin:0 auto;display:grid;gap:28px}
-.faq dl{margin:0;display:grid;gap:0}
-.faq dl > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2.2fr);gap:12px 32px;padding-block:18px;border-bottom:1px solid var(--rule)}
-.faq dt{font:600 11px/1.6 var(--label);letter-spacing:.18em;text-transform:uppercase}
-.faq dd{margin:0;min-width:0;color:#3d4043}
-footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 24px;padding-block:22px calc(22px + env(safe-area-inset-bottom,0px));padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));border-top:1px solid var(--rule);font:600 10.5px/1.4 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
-footer span{user-select:all}
-@media (max-width:560px){
-  .nav{gap:18px}
-  .faq dl > div{grid-template-columns:minmax(0,1fr)}
-  .dots{right:calc(6px + env(safe-area-inset-right,0px))}
+/* hero: the take-apart film sits in its own band, between the wordmark and the waitlist */
+.hero{position:relative;min-height:max(700px,100svh);display:grid;grid-template-rows:auto minmax(300px,1fr) auto;background:var(--bg)}
+.hero-top{position:relative;z-index:1;padding-top:calc(var(--head) + env(safe-area-inset-top,0px) + clamp(6px,1.6vh,28px))}
+.hero h1{font-size:min(10.6vw,150px);white-space:nowrap;text-align:center;
+  background:linear-gradient(180deg,#f6f5f1 0%,#c9c8c4 45%,#6c6c70 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .live{display:flex;justify-content:center;margin-top:clamp(12px,1.8vh,24px)}
+.stage{position:relative;grid-row:2;min-height:0;margin:clamp(4px,1vh,16px) 0;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
+.stage img,.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 50%}
+.stage video{opacity:0;transition:opacity 1.2s ease}
+.stage.on video{opacity:1}
+.film-ctl{position:absolute;right:max(var(--gut),env(safe-area-inset-right,0px));bottom:8px;z-index:2;display:inline-flex;align-items:center;gap:8px;height:30px;padding:0 12px;border:1px solid var(--line2);border-radius:999px;background:rgba(0,0,0,.5);color:var(--mute);font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;opacity:0;transition:opacity .3s,color .2s,border-color .2s}
+.stage.on .film-ctl{opacity:1}
+.film-ctl:hover{color:var(--fg);border-color:var(--fg2)}
+.film-ctl i{width:8px;height:9px;border-left:2px solid currentColor;border-right:2px solid currentColor}
+.film-ctl.paused i{width:0;height:0;border:0;border-left:8px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent}
+.js .stage{animation:power 2.4s var(--ease) .1s both}
+@keyframes power{0%{opacity:0;transform:scale(1.02)}100%{opacity:1;transform:none}}
+.js .hero-top,.js .hero-foot{animation:up 1.4s var(--ease) .7s both}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-foot{position:relative;z-index:3;grid-row:3;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;padding-bottom:clamp(20px,3.6vh,44px)}
+.hero-foot .lede{margin:0;max-width:36ch;font-size:16px;color:var(--mute)}
+.hero-foot .lede b{color:var(--fg);font-weight:500}
+.buy{display:flex;align-items:center;gap:22px}
+.price{font:400 13px/1.5 var(--mono);color:var(--mute);text-align:right}
+.price b{display:block;font:400 22px/1.1 var(--sans);letter-spacing:-.02em;color:var(--fg)}
+.specline{position:relative;z-index:3;list-style:none;margin:0;padding:16px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 30px;font:400 12px/1.2 var(--mono);letter-spacing:.04em;color:var(--mute)}
+.specline b{font-weight:500;color:var(--fg)}
+.hero-media{display:none}
+@media (max-width:899px){
+  .hero{min-height:0;display:block;padding-bottom:8px}
+  .hero-top{padding-top:calc(var(--head) + env(safe-area-inset-top,0px) + 28px)}
+  .stage{aspect-ratio:4/3;margin:6px 0 4px}
+  .stage img,.stage video{object-fit:cover}
+  .hero-foot{grid-template-columns:minmax(0,1fr);padding-bottom:28px}
+  .buy{justify-content:space-between}
+  .price{text-align:left}
 }
-@media (prefers-reduced-motion:reduce){.dots,.dots button::before,.layer,.layer.on{transition:none}}
 
-/* sections after the story */
-.wrap{max-width:1080px;margin:0 auto}
-.sec{padding-block:112px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));border-top:1px solid var(--rule)}
-.big{margin:14px 0 0;font:500 clamp(30px,4.4vw,56px)/1.04 var(--display);font-stretch:112%;letter-spacing:-.01em;text-wrap:balance;max-width:16ch}
-.lede{margin:22px 0 0;max-width:60ch;font-size:clamp(16px,1.35vw,19px);line-height:1.55;color:#3d4043;text-wrap:pretty}
-.lib{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-top:1px solid var(--ink)}
-.lib li{padding:18px 18px 0 0;display:grid;gap:8px;min-width:0}
-.lib b{font:600 11px/1.3 var(--label);letter-spacing:.18em;text-transform:uppercase}
-.lib span{color:var(--steel);font-size:14px;line-height:1.45}
-.film{background:#0b0b0c;color:#e8e9ea;border-top:0}
-.film .eyebrow{color:#8b8e92}
-.film-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px}
-.film-head p{margin:0;color:#8b8e92;font:500 12px/1.4 var(--label);letter-spacing:.14em;text-transform:uppercase}
-.player{position:relative;aspect-ratio:16/9;max-width:100%;background:#000;overflow:hidden}
-.player video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#000}
-.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:14px;padding:16px 24px;border:1px solid rgba(255,255,255,.45);background:rgba(10,10,11,.42);color:#fff;font:600 11px/1 var(--label);letter-spacing:.2em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:opacity .3s,background .2s}
-.play:hover{background:rgba(10,10,11,.6)}
-.play i{width:0;height:0;border-left:10px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
-.player.playing .play{opacity:0;pointer-events:none}
-.still{margin:0;background:#2a2b2d}
-.still.life{background:#151515}
-.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;background:#0b0b0c}
+/* waitlist form */
+.join{max-width:460px}
+.fmt{display:flex;gap:8px;margin-bottom:12px}
+.fmt label{position:relative;cursor:pointer}
+.fmt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.fmt span{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 15px;border:1px solid var(--line2);border-radius:999px;font-size:14px;color:var(--fg2);transition:border-color .15s,background .15s,color .15s}
+.fmt em{font:400 13px var(--mono);font-style:normal;color:var(--mute)}
+.fmt input:checked + span{border-color:var(--fg);color:var(--fg);background:rgba(255,255,255,.06)}
+.fmt input:focus-visible + span{outline:2px solid var(--fg);outline-offset:2px}
+.field{display:flex;gap:8px;padding:6px;border:1px solid var(--line2);border-radius:999px;background:rgba(255,255,255,.035);transition:border-color .15s,background .15s}
+.field:focus-within{border-color:var(--fg2);background:rgba(255,255,255,.05)}
+.field input{flex:1;min-width:0;border:0;background:transparent;padding:0 16px;height:46px;font-size:16px;color:var(--fg)}
+.field input:focus{outline:none}
+.field input::placeholder{color:var(--mute)}
+.fine{margin:12px 0 0;font:400 12.5px/1.5 var(--mono);color:var(--mute)}
+.fine b{font-weight:500;color:var(--fg2)}
+.err{margin:10px 0 0;font-size:14px;color:#ff8a65}
+.ok{margin:0;padding:18px 22px;border:1px solid var(--line2);border-radius:18px;background:rgba(255,255,255,.04)}
+.ok b{display:flex;align-items:center;gap:10px;color:var(--fg);font-weight:500;font-size:17px}
+.ok b::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px 1px rgba(255,91,31,.7)}
+.ok span{display:block;margin-top:4px;font-size:14px;color:var(--mute)}
+
+/* sticky bar, phones */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:35;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  background:rgba(8,8,10,.86);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .35s var(--ease)}
+.bar.on{transform:none}
+.bar span{font:500 15px/1.2 var(--sans);color:var(--fg)}
+.bar em{font:400 13px var(--mono);font-style:normal;color:var(--mute);margin-left:8px}
+@media (min-width:900px){.bar{display:none}}
+
+/* library */
+.stats{list-style:none;margin:clamp(56px,7vw,104px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line)}
+.stats li{padding:28px 24px 0 0;min-width:0}
+.stats li + li{padding-left:24px;border-left:1px solid var(--line)}
+.stats b{display:block;font:300 clamp(44px,5.6vw,88px)/.95 var(--sans);letter-spacing:-.055em;color:var(--fg);font-variant-numeric:tabular-nums}
+.stats b small{font-size:.42em;letter-spacing:-.02em;margin-left:4px;color:var(--fg2)}
+.stats span{display:block;margin-top:14px;font-size:15px;color:var(--mute);max-width:22ch}
+@media (max-width:899px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.stats li:nth-child(3){padding-left:0;border-left:0}.stats li{padding-bottom:28px;border-bottom:1px solid var(--line)}}
+.cap{margin-top:clamp(56px,7vw,96px)}
+.cap-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font:400 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-bottom:14px}
+.cap-head b{font-weight:500;color:var(--fg)}
+.meter{display:flex;height:64px;border-radius:12px;overflow:hidden;background:repeating-linear-gradient(135deg,rgba(255,255,255,.035) 0 6px,transparent 6px 12px),var(--bg2);border:1px solid var(--line);gap:2px;padding:0}
+.meter i{display:block;height:100%;flex:0 0 auto;width:0;background:linear-gradient(180deg,rgba(255,255,255,.16),rgba(0,0,0,.22)),var(--c);transition:width 1.4s var(--ease)}
+.meter i.sw{box-shadow:0 0 24px 2px rgba(255,91,31,.45)}
+.legend{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px 24px;font:400 12.5px/1.35 var(--mono);color:var(--mute)}
+.legend li{display:grid;grid-template-columns:10px minmax(0,1fr);gap:10px;align-items:start}
+.legend li::before{content:"";width:10px;height:10px;border-radius:3px;margin-top:2px;background:var(--c)}
+.legend b{display:block;font-weight:500;color:var(--fg2)}
+.inside{margin:clamp(40px,5vw,64px) 0 0;padding:18px 0 0;border-top:1px solid var(--line);font:400 13px/1.9 var(--mono);color:var(--mute);max-width:110ch}
+.inside b{font-weight:500;color:var(--fg);margin-right:14px}
+@media (max-width:899px){.legend{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* catalog */
+.search{background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 22%,var(--bg2) 78%,var(--bg) 100%)}
+.find{margin-top:clamp(40px,5vw,64px);max-width:900px}
+.find .box{position:relative;display:flex;align-items:center;gap:14px;height:76px;padding:0 26px;border-radius:20px;background:var(--bg3);border:1px solid var(--line2);box-shadow:0 30px 80px -40px rgba(0,0,0,.9),inset 0 1px 0 rgba(255,255,255,.05);transition:border-color .2s,box-shadow .3s}
+.find .box:focus-within{border-color:rgba(255,255,255,.34);box-shadow:0 30px 80px -40px rgba(0,0,0,.9),0 0 0 6px rgba(255,255,255,.04)}
+.find svg{flex:none;color:var(--mute)}
+.find input{flex:1;min-width:0;border:0;background:transparent;font-size:clamp(19px,1.8vw,24px);letter-spacing:-.01em;color:var(--fg);height:100%;caret-color:var(--signal)}
+.find input:focus{outline:none}
+.find input::placeholder{color:var(--dim)}
+.find input::-webkit-search-cancel-button{filter:invert(1);opacity:.5}
+.find .count{font:400 12px var(--mono);letter-spacing:.04em;color:var(--mute);white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chips button{height:34px;padding:0 15px;border:1px solid var(--line2);border-radius:999px;background:transparent;font-size:14px;color:var(--fg2);cursor:pointer;transition:border-color .15s,color .15s}
+.chips button:hover{border-color:var(--fg2);color:var(--fg)}
+.results{list-style:none;margin:26px 0 0;padding:0;border-top:1px solid var(--line);min-height:440px}
+.results li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 24px;padding:15px 0;border-bottom:1px solid var(--line);align-items:baseline;animation:row .5s var(--ease) both}
+.results li:nth-child(2){animation-delay:.02s}.results li:nth-child(3){animation-delay:.04s}.results li:nth-child(4){animation-delay:.06s}.results li:nth-child(5){animation-delay:.08s}.results li:nth-child(6){animation-delay:.1s}.results li:nth-child(n+7){animation-delay:.12s}
+@keyframes row{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.results .t{color:var(--fg);font-size:16px;line-height:1.38;min-width:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.results .t mark{background:none;color:var(--signal)}
+.results .k{font:400 11.5px/1.3 var(--mono);letter-spacing:.03em;color:var(--mute);text-align:right;white-space:nowrap}
+.results .none{display:block;color:var(--mute)}
+.find .note{margin:18px 0 0;font:400 12.5px/1.6 var(--mono);color:var(--mute)}
+@media (max-width:599px){.results li{grid-template-columns:minmax(0,1fr)}.results .k{text-align:left}.find .count{display:none}.find .box{height:64px;padding:0 18px}}
+
+/* software */
+.soft-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px);align-items:center}
+.facts{list-style:none;margin:40px 0 0;padding:0;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts b{font:500 11.5px/1.7 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg)}
+.screen{position:relative}
+.screen::before{content:"";position:absolute;inset:-12% -8%;background:radial-gradient(closest-side,rgba(220,226,255,.13),transparent 70%);filter:blur(10px);pointer-events:none}
+.win{position:relative;border-radius:14px;overflow:hidden;background:#fbfbfa;color:#2b2c2f;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 40px 120px -30px rgba(170,180,255,.22),0 30px 60px -30px rgba(0,0,0,.9);font-size:13px}
+.win-bar{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;background:#f0f0ee;border-bottom:1px solid #e3e3e0}
+.win-bar i{width:11px;height:11px;border-radius:50%;background:#d6d6d3}
+.win-bar span{margin-left:12px;flex:1;max-width:320px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:7px;background:#fff;font:400 12px var(--mono);color:#808286}
+.win-body{display:grid;grid-template-columns:170px minmax(0,1fr);min-height:400px}
+.win-side{padding:18px 0 18px 16px;border-right:1px solid #e6e6e3;font-size:12.5px}
+.win-side p{margin:0 0 10px;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#8a8c90}
+.win-side ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;color:#45474b}
+.win-side li.on{color:#0b0b0c;font-weight:500}
+.win-main{padding:18px 20px}
+.win-q{display:flex;align-items:center;gap:10px;height:38px;padding:0 12px;border:1px solid #cfcfcb;border-radius:9px;color:#0b0b0c}
+.win-q kbd{margin-left:auto;font:400 11px var(--mono);color:#8a8c90}
+.win-n{margin:12px 0 8px;font:400 11.5px var(--mono);color:#8a8c90}
+.win-r{padding:11px 0;border-top:1px solid #e6e6e3}
+.win-r small{display:block;font:400 11px var(--mono);color:#8a8c90;text-transform:uppercase;letter-spacing:.05em}
+.win-r b{display:block;margin-top:3px;font-weight:500;color:#0b0b0c;font-size:14px}
+.win-r p{margin:3px 0 0;color:#6a6c70;font-size:12.5px;line-height:1.45}
+.cap-row{display:flex;justify-content:space-between;gap:16px;padding-top:14px;font:400 12px/1.4 var(--mono);letter-spacing:.03em;color:var(--mute)}
+@media (max-width:899px){.soft-grid{grid-template-columns:minmax(0,1fr)}.facts li{grid-template-columns:100px minmax(0,1fr)}}
+@media (max-width:599px){.win-body{grid-template-columns:minmax(0,1fr)}.win-side{display:none}}
+.tree{margin-top:30px}
+.tree summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:10px;font:500 11.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg)}
+.tree summary::-webkit-details-marker{display:none}
+.tree summary::before{content:"+";display:inline-grid;place-items:center;width:20px;height:20px;border:1px solid var(--line2);border-radius:50%;font:400 14px/1 var(--mono)}
+.tree[open] summary::before{content:"−"}
+.tree pre{margin:18px 0 0;padding:20px 22px;overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--bg2);font:400 12.5px/1.75 var(--mono);color:var(--fg2)}
+.tree pre b{font-weight:500;color:var(--fg)}
+.tree pre i{font-style:normal;color:var(--dim)}
+.tree pre em{font-style:normal;color:var(--signal)}
+
+/* compared */
+.tbl{margin-top:clamp(40px,5vw,64px);overflow-x:auto}
+.tbl table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
+.tbl th,.tbl td{text-align:left;padding:18px 16px 18px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{font:500 11.5px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute);border-bottom-color:var(--line2)}
+.tbl thead th:last-child{color:var(--fg)}
+.tbl tbody th{width:18%;font:500 11.5px/1.7 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2)}
+.tbl td{width:41%;color:var(--mute)}
+.tbl td:last-child{color:var(--fg)}
+@media (max-width:599px){
+  .tbl table{min-width:0}
+  .tbl thead{display:none}
+  .tbl tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .tbl tbody th{grid-column:1/-1;width:auto;padding:0 0 6px;border:0}
+  .tbl td{width:auto;padding:0;border:0;font-size:14px}
+  .tbl td::before{content:attr(data-l);display:block;font:400 10.5px/1.7 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+}
+
+/* full-bleed images */
+.bleed{margin:0}
+.bleed img{width:100%}
+.inuse{position:relative}
+.inuse img{aspect-ratio:16/9;object-fit:cover}
+.inuse::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,transparent 14%,transparent 86%,var(--bg) 100%);pointer-events:none}
+
+/* design */
+.design-head{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end}
+.design-head .lede{margin:0}
+@media (max-width:899px){.design-head{grid-template-columns:minmax(0,1fr)}}
+.shot{margin:0;position:relative}
+.shot img{width:100%;border-radius:4px}
+.big{margin-top:clamp(48px,6vw,96px)}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);margin-top:clamp(12px,1.6vw,24px)}
 .pair figure{margin:0;min-width:0}
-.pair img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-.pair figcaption{padding:14px 16px;color:#8b8e92;font:600 10.5px/1.4 var(--label);letter-spacing:.16em;text-transform:uppercase}
-@media (max-width:820px){.pair{grid-template-columns:minmax(0,1fr)}}
-.still img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
-.still figcaption{padding-block:14px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));background:#0b0b0c;color:#8b8e92;font:600 10.5px/1.4 var(--label);letter-spacing:.16em;text-transform:uppercase;text-align:center}
-.gallery .grid{margin-top:28px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
-.gallery figure{margin:0;min-width:0}
-.gallery figure.wide{grid-column:1/-1}
-.gallery img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;background:#fff}
-.gallery figcaption{margin-top:10px;font:600 10.5px/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
-@media (max-width:820px){.gallery .grid{grid-template-columns:minmax(0,1fr)}}
-.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:56px}
-.two h3{margin:12px 0 0;font:500 clamp(24px,2.6vw,34px)/1.1 var(--display);font-stretch:108%}
-.two p.body{margin:16px 0 0;color:#3d4043;max-width:46ch;line-height:1.6}
-.specs dl{margin:28px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 56px}
-.specs dl > div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:16px;padding-block:16px;border-bottom:1px solid var(--rule)}
-.specs dt{font:600 11px/1.6 var(--label);letter-spacing:.18em;text-transform:uppercase}
-.specs dd{margin:0;min-width:0;color:#3d4043}
-@media (max-width:820px){.lib{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:28px}.two,.specs dl{grid-template-columns:minmax(0,1fr)}.sec{padding-block:80px}}
+.pair img{width:100%;aspect-ratio:1.6;object-fit:cover}
+@media (max-width:699px){.pair{grid-template-columns:minmax(0,1fr)}}
 
-/* what's on the drive: the programs, then the folder tree */
-.ondrive .head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px 56px;align-items:end}
-.ondrive .head .lede{margin:0}
-.progs{list-style:none;margin:56px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--ink)}
-.progs li{padding:20px 24px 0 0;display:grid;gap:10px;align-content:start;min-width:0}
-.progs b{display:flex;align-items:center;gap:10px;font:600 11px/1.3 var(--label);letter-spacing:.18em;text-transform:uppercase}
-.progs b::before{content:"";width:8px;height:8px;background:var(--signal);flex:none}
-.progs span{color:#3d4043;font-size:15px;line-height:1.5;text-wrap:pretty}
-.tree{margin:56px 0 0;border:1px solid var(--rule);background:#fafafa}
-.tree-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 18px;border-bottom:1px solid var(--rule);font:600 10.5px/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
-.tree-bar b{color:var(--ink);font-weight:600}
-.tree-bar .key{display:flex;align-items:center;gap:8px}
-.tree-bar .key::before{content:"";width:8px;height:8px;background:var(--signal)}
-.tree-body{overflow-x:auto;padding:14px 0 16px}
-.tree .r{display:grid;grid-template-columns:minmax(0,26rem) minmax(0,1fr);gap:4px 24px;padding:5px 18px;font:400 13px/1.5 var(--mono);color:#3d4043}
-.tree .n{white-space:pre;color:var(--ink)}
-.tree .n i{font-style:normal;color:#b9bcc0}
-.tree .d:empty{display:none}
-.tree .d{min-width:0;color:var(--steel);font:400 13px/1.5 var(--display)}
-.tree .d em{font-style:normal;font-variant-numeric:tabular-nums;color:#9a9da1;margin-left:6px}
-.tree .r.dir .n{font-weight:600}
-.tree .r.p{background:#fff4ee}
-.tree .r.p .n{font-weight:600}
-.tree .r.p .n::after{content:"";display:inline-block;width:7px;height:7px;margin-left:10px;background:var(--signal);vertical-align:middle}
-.tree .r.p .d{color:var(--ink)}
-.tree-foot{margin:18px 0 0;max-width:68ch;color:var(--steel);font-size:14px;line-height:1.55}
-@media (max-width:820px){
-  .ondrive .head,.progs{grid-template-columns:minmax(0,1fr)}
-  .progs li{padding:18px 0;border-bottom:1px solid var(--rule)}
-  .tree .r{grid-template-columns:minmax(0,1fr);padding:6px 14px}
-  .tree .r .d{padding-left:calc(var(--i,0) * 4ch + 4ch);font-size:13px}
-  .tree .r{font-size:12px}
+/* 3D viewer */
+.viewer{position:relative;margin-top:clamp(48px,6vw,96px);border-radius:24px;background:radial-gradient(120% 90% at 50% 0%,#17171a 0%,#0a0a0c 60%,#070708 100%);border:1px solid var(--line);overflow:hidden}
+.viewer canvas{width:100%;height:clamp(360px,52vw,640px);touch-action:pan-y;cursor:grab;outline:none;opacity:0;transition:opacity 1s ease}
+.viewer.live canvas{opacity:1}
+.viewer canvas.drag{cursor:grabbing}
+.viewer .vlabel{position:absolute;left:24px;top:22px;font:500 11.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--mute)}
+.viewer .vhint{position:absolute;right:24px;top:22px;font:400 12px var(--mono);color:var(--mute)}
+.states{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(20,20,23,.8);border:1px solid var(--line2);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.states button{height:36px;padding:0 16px;border:0;border-radius:999px;background:transparent;font-size:14px;color:var(--fg2);cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+.states button[aria-pressed="true"]{background:var(--fg);color:#050506}
+@media (max-width:599px){.states button{padding:0 12px;font-size:13px}.viewer .vhint{display:none}}
+
+/* drawing */
+.draw-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(40px,6vw,96px);align-items:center}
+.drawing{width:100%;height:auto;color:var(--fg2)}
+.drawing text{font:400 11px var(--mono);fill:var(--fg);stroke:none;text-anchor:middle}
+.drawing text[text-anchor="start"]{text-anchor:start}
+.drawing .ext{opacity:.4}
+.drawing .ar{stroke:none}
+.blueprint{position:relative;padding:clamp(20px,3vw,40px);border:1px solid var(--line);border-radius:20px;background:
+  linear-gradient(var(--line) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/24px 24px,var(--bg2);background-blend-mode:normal}
+.blueprint::after{content:"BLACKSTART · REV A · MM";position:absolute;right:16px;bottom:12px;font:400 10.5px var(--mono);letter-spacing:.1em;color:var(--dim)}
+.dims{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px 24px}
+.dims b{display:block;font:300 clamp(36px,3.8vw,56px)/1 var(--sans);letter-spacing:-.045em;color:var(--fg)}
+.dims span{display:block;margin-top:10px;font:400 11.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--mute)}
+@media (max-width:899px){.draw-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:599px){.drawing text{font-size:19px}}
+
+/* parts */
+.parts img{-webkit-mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(180deg,transparent,#000 14%,#000 86%,transparent)}
+.parts-key{list-style:none;margin:0;padding:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 28px;font:400 12.5px var(--mono);color:var(--mute)}
+.parts-key b{font-weight:500;color:var(--fg);margin-right:6px}
+
+/* film */
+.film-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:24px}
+.film-head p{margin:0;font:400 12px var(--mono);letter-spacing:.04em;color:var(--mute)}
+.player{position:relative;aspect-ratio:16/9;background:#000;border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:12px;height:54px;padding:0 26px 0 22px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(10,10,12,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--fg);font:500 15px var(--sans);cursor:pointer;transition:transform .2s,opacity .3s,background .2s}
+.play:hover{transform:translate(-50%,-50%) scale(1.03);background:rgba(10,10,12,.7)}
+.play i{width:0;height:0;border-left:11px solid var(--fg);border-top:7px solid transparent;border-bottom:7px solid transparent}
+.player.playing .play{opacity:0;pointer-events:none}
+
+/* promises */
+.three{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.three li{border-top:1px solid var(--line2);padding-top:22px}
+.three b{display:block;font:400 clamp(24px,2.2vw,32px)/1.12 var(--sans);letter-spacing:-.03em;color:var(--fg)}
+.three span{display:block;margin-top:10px;color:var(--mute)}
+@media (max-width:799px){.three{grid-template-columns:minmax(0,1fr)}}
+.never{list-style:none;margin:clamp(48px,6vw,80px) 0 0;padding:0;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px clamp(20px,2.6vw,40px)}
+.never li{font:300 clamp(28px,4vw,56px)/1.15 var(--sans);letter-spacing:-.04em;color:var(--dim);text-decoration:line-through;text-decoration-thickness:1px;text-decoration-color:var(--mute)}
+.never li:first-child{font:500 11.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--mute);flex-basis:100%;margin-bottom:14px}
+
+/* specs */
+.specs{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px)}
+.specs dl{margin:0;border-top:1px solid var(--line)}
+.specs dl div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:16px;padding:17px 0;border-bottom:1px solid var(--line)}
+.specs dt{font:500 11.5px/1.7 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--fg2)}
+.specs dd{margin:0;min-width:0;color:var(--fg)}
+@media (max-width:799px){.specs{grid-template-columns:minmax(0,1fr)}.specs dl div{grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:12px;padding:14px 0}.specs dt{font-size:10.5px}.specs dd{font-size:15px}}
+
+/* faq */
+.faq{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px)}
+.qa{border-top:1px solid var(--line)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font:400 19px/1.35 var(--sans);letter-spacing:-.015em;color:var(--fg)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";flex:none;font:300 22px/1 var(--sans);color:var(--mute);transition:transform .25s var(--ease)}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa p{margin:-6px 0 24px;max-width:62ch;color:var(--fg2)}
+@media (max-width:799px){.faq{grid-template-columns:minmax(0,1fr)}}
+
+/* end */
+.end{position:relative;text-align:center;overflow:hidden;padding-bottom:0}
+.end .wordmark{font-size:min(10.6vw,150px);white-space:nowrap;background:linear-gradient(180deg,#f6f5f1 0%,#a9a8a5 55%,#3c3c40 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.end .lede{margin-inline:auto}
+.end .join{margin:36px auto 0}
+.end .fmt{justify-content:center}
+.end-img{position:relative;margin-top:clamp(8px,2vw,24px);display:flex;justify-content:center}
+.end-img img{flex:none;width:min(1300px,140%);max-width:none;-webkit-mask-image:radial-gradient(70% 72% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(70% 72% at 50% 50%,#000 55%,transparent 100%)}
+footer{border-top:1px solid var(--line);padding-block:30px calc(30px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;font:400 12px/1.6 var(--mono);color:var(--mute)}
+@media (max-width:899px){footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+
+
+/* photo reel */
+.reel{padding-block:clamp(56px,7vw,104px) 0}
+.reel-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
+.reel-head .eyebrow{margin:0}
+.reel-nav{display:flex;gap:8px}
+.reel-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:transparent;color:var(--fg);cursor:pointer;display:grid;place-items:center;transition:border-color .2s,background .2s,opacity .2s}
+.reel-nav button:hover{border-color:var(--fg2);background:rgba(255,255,255,.05)}
+.reel-nav button:disabled{opacity:.3;cursor:default}
+.track{display:flex;gap:clamp(12px,1.4vw,20px);overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;
+  padding-inline:max(var(--gut),calc((100vw - var(--max)) / 2 + var(--gut)));scroll-padding-inline:max(var(--gut),calc((100vw - var(--max)) / 2 + var(--gut)));cursor:grab;-webkit-user-select:none;user-select:none}
+.track::-webkit-scrollbar{display:none}
+.track.grab{cursor:grabbing;scroll-snap-type:none}
+.track.grab a,.track.grab img{pointer-events:none}
+.card{flex:0 0 clamp(260px,29vw,430px);margin:0;scroll-snap-align:start}
+.card .ph{position:relative;aspect-ratio:3/4;overflow:hidden;border-radius:6px;background:var(--bg2)}
+.card img{position:absolute;inset:0;width:118%;max-width:none;height:100%;left:-9%;object-fit:cover;transform:translateX(var(--px,0px));will-change:transform;-webkit-user-drag:none}
+.card .ph::after{content:"";position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(255,255,255,.07);pointer-events:none}
+.card figcaption{display:flex;justify-content:space-between;gap:12px;padding-top:14px;font:400 12px/1.4 var(--mono);letter-spacing:.03em;color:var(--mute)}
+.card figcaption b{font-weight:500;color:var(--fg2)}
+.reel-bar{margin-top:28px;height:1px;background:var(--line);position:relative;overflow:hidden}
+.reel-bar i{position:absolute;left:0;top:0;bottom:0;width:20%;background:var(--fg2);transform-origin:left;transition:transform .1s linear}
+@media (max-width:699px){.card{flex-basis:78vw}.reel-nav{display:none}}
+
+/* live library window */
+.app{position:relative;margin-top:clamp(40px,5vw,64px);border-radius:14px;overflow:hidden;background:#fbfbfa;color:#2b2c2f;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 50px 140px -40px rgba(170,180,255,.25),0 30px 60px -30px rgba(0,0,0,.9);font-size:14px}
+.app-glow{position:relative}
+.app-glow::before{content:"";position:absolute;inset:-6% -4% -10%;background:radial-gradient(closest-side,rgba(220,226,255,.12),transparent 72%);filter:blur(12px);pointer-events:none}
+.app .win-bar{gap:7px}
+.app .win-bar span{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.app .win-bar em{white-space:nowrap;margin-left:auto;display:inline-flex;align-items:center;gap:7px;font:400 11.5px var(--mono);font-style:normal;color:#8a8c90}
+.app .win-bar em::before{content:"";width:7px;height:7px;border-radius:50%;background:#c9cacc}
+.app-body{display:grid;grid-template-columns:210px minmax(0,1fr);height:clamp(440px,52vw,560px)}
+.app-side{padding:18px 10px 18px 14px;border-right:1px solid #e6e6e3;overflow-y:auto}
+.app-side p{margin:0 0 10px 8px;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:#8a8c90}
+.app-side ul{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.app-side button{display:flex;justify-content:space-between;gap:8px;width:100%;padding:7px 8px;border:0;border-radius:7px;background:transparent;font:400 13px/1.25 var(--sans);color:#45474b;text-align:left;cursor:pointer}
+.app-side button em{font:400 11px var(--mono);font-style:normal;color:#9a9ca0}
+.app-side button:hover{background:#f0f0ee}
+.app-side button[aria-pressed="true"]{background:#0b0b0c;color:#fff}
+.app-side button[aria-pressed="true"] em{color:#9a9ca0}
+.app-main{display:flex;flex-direction:column;min-width:0;min-height:0;padding:18px 20px 0}
+.app-q{display:flex;align-items:center;gap:10px;height:44px;padding:0 14px;border:1px solid #cfcfcb;border-radius:10px;color:#0b0b0c;transition:border-color .15s,box-shadow .15s}
+.app-q:focus-within{border-color:#0b0b0c;box-shadow:0 0 0 4px rgba(0,0,0,.05)}
+.app-q svg{flex:none;color:#8a8c90}
+.app-q input{flex:1;min-width:0;border:0;background:transparent;font-size:16px;color:#0b0b0c;height:100%;caret-color:var(--signal)}
+.app-q input:focus{outline:none}
+.app-q input::placeholder{color:#a3a5a8}
+.app-q input::-webkit-search-cancel-button{opacity:.5}
+.app-q kbd{font:400 11px var(--mono);color:#8a8c90;white-space:nowrap}
+.kinds{display:flex;gap:4px;margin:12px 0 4px;flex-wrap:wrap}
+.kinds button{height:28px;padding:0 11px;border:1px solid #e0e0dd;border-radius:999px;background:#fff;font:400 12.5px var(--sans);color:#55575b;cursor:pointer}
+.kinds button[aria-pressed="true"]{border-color:#0b0b0c;color:#0b0b0c;background:#f0f0ee}
+.app .results{flex:1;min-height:0;overflow-y:auto;margin:8px -20px 0;padding:0 20px;border-top:1px solid #e6e6e3}
+.app .results li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 18px;padding:12px 0;border-bottom:1px solid #ececea;align-items:baseline;animation:row .4s var(--ease) both}
+.app .results .t{color:#0b0b0c;font-size:14.5px;line-height:1.35;min-width:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.app .results .t mark{background:rgba(255,91,31,.16);color:#0b0b0c;border-radius:2px}
+.app .results .k{font:400 11px/1.3 var(--mono);color:#8a8c90;text-align:right;white-space:nowrap}
+.app .results .none{display:block;color:#6a6c70;font-size:14px}
+.app-foot{display:flex;justify-content:space-between;gap:16px;padding:10px 20px;border-top:1px solid #e6e6e3;background:#f6f6f4;font:400 11.5px var(--mono);color:#8a8c90}
+.app-foot b{font-weight:500;color:#45474b}
+.try{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:18px;font:400 12px var(--mono);color:var(--mute)}
+.try button{height:32px;padding:0 14px;border:1px solid var(--line2);border-radius:999px;background:transparent;font:400 14px var(--sans);color:var(--fg2);cursor:pointer}
+.try button:hover{border-color:var(--fg2);color:var(--fg)}
+@media (max-width:759px){.app-body{grid-template-columns:minmax(0,1fr);height:520px}.app-side{display:none}.app .results .k{display:none}}
+.subj-m{display:none;margin:12px 0 0;font:inherit}
+@media (max-width:759px){.subj-m{display:block;width:100%;height:36px;padding:0 10px;border:1px solid #e0e0dd;border-radius:8px;background:#fff;color:#2b2c2f;font-size:14px}}
+
+/* files panel */
+.files{margin:0;border:1px solid var(--line2);border-radius:14px;background:var(--bg2);overflow:hidden;box-shadow:0 30px 80px -40px rgba(0,0,0,.9)}
+.files-bar{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;border-bottom:1px solid var(--line);font:400 12px var(--mono);color:var(--mute)}
+.files-bar i{width:11px;height:11px;border-radius:50%;background:#2a2a2e}
+.files-bar span{margin-left:10px}
+.files pre{margin:0;padding:22px 24px;overflow-x:auto;font:400 13px/1.85 var(--mono);color:var(--fg2)}
+.files pre b{font-weight:500;color:var(--fg)}
+.files pre i{font-style:normal;color:var(--dim)}
+.files pre em{font-style:normal;color:var(--signal)}
+.files pre u{text-decoration:none;color:var(--mute)}
+
+/* parts hotspots */
+.parts-stage{position:relative}
+.hs{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);color:var(--fg);font:500 10.5px/1 var(--mono);cursor:pointer;display:grid;place-items:center;padding:0;transition:background .2s,border-color .2s,transform .2s}
+.hs::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid rgba(255,255,255,.25);animation:ping 3.2s ease-out infinite;opacity:0}
+.hs:hover,.hs.on{background:var(--fg);color:#000;border-color:var(--fg);transform:translate(-50%,-50%) scale(1.08)}
+.hs-tip{position:absolute;z-index:2;transform:translate(-50%,calc(-100% - 22px));padding:10px 14px;border-radius:10px;background:rgba(12,12,14,.92);border:1px solid var(--line2);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s}
+.hs-tip.on{opacity:1}
+.hs-tip b{display:block;font:500 14px var(--sans);color:var(--fg)}
+.hs-tip span{display:block;margin-top:2px;font:400 12px var(--mono);color:var(--mute)}
+.parts-key li{cursor:default;transition:color .2s}
+.parts-key li.on{color:var(--fg)}
+@media (max-width:599px){.hs{width:24px;height:24px;font-size:9px}.hs-tip{white-space:normal;width:200px}}
+
+/* capacity hover */
+.meter i{cursor:default;transition:width 1.4s var(--ease),filter .2s,opacity .2s}
+.meter.hovering i{opacity:.35}
+.meter.hovering i.on{opacity:1;filter:brightness(1.12)}
+.legend li{transition:color .2s}
+.legend li.on{color:var(--fg)}
+.legend li.on b{color:var(--fg)}
+#capnow b{color:var(--fg)}
+
+/* entrance, once */
+.js .rise{opacity:0;transform:translateY(18px);transition:opacity 1.1s ease,transform 1.1s var(--ease)}
+.js .rise.in{opacity:1;transform:none}
+.static .stage,.static .hero-top,.static .hero-foot{animation:none!important}
+@media (min-width:900px){.static .hero{min-height:max(640px,var(--shotvh))}}
+.static .rise{opacity:1!important;transform:none!important;transition:none!important}
+.static .results li{animation:none!important}
+@media (prefers-reduced-motion:reduce){
+  .js .rise{opacity:1;transform:none;transition:none}
+  .js .stage,.js .hero-top,.js .hero-foot{animation:none}
+  .live i::after{animation:none}
+  .meter i,.results li{transition:none;animation:none}
 }
-
-/* waitlist */
-.co{position:fixed;inset:0;z-index:20;background:var(--paper);overflow:auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-.co[hidden]{display:none}
-.co-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--rule)}
-.co-back{background:none;border:0;padding:4px 0;font:600 11px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
-.co-tag{font:600 10.5px/1 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--steel)}
-.co-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:64px;padding-block:56px 96px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.co h2{margin:0 0 28px;font:500 32px/1.1 var(--display);font-stretch:108%}
-.co fieldset{border:0;margin:0 0 28px;padding:0;display:grid;gap:12px;min-width:0}
-.co legend{padding:0;margin-bottom:12px;font:600 11px/1 var(--label);letter-spacing:.18em;text-transform:uppercase}
-.co label{display:grid;gap:6px;font:500 12px/1.2 var(--label);letter-spacing:.06em;color:var(--steel);min-width:0}
-.co input,.co select{font:400 15px/1.3 var(--display);color:var(--ink);background:#fff;border:1px solid #cfd1d4;border-radius:0;padding:12px 12px;width:100%;box-sizing:border-box;min-width:0}
-.co input:focus,.co select:focus{outline:2px solid var(--ink);outline-offset:-1px}
-.co-lede{margin:-12px 0 32px;max-width:46ch;color:#3d4043;line-height:1.6}
-.co-pick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.co-pick label{position:relative;cursor:pointer}
-.co-pick input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
-.co-pick span{display:grid;gap:4px;padding:14px 16px;border:1px solid #cfd1d4}
-.co-pick b{font:600 11px/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
-.co-pick em{font-style:normal;color:var(--steel);font-size:14px;font-variant-numeric:tabular-nums}
-.co-pick input:checked + span{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
-.co-pick input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px}
-.sr > :not(input){position:absolute}
-.co label.sr{font-size:0;gap:0}
-.co-note{margin:12px 0 0;color:var(--steel);font-size:13px}
-.co-err{margin:12px 0 0;color:#b3261e;font-size:14px}
-.co-done h2{margin:0 0 28px}
-.co-done:focus{outline:none}
-.co .add{width:100%;margin-top:4px}
-.co-sum{align-self:start;position:sticky;top:24px;border:1px solid var(--rule);padding:24px;display:grid;gap:18px}
-.co-item{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:center}
-.co-item img{width:96px;height:72px;object-fit:cover;background:#ececee;display:block}
-.co-item b{display:block;font:600 12px/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase}
-.co-item span{color:var(--steel);font-size:14px}
-.qty{display:flex;align-items:center;gap:0;border:1px solid #cfd1d4;width:max-content}
-.qty button{width:34px;height:34px;background:none;border:0;cursor:pointer;font-size:16px}
-.qty output{min-width:28px;text-align:center;font-variant-numeric:tabular-nums}
-.co-lines{display:grid;gap:8px;border-top:1px solid var(--rule);padding-top:16px;font-variant-numeric:tabular-nums}
-.co-lines div{display:flex;justify-content:space-between;gap:12px;color:#3d4043;font-size:14px}
-.co-lines .tot{color:var(--ink);font-weight:600;font-size:16px;border-top:1px solid var(--rule);padding-top:10px;margin-top:4px}
-@media (max-width:820px){.co-grid{grid-template-columns:minmax(0,1fr);gap:36px;padding-block:36px 72px}.co-sum{position:static}}
 </style>
+</head>
+<body>
 
-<header class="top">
-  <a class="mark" href="#top" id="top-link">BABEL DRIVE</a>
-  <nav class="nav" aria-label="Store">
-    <a href="#film">Film</a>
-    <a href="#specs">Specs</a>
-    <a href="#faq">FAQ</a>
-    <button type="button" id="buy-top">Waitlist</button>
-  </nav>
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="mark" href="#">BABEL DRIVE</a>
+    <nav class="nav" aria-label="Page">
+      <a href="#library">Library</a>
+      <a href="#software">Software</a>
+      <a href="#design">Design</a>
+      <a href="#specs">Specs</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn sm" href="#join" data-go-join>Join the waitlist</a>
+    </nav>
+  </div>
 </header>
 
-<main id="top">
-  <div class="story" id="story">
+<main>
+  <section class="hero" id="hero">
+    <div class="hero-top wrap">
+      <h1 class="wordmark">Blackstart</h1>
+      <p class="live"><i></i>Waitlist open</p>
+    </div>
+
     <div class="stage" id="stage">
-      <canvas id="drive" tabindex="0" aria-label="3D model of the Blackstart drive. Drag sideways, or use the left and right arrow keys, to turn it."></canvas>
-      <p class="fail" id="fail" hidden>This 3D view needs WebGL</p>
-      <div class="labels" id="labels" aria-hidden="true"><svg id="leaders"></svg></div>
-      <div class="captions">
-        <div class="layer buy on">
-          <p class="eyebrow">The most capable Babel Drive</p>
-          <h1 class="name">Blackstart</h1>
-          <p class="price" id="price">$199 · 256 GB USB-C drive</p>
-          <div class="opts" role="radiogroup" aria-label="Format">
-            <button type="button" role="radio" aria-checked="true" id="opt-drive" data-opt="drive">256 GB Drive</button>
-            <button type="button" role="radio" aria-checked="false" id="opt-download" data-opt="download">Download</button>
-          </div>
-          <button type="button" class="add" id="add">Join the waitlist</button>
-          <p class="hint"><span class="h-fine">Drag to turn · Scroll</span><span class="h-touch">Swipe up</span></p>
-        </div>
-        <div class="layer"><p class="eyebrow">01 / Inside</p><h2>256 GB. One chip.</h2></div>
-        <div class="layer"><p class="eyebrow">02 / Inside</p><h2>English Wikipedia</h2><p class="body">6.8 million articles. Offline.</p></div>
-        <div class="layer"><p class="eyebrow">03 / Inside</p><h2>2,000+ books and manuals</h2></div>
-        <div class="layer"><p class="eyebrow">04 / Inside</p><h2>North America maps</h2><p class="body">Offline map viewer.</p></div>
-        <div class="layer"><p class="eyebrow">05 / Outside</p><h2>USB-C</h2><p class="body">Laptop, phone, tablet.</p></div>
-        <div class="layer"><p class="eyebrow">06 / Outside</p><h2>Cap posts on the back</h2></div>
-        <div class="layer"><p class="eyebrow">07 / Inside</p><h2>Every part</h2><p class="body">Steel body. Four screws. One board.</p></div>
-        <div class="layer end"><h2>Blackstart</h2><p class="eyebrow">256 GB · USB-C · Solid steel</p></div>
+      <img src="img/hero/poster-1280.jpg" srcset="img/hero/poster-1280.jpg 1280w, img/hero/poster-2560.jpg 2560w" sizes="(min-width: 900px) 90vw, 100vw" width="2560" height="1600" alt="Blackstart, a solid stainless steel USB-C drive, on a black table" fetchpriority="high">
+      <video id="film" muted loop playsinline preload="none" aria-label="Blackstart taking itself apart down to the chip, then going back together" disablepictureinpicture></video>
+      <button type="button" class="film-ctl" id="filmctl" aria-label="Pause the film"><i></i><span>Pause</span></button>
+    </div>
+
+    <div class="hero-foot wrap">
+      <div>
+        <p class="lede"><b>The offline library, in solid steel.</b><br>English Wikipedia, wikiHow, 2,000+ books and manuals, maps of the world, and more.</p>
       </div>
+      <div class="buy">
+        <p class="price"><b>$199</b>256 GB drive</p>
+        <a class="btn" href="#join" data-go-join>Join the waitlist</a>
+      </div>
+      <ul class="specline" aria-label="Key specs" style="grid-column:1/-1">
+        <li><b>256 GB</b></li><li>USB-C</li><li>316L stainless</li><li>55 g</li><li>44.7 × 20.4 × 9 mm</li><li>Works offline</li>
+      </ul>
     </div>
-    <div class="steps" aria-hidden="true">
-      <div class="step" data-name="Overview"></div>
-      <div class="step" data-name="Inside"></div>
-      <div class="step" data-name="English Wikipedia"></div>
-      <div class="step" data-name="Books and manuals"></div>
-      <div class="step" data-name="Maps"></div>
-      <div class="step" data-name="USB-C"></div>
-      <div class="step" data-name="Cap"></div>
-      <div class="step" data-name="Every part"></div>
-      <div class="step" data-name="Blackstart"></div>
+  </section>
+
+
+  <section class="reel" id="reel" aria-label="Photos">
+    <div class="wrap reel-head">
+      <p class="eyebrow">In hand</p>
+      <div class="reel-nav"><button type="button" id="rprev" aria-label="Previous photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3L5 8l5 5"/></svg></button><button type="button" id="rnext" aria-label="Next photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l5 5-5 5"/></svg></button></div>
     </div>
-  </div>
+    <div class="track" id="track" tabindex="0" aria-label="Photos of Blackstart, scroll sideways">
+      <figure class="card"><div class="ph"><img src="img/p/palm-900.jpg" srcset="img/p/palm-900.jpg 900w, img/p/palm-1400.jpg 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" decoding="async" alt="Blackstart resting in an open palm, about a third of the palm wide" draggable="false"></div><figcaption><b>45 × 20 × 9 mm, 55 g</b><span>01 / 05</span></figcaption></figure>
+      <figure class="card"><div class="ph"><img src="img/p/hold-900.jpg" srcset="img/p/hold-900.jpg 900w, img/p/hold-1400.jpg 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" decoding="async" alt="Blackstart held between thumb and finger against black" draggable="false"></div><figcaption><b>Solid 316L stainless</b><span>02 / 05</span></figcaption></figure>
+      <figure class="card"><div class="ph"><img src="img/p/lamp-900.jpg" srcset="img/p/lamp-900.jpg 900w, img/p/lamp-1400.jpg 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a walnut desk under a warm lamp" draggable="false"></div><figcaption><b>Laser-marked cap</b><span>03 / 05</span></figcaption></figure>
+      <figure class="card"><div class="ph"><img src="img/p/cabin-900.jpg" srcset="img/p/cabin-900.jpg 900w, img/p/cabin-1400.jpg 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a cabin windowsill with snow outside" draggable="false"></div><figcaption><b>No connection needed</b><span>04 / 05</span></figcaption></figure>
+      <figure class="card"><div class="ph"><img src="img/p/book-900.jpg" srcset="img/p/book-900.jpg 900w, img/p/book-1400.jpg 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a desk beside a cloth-bound book" draggable="false"></div><figcaption><b>Bead-blasted finish</b><span>05 / 05</span></figcaption></figure>
+    </div>
+    <div class="wrap"><div class="reel-bar"><i id="rbar"></i></div></div>
+  </section>
 
   <section class="sec" id="library" aria-labelledby="lib-h">
     <div class="wrap">
       <p class="eyebrow">Library</p>
-      <h2 class="big" id="lib-h">The most capable Babel Drive.</h2>
-      <p class="lede">English Wikipedia, wikiHow, 2,000+ books and manuals, and maps of North America. Offline.</p>
-      <ul class="lib">
-        <li><b>English Wikipedia</b><span>6.8 million articles, with pictures.</span></li>
-        <li><b>wikiHow</b><span>Step-by-step guides.</span></li>
-        <li><b>Books and manuals</b><span>2,000+</span></li>
-        <li><b>Maps</b><span>North America.</span></li>
+      <h2 id="lib-h">224.6 GB of reference. <em>No connection.</em></h2>
+      <ul class="stats">
+        <li><b data-n="6.8" data-d="1">6.8<small>M</small></b><span>English Wikipedia articles, with pictures</span></li>
+        <li><b data-n="2101">2,101</b><span>Books, manuals and archives in the catalog</span></li>
+        <li><b data-n="29">29</b><span>Stack Exchange Q&amp;A archives</span></li>
+        <li><b>World</b><span>Offline maps, every continent</span></li>
       </ul>
+      <div class="cap" id="cap">
+        <div class="cap-head"><span><b>256 GB</b> drive</span><span>224.6 GB used</span></div>
+        <div class="meter" role="img" aria-label="How the 256 GB is used: Wikipedia 127.4 GB, historical books 25.5 GB, reference wikis 24.8 GB, maps 22.7 GB, Q&amp;A archives 13.9 GB, dictionary 9.2 GB, books, manuals and software 1.2 GB, 31.4 GB free"></div>
+        <ul class="legend" id="legend"></ul>
+      </div>
+      <p class="inside"><b>Inside</b>English Wikipedia · wikiHow · Wiktionary · Wikibooks · Wikivoyage · Wikisource · World Factbook · 29 Stack Exchange archives · 2,000+ books and manuals · World maps · and more</p>
     </div>
   </section>
 
-  <section class="sec ondrive" id="ondrive" aria-labelledby="od-h">
+  <section class="sec search" id="catalog" aria-labelledby="cat-h">
     <div class="wrap">
-      <div class="head">
-        <div>
-          <p class="eyebrow">Software</p>
-          <h2 class="big" id="od-h">Plug it in. Open Library.</h2>
+      <p class="eyebrow">Try it</p>
+      <h2 id="cat-h">Open Library. <em>Live.</em></h2>
+      <p class="lede">The real catalog on the drive. Pick a subject or search 2,101 titles.</p>
+      <div class="app-glow rise">
+        <div class="app">
+          <div class="win-bar"><i></i><i></i><i></i><span>localhost · Blackstart Library</span><em>Wi-Fi off</em></div>
+          <div class="app-body">
+            <aside class="app-side" aria-label="Subjects"><p>Subjects</p><ul id="subj"></ul></aside>
+            <div class="app-main">
+              <div class="app-q">
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="8.5" cy="8.5" r="6"/><path d="M13 13l5 5"/></svg>
+                <label class="sr" for="q">Search the catalog</label>
+                <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search titles">
+                <kbd id="qcount"></kbd>
+              </div>
+              <select class="subj-m" id="subjm" aria-label="Subject"></select>
+              <div class="kinds" id="kinds" role="group" aria-label="Type"></div>
+              <ul class="results" id="results" aria-live="polite"></ul>
+            </div>
+          </div>
+          <div class="app-foot"><span id="appnow"><b>All subjects</b></span><span>Runs from the drive</span></div>
         </div>
-        <p class="lede">Search, Wikipedia and maps open in your browser. No install. No internet. No account.</p>
       </div>
-      <ul class="progs">
-        <li><b>Search</b><span>Wikipedia, dictionary, how-to and Q&amp;A archives, books and manuals.</span></li>
-        <li><b>Map viewer</b><span>North America, offline.</span></li>
-        <li><b>Runs on</b><span>Mac, Windows, Linux, Android.</span></li>
-      </ul>
-      <figure class="tree" aria-label="The folders on a Blackstart drive">
-        <figcaption class="tree-bar"><span><b>BLACKSTART</b> · 256 GB · USB-C</span><span class="key">Programs</span></figcaption>
-        <div class="tree-body" role="list">
-          <div class="r dir"><span class="n">BLACKSTART/</span><span class="d"></span></div>
-          <div class="r p" style="--i:0"><span class="n"><i>├── </i>START.html</span><span class="d">Library home</span></div>
-          <div class="r p" style="--i:0"><span class="n"><i>├── </i>Open Library (Mac).command</span><span class="d">Opens the library</span></div>
-          <div class="r p" style="--i:0"><span class="n"><i>├── </i>Open Library (Windows).bat</span><span class="d">Windows</span></div>
-          <div class="r p" style="--i:0"><span class="n"><i>├── </i>open-library-linux.sh</span><span class="d">Linux</span></div>
-          <div class="r dir" style="--i:0"><span class="n"><i>├── </i>apps/</span><span class="d"></span></div>
-          <div class="r p" style="--i:1"><span class="n"><i>│   ├── </i>kiwix-serve/</span><span class="d">Reader</span></div>
-          <div class="r p" style="--i:1"><span class="n"><i>│   ├── </i>macos/  windows/  linux/</span><span class="d">Desktop apps</span></div>
-          <div class="r p" style="--i:1"><span class="n"><i>│   └── </i>android/</span><span class="d">Android app</span></div>
-          <div class="r dir" style="--i:0"><span class="n"><i>├── </i>library/</span><span class="d"><em>224 GB</em></span></div>
-          <div class="r dir" style="--i:1"><span class="n"><i>│   ├── </i>wikipedia/</span><span class="d"></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wikipedia_en_all_maxi.zim</span><span class="d">English Wikipedia<em>127 GB</em></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>maps_en_north-america.zim</span><span class="d">North America maps<em>23 GB</em></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wiktionary_en_all.zim</span><span class="d">Dictionary<em>9 GB</em></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wikibooks, wikivoyage, …</span><span class="d">Wikibooks, Wikivoyage, Appropedia, more<em>25 GB</em></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   └── </i>29 Q&amp;A archives</span><span class="d">Q&amp;A archives<em>14 GB</em></span></div>
-          <div class="r" style="--i:1"><span class="n"><i>│   ├── </i>books/</span><span class="d">250 books<em>10 GB</em></span></div>
-          <div class="r" style="--i:1"><span class="n"><i>│   ├── </i>manuals/</span><span class="d">Field manuals</span></div>
-          <div class="r" style="--i:1"><span class="n"><i>│   └── </i>historical/</span><span class="d">1,800+ how-to books<em>26 GB</em></span></div>
-          <div class="r" style="--i:0"><span class="n"><i>├── </i>SOURCES.csv</span><span class="d">Sources and licenses</span></div>
-          <div class="r" style="--i:0"><span class="n"><i>├── </i>CHECK/</span><span class="d">Checksums</span></div>
-          <div class="r" style="--i:0"><span class="n"><i>└── </i>README.txt</span><span class="d">Instructions</span></div>
-        </div>
+      <div class="try" aria-label="Examples"><span>Try</span><button type="button">canning</button><button type="button">radio</button><button type="button">first aid</button><button type="button">well</button><button type="button">bees</button><button type="button">welding</button></div>
+      <p class="note mono" style="margin:16px 0 0;font-size:12.5px;line-height:1.6;color:var(--mute)">Interface preview. Titles from the books, manuals and archives on the drive. Wikipedia and the archives add full-text search across millions of pages.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="software" aria-labelledby="soft-h">
+    <div class="wrap soft-grid">
+      <div>
+        <p class="eyebrow">Software</p>
+        <h2 id="soft-h">Plug it in. Open Library.</h2>
+        <p class="lede">Search, Wikipedia and maps open in your browser. No install. No internet. No account.</p>
+        <ul class="facts">
+          <li><b>Search</b><span>One box across every archive</span></li>
+          <li><b>Maps</b><span>World map viewer</span></li>
+          <li><b>Runs on</b><span>Mac, Windows, Linux, Android</span></li>
+          <li><b>Formats</b><span>ZIM, PDF, EPUB, HTML. Open without our software too.</span></li>
+        </ul>
+      </div>
+      <figure class="files rise" aria-label="Files on the drive">
+        <div class="files-bar"><i></i><i></i><i></i><span>BLACKSTART · 256 GB</span></div>
+<pre><b>BLACKSTART/</b>
+<i>├─</i> <em>START.html</em>
+<i>├─</i> <em>Open Library (Mac).command</em>
+<i>├─</i> <em>Open Library (Windows).bat</em>
+<i>├─</i> <em>open-library-linux.sh</em>
+<i>├─</i> <b>apps/</b>             <u>kiwix-serve, Kiwix apps</u>
+<i>├─</i> <b>library/</b>          <u>224.6 GB</u>
+<i>│  ├─</i> wikipedia/      <u>Wikipedia, maps, Q&amp;A, wikis</u>
+<i>│  ├─</i> books/          <u>EPUB, HTML</u>
+<i>│  ├─</i> manuals/        <u>PDF</u>
+<i>│  └─</i> historical/     <u>PDF, by subject</u>
+<i>├─</i> SOURCES.csv       <u>sources and licenses</u>
+<i>├─</i> CHECK/            <u>checksums</u>
+<i>└─</i> README.txt</pre>
+        <figcaption class="cap-row" style="padding:12px 24px 16px"><span>Files on the drive</span><span>Double-click to open</span></figcaption>
       </figure>
     </div>
   </section>
 
+  <section class="sec diy" aria-labelledby="diy-h" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Compared</p>
+      <h2 id="diy-h">Why not download it yourself?</h2>
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col"><span class="sr">Step</span></th><th scope="col">Do it yourself</th><th scope="col">Blackstart</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Content</th><td data-l="Do it yourself">2,100+ files from dozens of sources</td><td data-l="Blackstart">Preloaded</td></tr>
+            <tr><th scope="row">Download</th><td data-l="Do it yourself">224.6 GB</td><td data-l="Blackstart">None</td></tr>
+            <tr><th scope="row">Software</th><td data-l="Do it yourself">Find, install and set up a reader on each computer</td><td data-l="Blackstart">Double-click Open Library</td></tr>
+            <tr><th scope="row">Maps</th><td data-l="Do it yourself">Separate download and viewer</td><td data-l="Blackstart">Included</td></tr>
+            <tr><th scope="row">Checked</th><td data-l="Do it yourself">Up to you</td><td data-l="Blackstart">Every file checksummed</td></tr>
+            <tr><th scope="row">Housing</th><td data-l="Do it yourself">Plastic stick</td><td data-l="Blackstart">Solid 316L steel</td></tr>
+            <tr><th scope="row">Updates</th><td data-l="Do it yourself">Repeat all of it</td><td data-l="Blackstart">Lifetime, included</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <figure class="bleed inuse">
+    <img class="rise" src="img/desk-1600.jpg" srcset="img/desk-1000.jpg 1000w, img/desk-1600.jpg 1600w" sizes="100vw" width="1672" height="942" loading="lazy" decoding="async" alt="Blackstart plugged into a laptop, its cap clicked onto the back">
+  </figure>
+
+  <section class="sec" id="design" aria-labelledby="design-h">
+    <div class="wrap">
+      <div class="design-head">
+        <div>
+          <p class="eyebrow">Design</p>
+          <h2 id="design-h">Solid steel. <em>Small batches.</em></h2>
+        </div>
+        <p class="lede">Machined from solid 316L stainless. The cap and its clip are one piece of 17-4PH steel and click onto either end.</p>
+      </div>
+      <figure class="shot big">
+        <img class="rise" src="img/plug-1600.jpg" srcset="img/plug-1000.jpg 1000w, img/plug-1600.jpg 1600w, img/plug-2400.jpg 2400w" sizes="(min-width: 1360px) 1280px, 92vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Close-up of the USB-C plug held in the steel body">
+        <figcaption class="cap-row"><span>USB-C, held in steel on four sides</span><span>01</span></figcaption>
+      </figure>
+      <div class="pair">
+        <figure><img class="rise" src="img/logo-1000.jpg" srcset="img/logo-1000.jpg 1000w, img/logo-1600.jpg 1600w" sizes="(min-width: 700px) 46vw, 92vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Laser-marked Babel Drive logo on the steel top plate"><figcaption class="cap-row"><span>Laser-marked, flush top plate</span><span>02</span></figcaption></figure>
+        <figure><img class="rise" src="img/posted-1000.jpg" srcset="img/posted-1000.jpg 1000w, img/posted-1600.jpg 1600w" sizes="(min-width: 700px) 46vw, 92vw" width="1600" height="1000" loading="lazy" decoding="async" alt="The cap clicked onto the back while the drive is in use"><figcaption class="cap-row"><span>Cap posts on the back</span><span>03</span></figcaption></figure>
+      </div>
+
+      <div class="viewer" id="viewer">
+        <canvas id="v3d" tabindex="0" aria-label="3D model of Blackstart. Drag sideways or use the arrow keys to turn it."></canvas>
+        <span class="vlabel">3D</span>
+        <span class="vhint">Drag to turn</span>
+        <div class="states" role="group" aria-label="Cap position">
+          <button type="button" data-q="0" aria-pressed="true">Capped</button>
+          <button type="button" data-q="0.3" aria-pressed="false">Cap off</button>
+          <button type="button" data-q="1" aria-pressed="false">Posted</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="dim-h" style="padding-top:0">
+    <div class="wrap draw-grid">
+      <div>
+        <p class="eyebrow">Dimensions</p>
+        <h2 id="dim-h">Pocket size. <em>55 grams.</em></h2>
+        <ul class="dims">
+          <li><b>44.7</b><span>Length, mm</span></li>
+          <li><b>20.4</b><span>Width, mm</span></li>
+          <li><b>9.0</b><span>Height, mm</span></li>
+          <li><b>55</b><span>Weight, g</span></li>
+        </ul>
+      </div>
+      <div class="blueprint rise"><div id="drawing"></div></div>
+    </div>
+  </section>
+
+  <figure class="bleed parts">
+    <div class="parts-stage" id="parts"><img class="rise" src="img/parts-1600.jpg" srcset="img/parts-1000.jpg 1000w, img/parts-1600.jpg 1600w, img/parts-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" loading="lazy" decoding="async" alt="Every part laid out: steel body, cover, four Torx screws, four click balls, thermal pad, the 256 GB board with its USB-C plug, and the cap"><button type="button" class="hs" data-i="0" style="left:16.4%;top:37.8%" aria-label="Body: 316L stainless, machined from solid">01</button><button type="button" class="hs" data-i="1" style="left:34.6%;top:37.8%" aria-label="Cover: Steel, held by four screws">02</button><button type="button" class="hs" data-i="2" style="left:45.6%;top:33.0%" aria-label="Torx screws ×4: M1.6, flush">03</button><button type="button" class="hs" data-i="3" style="left:46.8%;top:56.0%" aria-label="Click balls ×4: The click when the cap goes on">04</button><button type="button" class="hs" data-i="4" style="left:54.5%;top:37.8%" aria-label="Thermal pad: Presses the board down">05</button><button type="button" class="hs" data-i="5" style="left:66.6%;top:36.7%" aria-label="256 GB board: One chip and the USB-C plug">06</button><button type="button" class="hs" data-i="6" style="left:81.9%;top:37.8%" aria-label="Cap and clip: One piece, 17-4PH steel">07</button><div class="hs-tip" id="hstip"><b></b><span></span></div></div>
+    <div class="wrap"><ul class="parts-key" id="pkey"><li data-i="0"><b>01</b>Body</li><li data-i="1"><b>02</b>Cover</li><li data-i="2"><b>03</b>Torx screws ×4</li><li data-i="3"><b>04</b>Click balls ×4</li><li data-i="4"><b>05</b>Thermal pad</li><li data-i="5"><b>06</b>256 GB board</li><li data-i="6"><b>07</b>Cap and clip</li></ul></div>
+  </figure>
+
   <section class="sec film" id="film" aria-labelledby="film-h">
     <div class="wrap">
-      <div class="film-head"><h2 class="eyebrow" id="film-h">Film</h2><p>0:43 · Sound on</p></div>
+      <div class="film-head"><h2 class="eyebrow" id="film-h" style="margin:0">Film</h2><p>0:43 · Sound on</p></div>
       <div class="player" id="player">
-        <video id="film-video" src="babel-drive-film.mp4" poster="babel-drive-film-poster.jpg" preload="metadata" playsinline></video>
-        <button type="button" class="play" id="film-play"><i></i>Play</button>
+        <video id="video" src="babel-drive-film.mp4" poster="babel-drive-film-poster.jpg" preload="none" playsinline></video>
+        <button class="play" type="button" id="play"><i></i>Play</button>
       </div>
     </div>
   </section>
 
-  <figure class="still life"><img src="life-slate.jpg" alt="Blackstart, capped, on dark slate" loading="lazy" decoding="async"></figure>
-
-  <section class="sec gallery" id="gallery" aria-labelledby="gal-h">
+  <section class="sec" aria-label="Promises" style="padding-top:0">
     <div class="wrap">
-      <h2 class="eyebrow" id="gal-h">Gallery</h2>
-      <div class="grid">
-        <figure class="wide"><img src="gallery-capped.jpg" alt="Blackstart, capped, three-quarter view" loading="lazy" decoding="async"><figcaption>Capped</figcaption></figure>
-        <figure><img src="gallery-capoff.jpg" alt="The cap pulled off, USB-C plug exposed" loading="lazy" decoding="async"><figcaption>Cap off</figcaption></figure>
-        <figure><img src="gallery-posted.jpg" alt="The cap clicked onto the back while in use" loading="lazy" decoding="async"><figcaption>Cap posted</figcaption></figure>
-        <figure><img src="gallery-top.jpg" alt="Top view, the flat steel plate with the logo" loading="lazy" decoding="async"><figcaption>Top</figcaption></figure>
-        <figure><img src="gallery-exploded.jpg" alt="Taken apart: body, board, thermal pad, cover, screws and cap" loading="lazy" decoding="async"><figcaption>Exploded</figcaption></figure>
-      </div>
+      <ul class="three">
+        <li><b>Lifetime updates</b><span>Every library update, included with every purchase.</span></li>
+        <li><b>Small batches</b><span>Machined and assembled a batch at a time.</span></li>
+        <li><b>30-day returns</b><span>Any reason.</span></li>
+      </ul>
+      <ul class="never" aria-label="Never">
+        <li>Never</li><li>Accounts</li><li>Subscriptions</li><li>Tracking</li><li>AI</li><li>Internet</li>
+      </ul>
     </div>
   </section>
 
-  <section class="pair" aria-label="In use">
-    <figure><img src="life-desk.jpg" alt="Plugged into a laptop, the cap clicked onto the back" loading="lazy" decoding="async"><figcaption>In use</figcaption></figure>
-    <figure><img src="life-bench.jpg" alt="The cap pulled off, USB-C plug ready" loading="lazy" decoding="async"><figcaption>Cap off</figcaption></figure>
-  </section>
-
-  <figure class="still"><img src="babel-drive-parts.jpg" alt="Every part of the Blackstart laid out: steel body, cover, four Torx screws, click balls, thermal pad, the 256 GB board with its USB-C plug, and the cap with its clip" loading="lazy" decoding="async"><figcaption>Parts</figcaption></figure>
-
-  <section class="sec" id="made">
-    <div class="wrap two">
-      <div><p class="eyebrow">Build</p><h3>Solid steel, small batches.</h3><p class="body">Machined from solid stainless steel. Cap and clip are one piece.</p></div>
-      <div><p class="eyebrow">Updates</p><h3>A lifetime of updates.</h3><p class="body">Included with every purchase.</p></div>
-    </div>
-  </section>
-
-  <section class="sec specs" id="specs" aria-labelledby="specs-h">
-    <div class="wrap">
-      <h2 class="eyebrow" id="specs-h">Specs</h2>
+  <section class="sec" id="specs" aria-labelledby="specs-h" style="padding-top:0">
+    <div class="wrap specs">
+      <div><p class="eyebrow">Specs</p><h2 id="specs-h">Blackstart</h2></div>
       <dl>
         <div><dt>Capacity</dt><dd>256 GB</dd></div>
+        <div><dt>Library</dt><dd>224.6 GB, preloaded</dd></div>
         <div><dt>Connector</dt><dd>USB-C</dd></div>
         <div><dt>Size</dt><dd>44.7 × 20.4 × 9 mm, capped</dd></div>
         <div><dt>Weight</dt><dd>55 g</dd></div>
-        <div><dt>Body</dt><dd>Solid 316L stainless steel, bead-blasted</dd></div>
-        <div><dt>Cap and clip</dt><dd>One piece of 17-4PH stainless steel</dd></div>
-        <div><dt>Works with</dt><dd>Windows, macOS, Linux, Android, and iPad or iPhone with USB-C</dd></div>
-        <div><dt>Library</dt><dd>Offline</dd></div>
-        <div><dt>Programs</dt><dd>Search, map viewer. Mac, Windows, Linux, Android.</dd></div>
+        <div><dt>Body</dt><dd>316L stainless steel, bead-blasted</dd></div>
+        <div><dt>Cap and clip</dt><dd>One piece, 17-4PH stainless steel</dd></div>
+        <div><dt>Software</dt><dd>Search and map viewer for Mac, Windows and Linux. Kiwix app for Android.</dd></div>
+        <div><dt>Works with</dt><dd>Mac, Windows, Linux, Android, iPad and iPhone with USB-C</dd></div>
+        <div><dt>Internet</dt><dd>Not needed</dd></div>
         <div><dt>Updates</dt><dd>Lifetime</dd></div>
-        <div><dt>Made</dt><dd>Small batches</dd></div>
       </dl>
     </div>
   </section>
 
-  <section class="faq" id="faq" aria-labelledby="faq-h">
-    <div class="faq-in">
-      <h2 class="eyebrow" id="faq-h">FAQ</h2>
-      <dl>
-        <div><dt>How it opens</dt><dd>Double-click Open Library (Mac, Windows, Linux). On a phone, open START.html or use Kiwix.</dd></div>
-        <div><dt>Waitlist</dt><dd>One email when the next batch opens. No payment until then.</dd></div>
-        <div><dt>Shipping</dt><dd>From the US. Free worldwide. Tracked.</dd></div>
-        <div><dt>Returns</dt><dd>30 days.</dd></div>
-        <div><dt>Updates</dt><dd>Lifetime. Download each new library, or get a refreshed drive at cost.</dd></div>
-        <div><dt>Download</dt><dd>Same library, $49. Bring your own 256 GB drive.</dd></div>
-        <div><dt>Privacy</dt><dd>No account. No telemetry.</dd></div>
-      </dl>
+  <section class="sec" id="faq" aria-labelledby="faq-h" style="padding-top:0">
+    <div class="wrap faq">
+      <div><p class="eyebrow">FAQ</p><h2 id="faq-h">Questions</h2></div>
+      <div class="qa">
+        <details><summary>Isn't this content free online?</summary><p>Online, yes. Blackstart has it downloaded, checked and working with no connection, on any computer.</p></details>
+        <details><summary>How do I open it?</summary><p>Plug it in and double-click Open Library (Mac, Windows or Linux). The library opens in your browser. On Android, use the Kiwix app included on the drive.</p></details>
+        <details><summary>Does it need the internet or an account?</summary><p>No. No internet, no account, no subscription, no tracking.</p></details>
+        <details><summary>How do updates work?</summary><p>When the library is updated, you can download the new version, or have a refreshed drive sent at cost.</p></details>
+        <details><summary>What is the Download version?</summary><p>The same library for $49. You bring a 256 GB drive.</p></details>
+        <details><summary>When does it ship?</summary><p>Blackstart is made in small batches. The waitlist gets one email when the next batch opens. No payment until then.</p></details>
+        <details><summary>Shipping and returns?</summary><p>Ships from the US, free worldwide, tracked. 30-day returns.</p></details>
+      </div>
     </div>
+  </section>
+
+  <section class="sec end" id="join" aria-labelledby="end-h">
+    <div class="wrap">
+      <p class="live" style="justify-content:center;display:flex;margin-bottom:28px"><i></i>Waitlist open</p>
+      <h2 id="end-h" class="wordmark">Blackstart</h2>
+      <p class="lede">256 GB. Solid steel. Offline.</p>
+      <form class="join" data-join novalidate>
+        <div class="fmt" role="radiogroup" aria-label="Format">
+          <label><input type="radio" name="fmt-b" value="drive" checked><span>256 GB Drive <em>$199</em></span></label>
+          <label><input type="radio" name="fmt-b" value="download"><span>Download <em>$49</em></span></label>
+        </div>
+        <div class="field">
+          <label class="sr" for="email-b">Email</label>
+          <input id="email-b" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Email address" required>
+          <button class="btn" type="submit">Join the waitlist</button>
+        </div>
+        <p class="fine"><b>Nothing due today.</b> One email when the next batch opens.</p>
+        <p class="err" role="alert" hidden></p>
+      </form>
+    </div>
+    <div class="end-img"><img class="rise" src="img/s/5-1200.jpg" srcset="img/s/5-1200.jpg 1200w, img/s/5-2000.jpg 2000w" sizes="(min-width: 1100px) 1300px, 118vw" width="2000" height="1250" loading="lazy" decoding="async" alt="Blackstart, capped, on a black table"></div>
   </section>
 </main>
 
 <footer>
-  <div>© 2026 Babel Drive</div>
-  <div><span>hello@blackstart.co</span></div>
+  <div class="wrap">
+    <span class="mark" style="font-size:11px">BABEL DRIVE</span>
+    <span>Library content is openly licensed or public domain. Every source is listed on the drive in SOURCES.csv.</span>
+    <span>No cookies. No tracking. © 2026 Babel Drive</span>
+  </div>
 </footer>
 
-<nav class="dots off" id="dots" aria-label="Stops"></nav>
-
-<div class="co" id="waitlist" hidden role="dialog" aria-modal="true" aria-labelledby="co-h">
-  <div class="co-top">
-    <button type="button" class="co-back" id="co-back">← Back</button>
-    <span class="mark">BABEL DRIVE</span>
-    <span class="co-tag">Waitlist</span>
-  </div>
-  <div class="co-grid">
-    <form id="co-form" novalidate>
-      <h2 id="co-h">Join the waitlist</h2>
-      <p class="co-lede">Made in small batches. One email when the next batch opens. No payment now.</p>
-      <fieldset>
-        <legend>Format</legend>
-        <div class="co-pick" role="radiogroup" aria-label="Format">
-          <label><input type="radio" name="format" value="drive" checked><span><b>256 GB Drive</b><em>$199</em></span></label>
-          <label><input type="radio" name="format" value="download"><span><b>Download</b><em>$49</em></span></label>
-        </div>
-      </fieldset>
-      <fieldset>
-        <legend>Email</legend>
-        <label class="sr">Email<input type="email" name="email" id="co-email" autocomplete="email" inputmode="email" placeholder="you@example.com" required></label>
-      </fieldset>
-      <button type="submit" class="add" id="co-go">Join the waitlist</button>
-      <p class="co-note">Never shared.</p>
-      <p class="co-err" id="co-err" role="alert" hidden></p>
-    </form>
-    <div class="co-done" id="co-done" hidden tabindex="-1">
-      <h2>You're on the list.</h2>
-      <p class="co-lede">We'll email <b id="co-who"></b> when the next batch opens.</p>
-      <button type="button" class="co-back" id="co-close">Back</button>
-    </div>
-    <aside class="co-sum" aria-label="Your reservation">
-      <div class="co-item"><img src="babel-drive-thumb.jpg" alt="Blackstart drive"><div><b>Blackstart</b><span id="co-what">256 GB USB-C drive</span></div></div>
-      <div class="co-lines">
-        <div><span>Price at launch</span><span id="co-price">$199</span></div>
-        <div><span id="co-ship-l">Shipping</span><span id="co-ship-v">Free</span></div>
-        <div class="tot"><span>Due today</span><span>$0</span></div>
-      </div>
-    </aside>
-  </div>
+<div class="bar" id="bar" aria-hidden="true">
+  <span>Blackstart<em>$199</em></span>
+  <a class="btn sm" href="#join" data-go-join tabindex="-1">Join the waitlist</a>
 </div>
 
 <script>
-/* Store UI: format toggle, cart count, stop dots. Plain script so it works even if 3D fails. */
+var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, held by four screws"], ["Torx screws ×4", "M1.6, flush"], ["Click balls ×4", "The click when the cap goes on"], ["Thermal pad", "Presses the board down"], ["256 GB board", "One chip and the USB-C plug"], ["Cap and clip", "One piece, 17-4PH steel"]];
 (function () {
-  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var price = document.getElementById('price'), add = document.getElementById('add');
-  var lines = { drive: '$199 · 256 GB USB-C drive', download: '$49 · same library, you bring the drive' };
-  var opts = document.querySelectorAll('.opts button'), choice = 'drive';
-  opts.forEach(function (b) {
-    b.addEventListener('click', function () {
-      opts.forEach(function (o) { o.setAttribute('aria-checked', o === b ? 'true' : 'false'); });
-      choice = b.dataset.opt; price.textContent = lines[choice];
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]static/.test(location.search);   // ?static: preview shots without motion
+  var fine = matchMedia('(pointer: fine)').matches;
+
+  /* header + phone bar */
+  var top = document.getElementById('top'), bar = document.getElementById('bar'), hero = document.getElementById('hero'), end = document.getElementById('join');
+  var heroOut = false, endIn = false;
+  function syncBar() { var on = heroOut && !endIn; bar.classList.toggle('on', on); bar.setAttribute('aria-hidden', on ? 'false' : 'true'); bar.querySelector('a').tabIndex = on ? 0 : -1; }
+  new IntersectionObserver(function (e) { heroOut = !e[0].isIntersecting; syncBar(); }, { rootMargin: '-60% 0px 0px 0px' }).observe(hero);
+  new IntersectionObserver(function (e) { endIn = e[0].isIntersecting; syncBar(); }).observe(end);
+  function lined() { top.classList.toggle('lined', scrollY > 24); }
+  addEventListener('scroll', lined, { passive: true }); lined();
+
+  /* hero film: the drive takes itself apart down to the chip and goes back together, on a loop.
+     The poster shows first; the film fades in once it can play. Paused while off screen. */
+  var stage = document.getElementById('stage'), film = document.getElementById('film'), ctl = document.getElementById('filmctl');
+  var userPaused = false, heroVisible = true;
+  function setCtl() { var p = film.paused; ctl.classList.toggle('paused', p); ctl.querySelector('span').textContent = p ? 'Play' : 'Pause'; ctl.setAttribute('aria-label', p ? 'Play the film' : 'Pause the film'); }
+  function tryPlay() { if (userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
+  if (!reduce) {
+    var big = Math.max(innerWidth, innerHeight * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;
+    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4';
+    film.preload = 'auto';
+    film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
+    film.addEventListener('pause', setCtl);
+    film.addEventListener('canplay', tryPlay, { once: true });
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; if (heroVisible) tryPlay(); else film.pause(); }, { threshold: .15 }).observe(stage);
+    ctl.addEventListener('click', function () { if (film.paused) { userPaused = false; tryPlay(); } else { userPaused = true; film.pause(); } });
+  } else { ctl.hidden = true; }
+
+  /* jump to the last form and focus it */
+  document.querySelectorAll('[data-go-join]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      end.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+      setTimeout(function () { var i = document.getElementById('email-b'); if (i && !i.closest('form').hidden) i.focus({ preventScroll: true }); }, reduce ? 0 : 700);
     });
   });
 
-  /* waitlist: opens on #waitlist; each signup is one row in Alex's Google Form (Babel Drive waitlist) */
+  /* waitlist: each signup is one row in the "Babel Drive waitlist" Google Form */
   var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeAXm_0712F5B9SYgVnl3TkMGeMNudEaREGeyKtNkV_ahYuZQ/formResponse';
-  var F_EMAIL = 'entry.1320750901', F_FORMAT = 'entry.897673328', F_LABEL = { drive: '256 GB Drive', download: 'Download' };
-  var co = document.getElementById('waitlist'), form = document.getElementById('co-form'), done = document.getElementById('co-done');
-  var email = document.getElementById('co-email'), err = document.getElementById('co-err'), go = document.getElementById('co-go');
-  var picks = form.querySelectorAll('input[name="format"]');
-  function sum() {
-    picks.forEach(function (r) { r.checked = r.value === choice; });
-    document.getElementById('co-what').textContent = choice === 'drive' ? '256 GB USB-C drive' : 'Library download, you bring the drive';
-    document.getElementById('co-price').textContent = choice === 'drive' ? '$199' : '$49';
-    document.getElementById('co-ship-l').textContent = choice === 'drive' ? 'Shipping' : 'Delivery';
-    document.getElementById('co-ship-v').textContent = choice === 'drive' ? 'Free' : 'Download link';
+  var F_EMAIL = 'entry.1320750901', F_FORMAT = 'entry.897673328', LABEL = { drive: '256 GB Drive', download: 'Download' };
+  var forms = Array.prototype.slice.call(document.querySelectorAll('[data-join]'));
+  function done(email) {
+    forms.forEach(function (f) {
+      var ok = document.createElement('div'); ok.className = 'ok'; ok.setAttribute('tabindex', '-1');
+      ok.innerHTML = '<b>You’re on the list.</b><span></span>';
+      ok.querySelector('span').textContent = 'We’ll email ' + email + ' when the next batch opens.';
+      f.hidden = true; f.parentNode.insertBefore(ok, f.nextSibling);
+    });
   }
-  picks.forEach(function (r) {
-    r.addEventListener('change', function () {
-      choice = r.value; price.textContent = lines[choice];
-      opts.forEach(function (o) { o.setAttribute('aria-checked', o.dataset.opt === choice ? 'true' : 'false'); });
-      sum();
+  forms.forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = f.querySelector('input[type=email]'), err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]');
+      var v = input.value.trim(), fmt = (f.querySelector('input[type=radio]:checked') || {}).value || 'drive';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.textContent = 'Enter a valid email address.'; err.hidden = false; input.focus(); return; }
+      err.hidden = true; btn.disabled = true; btn.textContent = 'Joining…';
+      var body = new URLSearchParams(); body.append(F_EMAIL, v); body.append(F_FORMAT, LABEL[fmt]);
+      fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: body })
+        .then(function () { done(v); })
+        .catch(function () { err.textContent = 'That didn’t go through. Check your connection and try again.'; err.hidden = false; btn.disabled = false; btn.textContent = 'Join the waitlist'; });
     });
   });
-  function route() {
-    if (location.hash === '#checkout') { history.replaceState(null, '', '#waitlist'); }
-    var open = location.hash === '#waitlist';
-    co.hidden = !open; document.documentElement.classList.toggle('co-open', open);
-    if (open) { sum(); err.hidden = true; co.scrollTop = 0; if (done.hidden) setTimeout(function () { email.focus({ preventScroll: true }); }, 50); }
+
+  /* capacity meter: sizes in GB from the library build manifest */
+  var SEG = [
+    ['English Wikipedia', 127.4], ['Historical books', 25.5], ['Reference wikis', 24.8], ['Maps', 22.7],
+    ['Q&A archives', 13.9], ['Dictionary', 9.2], ['Books, manuals, software', 1.2]
+  ];
+  var TOTAL = 256, meter = document.querySelector('.meter'), legend = document.getElementById('legend');
+  var cols = ['#cfcec9', '#a3a29e', '#83838a', '#68686e', '#525257', '#404045', '#ff5b1f'];
+  SEG.forEach(function (s, i) {
+    var el = document.createElement('i'); el.style.setProperty('--c', cols[i]); el.dataset.w = (s[1] / TOTAL * 100).toFixed(2) + '%'; if (i === SEG.length - 1) el.className = 'sw'; meter.appendChild(el);
+    var li = document.createElement('li'); li.style.setProperty('--c', cols[i]);
+    li.innerHTML = '<span><b></b></span>'; li.querySelector('b').textContent = s[0]; li.firstChild.appendChild(document.createTextNode(s[1].toFixed(1) + ' GB')); legend.appendChild(li);
+  });
+  var free = document.createElement('li'); free.style.setProperty('--c', '#1c1c20'); free.innerHTML = '<span><b>Free</b>31.4 GB</span>'; legend.appendChild(free);
+  var capnow = document.querySelector('.cap-head span:last-child'), capDefault = capnow.innerHTML, segs = meter.querySelectorAll('i'), legs = legend.querySelectorAll('li');
+  function capShow(k) {
+    meter.classList.toggle('hovering', k >= 0);
+    segs.forEach(function (el, j) { el.classList.toggle('on', j === k); });
+    legs.forEach(function (el, j) { el.classList.toggle('on', j === k); });
+    capnow.innerHTML = k < 0 ? capDefault : '<b>' + esc2(SEG[k][0]) + '</b> ' + SEG[k][1].toFixed(1) + ' GB · ' + Math.round(SEG[k][1] / TOTAL * 100) + '%';
   }
-  function join() { if (location.hash !== '#waitlist') location.hash = 'waitlist'; else route(); }
-  add.addEventListener('click', join);
-  document.getElementById('buy-top').addEventListener('click', join);
-  document.getElementById('co-back').addEventListener('click', function () { location.hash = ''; });
-  document.getElementById('co-close').addEventListener('click', function () { location.hash = ''; });
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    var v = email.value.trim();
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.textContent = 'Please enter a valid email address.'; err.hidden = false; email.focus(); return; }
-    err.hidden = true; go.disabled = true; go.textContent = 'Joining…';
-    var body = new URLSearchParams(); body.append(F_EMAIL, v); body.append(F_FORMAT, F_LABEL[choice]);
-    fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: body }).then(function () {
-      document.getElementById('co-who').textContent = v;
-      form.hidden = true; done.hidden = false; done.focus({ preventScroll: true });
-    }).catch(function () {
-      err.textContent = 'That didn\'t go through. Check your connection and try again.'; err.hidden = false;
-    }).then(function () { go.disabled = false; go.textContent = 'Join the waitlist'; });
-  });
-  addEventListener('hashchange', route); route();
+  function esc2(s) { return s.replace(/[&<>]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]; }); }
+  segs.forEach(function (el, j) { el.addEventListener('pointerenter', function () { capShow(j); }); el.addEventListener('pointerleave', function () { capShow(-1); }); });
+  legs.forEach(function (el, j) { if (j < SEG.length) { el.addEventListener('pointerenter', function () { capShow(j); }); el.addEventListener('pointerleave', function () { capShow(-1); }); } });
+  function fill() { meter.querySelectorAll('i').forEach(function (el, k) { setTimeout(function () { el.style.width = el.dataset.w; }, reduce ? 0 : k * 70); }); }
+  if (reduce || !('IntersectionObserver' in window)) fill();
+  else new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { fill(); o.disconnect(); } }, { threshold: .5 }).observe(meter);
 
-  /* the film: click to play with sound */
-  var vid = document.getElementById('film-video'), player = document.getElementById('player');
-  document.getElementById('film-play').addEventListener('click', function () {
-    vid.controls = true; player.classList.add('playing');
-    var pr = vid.play(); if (pr && pr.catch) pr.catch(function () { player.classList.remove('playing'); });
-  });
-  vid.addEventListener('ended', function () { player.classList.remove('playing'); vid.controls = false; vid.currentTime = 0; });
-
-  var steps = Array.prototype.slice.call(document.querySelectorAll('.step'));
-  var dots = document.getElementById('dots'), story = document.getElementById('story');
-  steps.forEach(function (s, k) {
-    var b = document.createElement('button');
-    b.type = 'button'; b.setAttribute('aria-label', s.dataset.name);
-    b.addEventListener('click', function () {
-      scrollTo({ top: story.getBoundingClientRect().top + scrollY + k * steps[0].offsetHeight, behavior: reduce ? 'auto' : 'smooth' });
+  /* stats count up once */
+  var stats = document.querySelectorAll('.stats b[data-n]');
+  function count() {
+    stats.forEach(function (b) {
+      var n = parseFloat(b.dataset.n), d = +(b.dataset.d || 0), small = b.querySelector('small'), suf = small ? small.outerHTML : '', t0 = performance.now();
+      (function step(now) {
+        var p = Math.min(1, (now - t0) / 1400), e = 1 - Math.pow(1 - p, 3), v = n * e;
+        b.innerHTML = (d ? v.toFixed(d) : Math.round(v).toLocaleString('en-US')) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      })(t0);
     });
-    dots.appendChild(b);
-  });
-  var buttons = dots.querySelectorAll('button');
-  var layers = document.querySelectorAll('.layer');
-  function sync() {
-    var r = story.getBoundingClientRect(), h = steps[0].offsetHeight || innerHeight;
-    var p = Math.min(Math.max(-r.top / h, 0), steps.length - 1);
-    var k = Math.round(p);
-    buttons.forEach(function (b, i) { b.setAttribute('aria-current', i === k ? 'true' : 'false'); });
-    layers.forEach(function (l, i) { l.classList.toggle('on', i === k); });
-    dots.classList.toggle('off', r.bottom < innerHeight * 0.6);
   }
-  addEventListener('scroll', sync, { passive: true }); addEventListener('resize', sync); sync();
+  if (!reduce && 'IntersectionObserver' in window) new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); count(); } }, { threshold: .6 }).observe(document.querySelector('.stats'));
 
-  /* One stop per flick on desktop. While the drive is pinned, a wheel or trackpad gesture moves exactly one stop;
-     the rest of that gesture (trackpad momentum) is ignored, and a fresh swipe is recognised by its jump in speed.
-     Touch scrolling keeps the CSS snap. Leaving the story (above the first stop, below the last) scrolls normally. */
-  var busy = false, lastTs = 0, lastMag = 0, moveEnd = 0, target = 0;
-  function stopTop(k) { return story.getBoundingClientRect().top + scrollY + k * steps[0].offsetHeight; }
-  function goTo(k) {
-    k = Math.max(0, Math.min(steps.length - 1, k));
-    busy = true; target = k; moveEnd = performance.now() + (reduce ? 50 : 750);
-    scrollTo({ top: stopTop(k), behavior: reduce ? 'auto' : 'smooth' });
+  /* live library window over the real title list: subjects, types and search */
+  var DEFAULTS = ['wikipedia (english', 'offline maps', 'complete guide to home canning', 'emergency disinfection of drinking water', 'atp 3-50.21 survival', 'cert basic training', "the ship's medicine chest", 'wood handbook', 'amateur radio q&a', 'the mechanical engineers', 'topographic map symbols', 'electrical engineering q&a'];
+  var KIND_ORDER = [3, 1, 0, 2];   // archives, manuals, books, historical
+  var q = document.getElementById('q'), out = document.getElementById('results'), qcount = document.getElementById('qcount');
+  var subjEl = document.getElementById('subj'), subjM = document.getElementById('subjm'), kindsEl = document.getElementById('kinds'), now = document.getElementById('appnow');
+  var CAT = null, loading = null, cat = -1, kind = -1;
+  function load() {
+    if (!loading) loading = fetch('catalog.json').then(function (r) { return r.json(); }).then(function (d) {
+      CAT = d; CAT.low = d.items.map(function (it) { return it[0].toLowerCase(); }); build(); return d;
+    });
+    return loading;
   }
-
-  /* Phones: one stop per swipe. While the drive is pinned, an up or down swipe moves exactly one stop
-     (a quick second swipe goes one further). Sideways swipes are left to the drive (drag to turn).
-     Swiping up at the last stop, or down at the first, scrolls the page normally. */
-  var tStart = null, tAxis = '', tDone = false;
-  function storyState() {
-    var r = story.getBoundingClientRect(), h = steps[0].offsetHeight || innerHeight;
-    return { p: -r.top / h, pinned: r.top <= 2 && r.bottom >= h - 2 };
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function mark(t, words) {
+    var s = esc(t);
+    words.forEach(function (w) { if (w.length > 1) s = s.replace(new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'), '<mark>$1</mark>'); });
+    return s;
   }
-  addEventListener('touchstart', function (e) {
-    if (e.touches.length !== 1 || document.documentElement.classList.contains('co-open')) { tStart = null; return; }
-    tStart = { x: e.touches[0].clientX, y: e.touches[0].clientY }; tAxis = ''; tDone = false;
-  }, { passive: true });
-  addEventListener('touchmove', function (e) {
-    if (!tStart) return;
-    if (e.touches.length !== 1) { tStart = null; return; }
-    var dx = e.touches[0].clientX - tStart.x, dy = e.touches[0].clientY - tStart.y;
-    if (!tAxis) {
-      if (!dx && !dy) return;
-      var s = storyState();
-      if (!s.pinned) { tStart = null; return; }
-      if (Math.abs(dx) > Math.abs(dy)) tAxis = 'x';
-      else {
-        var dir = dy < 0 ? 1 : -1, moving = performance.now() < moveEnd;
-        var from = moving ? target : s.p;
-        if ((dir > 0 && from >= steps.length - 1.02) || (dir < 0 && from <= 0.02)) { tStart = null; return; }
-        tAxis = 'y';
+  function count(c, k) { var n = 0; CAT.items.forEach(function (it) { if ((c < 0 || it[1] === c) && (k < 0 || it[2] === k)) n++; }); return n; }
+  function build() {
+    var html = '<li><button type="button" data-c="-1" aria-pressed="true">All <em>' + CAT.items.length.toLocaleString('en-US') + '</em></button></li>';
+    var opts = '<option value="-1">All subjects</option>';
+    CAT.cats.forEach(function (c, i) { var n = count(i, -1); html += '<li><button type="button" data-c="' + i + '" aria-pressed="false">' + esc(c) + ' <em>' + n + '</em></button></li>'; opts += '<option value="' + i + '">' + esc(c) + ' (' + n + ')</option>'; });
+    subjEl.innerHTML = html; subjM.innerHTML = opts;
+    var kh = '<button type="button" data-k="-1" aria-pressed="true">All types</button>';
+    [0, 1, 2, 3].forEach(function (k) { kh += '<button type="button" data-k="' + k + '" aria-pressed="false">' + ({ 0: 'Books', 1: 'Manuals', 2: 'Historical', 3: 'Archives' })[k] + '</button>'; });
+    kindsEl.innerHTML = kh;
+    subjEl.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) setCat(+b.dataset.c); });
+    subjM.addEventListener('change', function () { setCat(+subjM.value); });
+    kindsEl.addEventListener('click', function (e) { var b = e.target.closest('button'); if (!b) return; kind = +b.dataset.k; kindsEl.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); }); run(); });
+  }
+  function setCat(c) {
+    cat = c; subjM.value = String(c);
+    subjEl.querySelectorAll('button').forEach(function (x) { x.setAttribute('aria-pressed', +x.dataset.c === c ? 'true' : 'false'); });
+    out.scrollTop = 0; run();
+  }
+  function run() {
+    if (!CAT) { load().then(run); return; }
+    var v = q.value.trim().toLowerCase(), words = v.split(/\s+/).filter(Boolean), hits = [], i;
+    var ok = function (it) { return (cat < 0 || it[1] === cat) && (kind < 0 || it[2] === kind); };
+    if (!words.length && cat < 0 && kind < 0) {
+      DEFAULTS.forEach(function (d) { var x = CAT.low.findIndex(function (t) { return t.indexOf(d) === 0; }); if (x >= 0) hits.push(x); });
+    } else {
+      for (i = 0; i < CAT.low.length; i++) {
+        if (!ok(CAT.items[i])) continue;
+        var t = CAT.low[i], m = true;
+        for (var j = 0; j < words.length; j++) if (t.indexOf(words[j]) < 0) { m = false; break; }
+        if (m) hits.push(i);
       }
+      var re = words.length ? new RegExp('\\b' + words[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&')) : null;
+      hits.sort(function (a, b) {
+        var ka = KIND_ORDER.indexOf(CAT.items[a][2]), kb = KIND_ORDER.indexOf(CAT.items[b][2]);
+        var wa = re && re.test(CAT.low[a]) ? 0 : 1, wb = re && re.test(CAT.low[b]) ? 0 : 1;
+        return wa - wb || ka - kb || (words.length ? CAT.low[a].length - CAT.low[b].length : CAT.low[a] < CAT.low[b] ? -1 : 1);
+      });
     }
-    if (e.cancelable) e.preventDefault();
-    if (tAxis === 'y' && !tDone && Math.abs(dy) > 24) {
-      tDone = true;
-      var base = performance.now() < moveEnd ? target : Math.round(storyState().p);
-      goTo(base + (dy < 0 ? 1 : -1));
-    }
-  }, { passive: false });
-  addEventListener('touchend', function () { tStart = null; }, { passive: true });
-  addEventListener('touchcancel', function () { tStart = null; }, { passive: true });
-  addEventListener('wheel', function (e) {
-    if (document.documentElement.classList.contains('co-open')) return;
-    var r = story.getBoundingClientRect(), h = steps[0].offsetHeight || innerHeight;
-    var dir = e.deltaY > 0 ? 1 : e.deltaY < 0 ? -1 : 0;
-    if (!dir || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
-    var p = -r.top / h, k = Math.round(p);
-    var pinned = r.top <= 2 && r.bottom >= innerHeight - 2;
-    if (!pinned || (dir > 0 && k >= steps.length - 1 && p >= steps.length - 1.02) || (dir < 0 && p <= 0.02)) return;
-    e.preventDefault();
-    var now = performance.now(), mag = Math.abs(e.deltaY), gap = now - lastTs;
-    var fresh = gap > 160 || mag > lastMag * 1.6 + 4;
-    lastTs = now; lastMag = mag;
-    if (busy && (now < moveEnd || !fresh)) return;
-    busy = false;
-    goTo(Math.round(p) + dir);
-  }, { passive: false });
-  addEventListener('keydown', function (e) {
-    if (document.documentElement.classList.contains('co-open')) { if (e.key === 'Escape') location.hash = ''; return; }
-    if (e.target.closest && e.target.closest('input,textarea,select,button,[contenteditable]')) return;
-    var down = e.key === 'ArrowDown' || e.key === 'PageDown' || (e.key === ' ' && !e.shiftKey);
-    var up = e.key === 'ArrowUp' || e.key === 'PageUp' || (e.key === ' ' && e.shiftKey);
-    if (!down && !up) return;
-    var r = story.getBoundingClientRect(), h = steps[0].offsetHeight || innerHeight, p = -r.top / h;
-    if (!(r.top <= 2 && r.bottom >= innerHeight - 2)) return;
-    if ((down && p >= steps.length - 1.02) || (up && p <= 0.02)) return;
-    e.preventDefault(); goTo(Math.round(p) + (down ? 1 : -1));
+    var total = (!words.length && cat < 0 && kind < 0) ? CAT.items.length : hits.length;
+    qcount.textContent = total.toLocaleString('en-US') + (total === 1 ? ' title' : ' titles');
+    now.innerHTML = '<b>' + esc(cat < 0 ? 'All subjects' : CAT.cats[cat]) + '</b>' + (kind < 0 ? '' : ' · ' + esc({ 0: 'Books', 1: 'Manuals', 2: 'Historical', 3: 'Archives' }[kind]));
+    out.innerHTML = hits.slice(0, 60).map(function (x) {
+      var it = CAT.items[x];
+      return '<li><span class="t">' + mark(it[0], words) + '</span><span class="k">' + esc(CAT.kinds[it[2]]) + ' · ' + esc(CAT.cats[it[1]]) + '</span></li>';
+    }).join('') || '<li><span class="none">No titles match. Wikipedia full-text search on the drive covers far more.</span></li>';
+  }
+  var tmr; q.addEventListener('input', function () { clearTimeout(tmr); tmr = setTimeout(run, 60); });
+  document.querySelectorAll('.try button').forEach(function (b) { b.addEventListener('click', function () { q.value = b.textContent; if (cat >= 0) setCat(-1); else run(); }); });
+  new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); run(); } }, { rootMargin: '600px' }).observe(out);
+
+  /* photo reel: drag with the mouse, arrows, a slight parallax inside each frame */
+  var track = document.getElementById('track'), rprev = document.getElementById('rprev'), rnext = document.getElementById('rnext'), rbar = document.getElementById('rbar');
+  var cards = Array.prototype.slice.call(track.querySelectorAll('.card'));
+  function reelPaint() {
+    var max = track.scrollWidth - track.clientWidth, p = max > 0 ? track.scrollLeft / max : 0, vis = max > 0 ? track.clientWidth / track.scrollWidth : 1;
+    rbar.style.width = (vis * 100) + '%'; rbar.style.transform = 'translateX(' + (p * (1 / vis - 1) * 100) + '%)';
+    rprev.disabled = track.scrollLeft < 4; rnext.disabled = track.scrollLeft > max - 4;
+    if (reduce) return;
+    var mid = track.getBoundingClientRect().left + track.clientWidth / 2;
+    cards.forEach(function (c) { var r = c.getBoundingClientRect(), d = (r.left + r.width / 2 - mid) / track.clientWidth; c.querySelector('img').style.setProperty('--px', (-d * 7).toFixed(2) + '%'); });
+  }
+  var rq = 0; track.addEventListener('scroll', function () { if (!rq) rq = requestAnimationFrame(function () { rq = 0; reelPaint(); }); }, { passive: true });
+  addEventListener('resize', reelPaint); reelPaint();
+  function step(dir) { var w = cards[0].getBoundingClientRect().width + parseFloat(getComputedStyle(track).columnGap || 16); track.scrollBy({ left: dir * w, behavior: reduce ? 'auto' : 'smooth' }); }
+  rprev.addEventListener('click', function () { step(-1); }); rnext.addEventListener('click', function () { step(1); });
+  track.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { e.preventDefault(); step(1); } if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); } });
+  (function () {   // mouse drag; touch keeps native scrolling
+    var down = false, sx = 0, sl = 0, moved = 0, vx = 0, lx = 0, lt = 0;
+    track.addEventListener('pointerdown', function (e) { if (e.pointerType !== 'mouse' || e.button !== 0) return; down = true; moved = 0; sx = lx = e.clientX; sl = track.scrollLeft; lt = performance.now(); vx = 0; });
+    addEventListener('pointermove', function (e) {
+      if (!down) return; var dx = e.clientX - sx; moved = Math.max(moved, Math.abs(dx));
+      if (moved > 4) { track.classList.add('grab'); track.scrollLeft = sl - dx; var t = performance.now(); vx = (e.clientX - lx) / Math.max(t - lt, 1); lx = e.clientX; lt = t; }
+    });
+    addEventListener('pointerup', function () {
+      if (!down) return; down = false;
+      if (track.classList.contains('grab')) {
+        var v = -vx * 16, f = function () { if (Math.abs(v) < .5) { track.classList.remove('grab'); return; } track.scrollLeft += v; v *= .92; requestAnimationFrame(f); };
+        if (reduce) track.classList.remove('grab'); else requestAnimationFrame(f);
+      }
+    });
+  })();
+
+  /* parts: hover or tap a number to name the part */
+  var parts = document.getElementById('parts'), tip = document.getElementById('hstip'), pkey = document.getElementById('pkey');
+  function showPart(i, on) {
+    parts.querySelectorAll('.hs').forEach(function (b) { b.classList.toggle('on', on && +b.dataset.i === i); });
+    pkey.querySelectorAll('li').forEach(function (l) { l.classList.toggle('on', on && +l.dataset.i === i); });
+    if (!on) { tip.classList.remove('on'); return; }
+    var b = parts.querySelector('.hs[data-i="' + i + '"]');
+    tip.querySelector('b').textContent = HS[i][0]; tip.querySelector('span').textContent = HS[i][1];
+    tip.style.left = Math.min(Math.max(parseFloat(b.style.left), 12), 88) + '%'; tip.style.top = b.style.top; tip.classList.add('on');
+  }
+  var pin = -1;
+  parts.querySelectorAll('.hs').forEach(function (b) {
+    var i = +b.dataset.i;
+    b.addEventListener('mouseenter', function () { showPart(i, true); });
+    b.addEventListener('mouseleave', function () { if (pin !== i) showPart(pin, pin >= 0); });
+    b.addEventListener('focus', function () { showPart(i, true); });
+    b.addEventListener('blur', function () { if (pin !== i) showPart(-1, false); });
+    b.addEventListener('click', function () { pin = pin === i ? -1 : i; showPart(i, pin === i); });
   });
+  pkey.querySelectorAll('li').forEach(function (l) {
+    l.addEventListener('mouseenter', function () { showPart(+l.dataset.i, true); });
+    l.addEventListener('mouseleave', function () { showPart(pin, pin >= 0); });
+  });
+
+  /* outline drawing (inline so it inherits the page's ink) */
+  fetch('img/drawing.svg').then(function (r) { return r.text(); }).then(function (s) { document.getElementById('drawing').innerHTML = s; });
+
+  /* film */
+  var video = document.getElementById('video'), player = document.getElementById('player');
+  document.getElementById('play').addEventListener('click', function () {
+    video.controls = true; player.classList.add('playing'); video.preload = 'auto';
+    var p = video.play(); if (p && p.catch) p.catch(function () { player.classList.remove('playing'); });
+  });
+  video.addEventListener('ended', function () { player.classList.remove('playing'); video.controls = false; video.currentTime = 0; });
+
+  /* images rise in once */
+  var rise = document.querySelectorAll('.rise');
+  if (reduce || !('IntersectionObserver' in window)) rise.forEach(function (el) { el.classList.add('in'); });
+  else { var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' }); rise.forEach(function (el) { io.observe(el); }); }
+
+  /* the 3D viewer loads only when it is about to be seen */
+  var vEl = document.getElementById('viewer');
+  new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); import('./viewer.js?v=5').then(function (m) { m.start(vEl); }).catch(function () {}); } }, { rootMargin: '300px' }).observe(vEl);
 })();
 </script>
-
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
-<script type="module">
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
-
-const canvas = document.getElementById('drive');
-const stageEl = document.getElementById('stage');
-const story = document.getElementById('story');
-const steps = [...document.querySelectorAll('.step')];
-const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-// local preview only: ?pose=5&t=1.5 pins a stop and a moment in the open/close loop (the artifact viewer drops query strings)
-const Q = new URLSearchParams(location.search), FORCE = Q.has('pose') ? +Q.get('pose') : null, FT = Q.has('t') ? +Q.get('t') : null;
-
-let renderer;
-try {
-  renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' });
-} catch (e) { document.getElementById('fail').hidden = false; canvas.hidden = true; throw e; }
-renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.5));
-renderer.outputColorSpace = THREE.SRGBColorSpace;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
-renderer.toneMappingExposure = 0.88;
-renderer.setClearColor(0xffffff, 0);
-const maxAniso = renderer.capabilities.getMaxAnisotropy();
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(26, 1, 1, 100);
-camera.position.set(0, 0, 30);
-
-/* ---------- studio: a real room environment for the reflections, plus one soft key light that casts shadows ---------- */
-(function studio() {
-  const pm = new THREE.PMREMGenerator(renderer), room = new RoomEnvironment(renderer);
-  const box = (w, h, x, y, z, k) => {
-    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(k, k, k), side: THREE.DoubleSide }));
-    m.position.set(x, y, z); m.lookAt(0, 0, 0); room.add(m);
-  };
-  box(10, 3, 0, 9, 2, 9);       // long overhead softbox: the bright streak along the top
-  box(3, 8, -9, 3, 5, 5);       // tall key strip, left
-  box(6, 4, 8, 1, 7, 2.2);      // soft fill, front right
-  scene.environment = pm.fromScene(room, 0.03).texture;
-  pm.dispose();
-})();
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-renderer.shadowMap.autoUpdate = false;   // updated once per frame, before the main render only
-const key = new THREE.DirectionalLight(0xffffff, 1.1);
-key.position.set(-5, 12, 9);
-key.castShadow = true;
-const COARSE = matchMedia('(pointer: coarse)').matches;   // phones and tablets: lighter shadow map
-key.shadow.mapSize.set(COARSE ? 1024 : 2048, COARSE ? 1024 : 2048);
-Object.assign(key.shadow.camera, { left: -9, right: 9, top: 9, bottom: -9, near: 1, far: 60 });
-key.shadow.bias = -0.0004; key.shadow.normalBias = 0.03; key.shadow.radius = 4;
-scene.add(key);
-
-/* ---------- materials ---------- */
-function noiseTexture(size, lo, hi) {
-  const c = document.createElement('canvas'); c.width = c.height = size;
-  const g = c.getContext('2d'), d = g.createImageData(size, size);
-  for (let i = 0; i < d.data.length; i += 4) { const v = lo + Math.random() * (hi - lo); d.data[i] = d.data[i + 1] = d.data[i + 2] = v; d.data[i + 3] = 255; }
-  g.putImageData(d, 0, 0);
-  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.repeat.set(0.25, 0.25); t.anisotropy = 4;
-  return t;
-}
-const blast = noiseTexture(256, 104, 128);   // bead-blast grain: roughness about 0.41 to 0.50
-const MAT = {
-  steel: () => new THREE.MeshPhysicalMaterial({ color: 0xa9acaf, metalness: 1, roughness: 0.3, envMapIntensity: 1.0 }),
-  titanium: () => new THREE.MeshPhysicalMaterial({ color: 0x8d8f92, metalness: 1, roughness: 0.4 }),
-  polished: () => new THREE.MeshStandardMaterial({ color: 0xe2e4e6, metalness: 1, roughness: 0.16 }),
-  pcb: () => new THREE.MeshPhysicalMaterial({ color: 0x0d2a19, roughness: 0.42, metalness: 0.05, clearcoat: 0.6 }),
-  chip: () => new THREE.MeshStandardMaterial({ color: 0x1c1d1f, roughness: 0.6, metalness: 0.1 }),
-  ins: () => new THREE.MeshStandardMaterial({ color: 0x101011, roughness: 0.5 }),
-  gold: () => new THREE.MeshStandardMaterial({ color: 0xd9a54a, metalness: 1, roughness: 0.3 }),
-  pad: () => new THREE.MeshStandardMaterial({ color: 0x3b3e42, roughness: 0.85 }),
-  oxide: () => new THREE.MeshStandardMaterial({ color: 0x1b1c1e, metalness: 0.8, roughness: 0.35 }),
-  laser: () => new THREE.MeshStandardMaterial({ color: 0x0d0d0e, roughness: 0.75, polygonOffset: true, polygonOffsetFactor: -2, polygonOffsetUnits: -2 }),
-};
-const PARTS = {
-  body: 'steel', cover: 'steel', cap: 'steel',
-  screw0: 'oxide', screw1: 'oxide', screw2: 'oxide', screw3: 'oxide', plunger0: 'polished', plunger1: 'polished', plunger2: 'polished', plunger3: 'polished',
-  pcb: 'pcb', top: 'chip', bot: 'chip', plug: 'polished', pad: 'pad', logo_big: 'laser', logo_small: 'laser',
-};
-// the outer shell turns to glass in the "inside" stop so the board and the click balls show
-const SHELL = ['body', 'cover', 'cap', 'pad', 'screw0', 'screw1', 'screw2', 'screw3', 'logo_big', 'logo_small'];
-const anodised = new THREE.MeshPhysicalMaterial({ color: 0x141517, metalness: 0.6, roughness: 0.4 });
-const orange = new THREE.MeshPhysicalMaterial({ color: 0xff5208, roughness: 0.52, metalness: 0, sheen: 0.25, sheenRoughness: 0.8, sheenColor: 0xffb080 });
-
-/* ---------- the drive: CAD model in mm, plug toward +x, top face toward the camera ----------
-   Geometry: 36 x 20.4 x 9 mm steel block. The cap (with its titanium clip arm) sits on a 3 mm step at the front
-   and clicks onto the same step at the back. "capgrp" turns round the middle of the body (x = 18) to post. */
-const G = { L: 36, OFF: 42, LIFT: 14, CENTER: 20 };   // OFF: far enough that the 30 mm arm clears the body and the plug
-const rig = new THREE.Group();       // placement, scale and camera tilt per stop
-const spinner = new THREE.Group();   // turntable yaw
-const drive = new THREE.Group();     // mm -> cm, top face to +z, centred
-scene.add(rig); rig.add(spinner); spinner.add(drive);
-drive.scale.setScalar(0.1);
-drive.rotation.x = Math.PI / 2;
-drive.position.set(-G.CENTER * 0.1, 0, -0.45);
-const parts = {}, base = {};
-let loaded = false, chipMats = [], board = null;
-const halo = (() => {   // soft warm glow drawn over the chip
-  const c = document.createElement('canvas'); c.width = c.height = 256;
-  const g = c.getContext('2d'), gr = g.createRadialGradient(128, 128, 0, 128, 128, 128);
-  gr.addColorStop(0, 'rgba(255,120,40,0.75)'); gr.addColorStop(0.35, 'rgba(255,110,30,0.32)'); gr.addColorStop(1, 'rgba(255,100,20,0)');
-  g.fillStyle = gr; g.fillRect(0, 0, 256, 256);
-  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
-  const sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: t, transparent: true, depthWrite: false, depthTest: false, opacity: 0 }));
-  sp.scale.set(36, 24, 1); sp.renderOrder = 5; sp.visible = false;
-  return sp;
-})();
-
-// the CAD model ships as base64 text (artifacts don't serve .glb)
-const onModelError = err => { console.error(err); const f = document.getElementById('fail'); f.hidden = false; f.textContent = 'The 3D model did not load'; };
-fetch('babel-drive-v1.b64.txt').then(r => { if (!r.ok) throw new Error('model ' + r.status); return r.text(); }).then(t => {
-  const bin = atob(t.replace(/\s+/g, '')), buf = new Uint8Array(bin.length);
-  for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
-  new GLTFLoader().parse(buf.buffer, '', onModel, onModelError);
-}).catch(onModelError);
-function onModel(gltf) {
-  drive.add(gltf.scene);
-  parts.capgrp = gltf.scene.getObjectByName('capgrp');
-  base.capgrp = { p: parts.capgrp.position.clone(), s: parts.capgrp.scale.clone() };
-  gltf.scene.traverse(o => {
-    if (!(o.name in PARTS)) return;
-    parts[o.name] = o;
-    base[o.name] = { p: o.position.clone(), s: o.scale.clone() };
-    o.traverse(m => {
-      if (!m.isMesh) return;
-      m.material = MAT[PARTS[o.name]]();
-      m.castShadow = m.receiveShadow = true;
-      if (SHELL.includes(o.name)) { m.material.transparent = true; m.renderOrder = 2; }
-    });
-  });
-  for (let i = 0; i < 4; i++) if (parts['screw' + i]) { parts['screw' + i].position.y -= 0.05; base['screw' + i].p.y -= 0.05; }
-  // the board: the CAD placeholder block becomes a real-looking board with a marked flash chip and controller
-  if (parts.top) parts.top.visible = false;
-  board = buildBoard(); drive.add(board);
-  board.traverse(m => { if (m.isMesh) m.castShadow = m.receiveShadow = true; });
-  halo.position.set(22.4, 6.2, 0); halo.scale.set(26, 21, 1); drive.add(halo);   // over the flash chip, in the model's mm
-  renderer.compile(scene, camera);
-  loaded = true;
-}
-
-// three content cards that rise out of the opened body (cm, in turntable space)
-const slabGeo = (w, h, d) => new THREE.BoxGeometry(w, h, d, 1, 1, 1);
-const cards = [], cardFaces = [];
-const CHIP = new THREE.Vector3(0.03, 0, 0.09);   // the chip's centre in turntable space (cm)
-[anodised, anodised, orange].forEach((mat, i) => {
-  const g = new THREE.Group();
-  const own = mat.clone(); own.transparent = true;
-  g.add(new THREE.Mesh(slabGeo(1.9, 1.28, 0.04), own));
-  const face = new THREE.Mesh(new THREE.PlaneGeometry(1.84, 1.22), new THREE.MeshPhysicalMaterial({ color: 0xffffff, transparent: true, metalness: i === 2 ? 0 : 0.5, roughness: i === 2 ? 0.6 : 0.42 }));
-  face.position.z = 0.0206; face.visible = false; g.add(face); cardFaces.push(face);
-  g.visible = false; spinner.add(g); cards.push(g);
-});
-const fanX = [-1.15, 0, 1.15], fanR = [0.1, 0, -0.1], fanZ = [-0.04, 0, 0.04];
-
-/* ---------- card faces ---------- */
-function fit(g, text, weight, maxW, maxSize, track) {
-  let size = maxSize;
-  for (let i = 0; i < 4; i++) {
-    g.font = `${weight} ${size}px Barlow, "Helvetica Neue", Arial, sans-serif`; g.letterSpacing = `${size * track}px`;
-    const w = g.measureText(text).width; if (w <= maxW) break; size *= maxW / w * 0.995;
-  }
-  return size;
-}
-function etch(g, text, x, y, color) {
-  g.fillStyle = 'rgba(0,0,0,.55)'; g.fillText(text, x + 2, y + 3);
-  g.fillStyle = color; g.fillText(text, x, y);
-}
-function grainFill(g, W, H, base, amt) {
-  g.fillStyle = base; g.fillRect(0, 0, W, H);
-  const img = g.getImageData(0, 0, W, H), d = img.data;
-  for (let i = 0; i < d.length; i += 4) { const n = (Math.random() - 0.5) * amt; d[i] += n; d[i + 1] += n; d[i + 2] += n; }
-  g.putImageData(img, 0, 0);
-  const sh = g.createLinearGradient(0, 0, 0, H);
-  sh.addColorStop(0, 'rgba(255,255,255,.06)'); sh.addColorStop(0.55, 'rgba(255,255,255,0)'); sh.addColorStop(1, 'rgba(0,0,0,.12)');
-  g.fillStyle = sh; g.fillRect(0, 0, W, H);
-}
-function toTexture(c) {
-  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = maxAniso;
-  t.minFilter = THREE.LinearMipmapLinearFilter; t.generateMipmaps = true; return t;
-}
-function cardTexture(title, sub, base, ink, dim) {
-  const W = 1024, H = Math.round(W * 1.22 / 1.84), c = document.createElement('canvas'); c.width = W; c.height = H;
-  const g = c.getContext('2d'); grainFill(g, W, H, base, base === '#131416' ? 10 : 6);
-  const L = W * 0.09, R = W * 0.91; g.textAlign = 'left'; g.textBaseline = 'alphabetic';
-  fit(g, title, 600, (R - L) * 0.82, H * 0.17, 0.08); etch(g, title, L, H * 0.42, ink);
-  g.fillStyle = dim; g.fillRect(L, H * 0.5, R - L, 3);
-  fit(g, sub, 600, (R - L) * 0.7, H * 0.075, 0.14); etch(g, sub, L, H * 0.66, dim);
-  return toTexture(c);
-}
-Promise.race([
-  Promise.all([document.fonts.load('500 64px Barlow'), document.fonts.load('600 64px Barlow')]),
-  new Promise(r => setTimeout(r, 2500))
-]).then(() => {
-  const specs = [['WIKIPEDIA', '6.8M ARTICLES', '#131416', '#c9cbce', '#9ea1a5'], ['MANUALS', '2,000+ BOOKS', '#131416', '#c9cbce', '#9ea1a5'], ['MAPS', 'NORTH AMERICA', '#e8611a', '#24180f', '#5a2c10']];
-  specs.forEach((s, i) => { const m = cardFaces[i].material; m.map = cardTexture(...s); m.needsUpdate = true; cardFaces[i].visible = true; });
-});
-
-/* ---------- the circuit board (model mm: board X 8..34, top face y 4.9, width z +-6.2) ---------- */
-function canvasTex(W, H, draw) {
-  const c = document.createElement('canvas'); c.width = W; c.height = H; draw(c.getContext('2d'), W, H);
-  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = maxAniso; return t;
-}
-function boardTexture() {
-  return canvasTex(2048, 977, (g, W, H) => {
-    const X = x => (x - 8) / 26 * W, Z = z => (z + 6.2) / 12.4 * H, mm = W / 26;
-    g.fillStyle = '#0f4b2e'; g.fillRect(0, 0, W, H);
-    for (let i = 0; i < 9000; i++) { g.fillStyle = `rgba(0,0,0,${Math.random() * 0.06})`; g.fillRect(Math.random() * W, Math.random() * H, 3, 3); }
-    g.lineCap = 'round'; g.lineJoin = 'round';
-    const trace = (pts, w = 0.16) => { g.strokeStyle = '#1d7446'; g.lineWidth = w * mm; g.beginPath(); pts.forEach(([x, z], i) => i ? g.lineTo(X(x), Z(z)) : g.moveTo(X(x), Z(z))); g.stroke(); };
-    const via = (x, z) => { g.fillStyle = '#c99a45'; g.beginPath(); g.arc(X(x), Z(z), 0.22 * mm, 0, 7); g.fill(); g.fillStyle = '#0a2a1a'; g.beginPath(); g.arc(X(x), Z(z), 0.1 * mm, 0, 7); g.fill(); };
-    // plug pins fan back to the chips
-    for (let i = 0; i < 8; i++) { const z = -1.75 + i * 0.5, zz = z * 2.6; trace([[33.6, z], [31.6, z], [30.4, zz * 0.8], [28.2, zz]]); via(28.9, zz * 0.95); }
-    // edge runs from the front to the controller
-    for (const s of [-1, 1]) for (let k = 0; k < 3; k++) { const z = s * (5.95 - k * 0.32); trace([[31.8, s * 2.4], [30.8, z], [16.0, z], [15.6, s * (2.6 + k * 0.4)]], 0.13); }
-    // controller to the rear edge and the crystal
-    for (let i = 0; i < 6; i++) { const z = -1.5 + i * 0.6; trace([[10.9, z], [9.6, z], [9.0, z * 1.6]], 0.13); via(9.0, z * 1.6); }
-    trace([[13.0, 2.25], [13.0, 3.3]], 0.14); trace([[12.2, 2.25], [12.2, 3.3]], 0.14);
-    // gold pads under the passives, test points
-    g.fillStyle = '#d1a24c';
-    for (const [x, z, rot] of PASSIVES) { const L = 1.0, Wd = 0.5; const r = rot ? [Wd, L] : [L, Wd];
-      g.fillRect(X(x - r[0] / 2 - 0.05), Z(z - r[1] / 2 - 0.05), (r[0] + 0.1) * mm, (r[1] + 0.1) * mm); }
-    for (const [x, z] of [[16.0, -5.3], [16.0, 5.3], [31.6, -2.9], [31.6, 2.9], [10.2, -3.0], [10.2, 3.0]]) { g.beginPath(); g.arc(X(x), Z(z), 0.38 * mm, 0, 7); g.fill(); }
-    // silkscreen: outlines and the board name
-    g.strokeStyle = 'rgba(235,238,236,.85)'; g.lineWidth = 0.07 * mm;
-    g.strokeRect(X(16.2), Z(-5.95), 12.4 * mm, 11.9 * mm); g.strokeRect(X(10.75), Z(-2.4), 4.8 * mm, 4.8 * mm);
-    g.fillStyle = 'rgba(235,238,236,.9)'; g.textBaseline = 'middle'; g.textAlign = 'center';
-    g.save(); g.translate(X(8.75), Z(0)); g.rotate(-Math.PI / 2);
-    g.font = `600 ${0.55 * mm}px Barlow, Arial, sans-serif`; g.fillText('BABEL DRIVE', 0, 0);
-    g.font = `500 ${0.42 * mm}px Barlow, Arial, sans-serif`; g.fillText('BD256-C  REV A', 0, 0.75 * mm); g.restore();
-    g.font = `600 ${0.38 * mm}px Barlow, Arial, sans-serif`; g.textAlign = 'left';
-    g.fillText('U1', X(16.3), Z(-6.05) + 0.2 * mm); g.fillText('U2', X(10.8), Z(-2.55));
-  });
-}
-function chipTexture(lines, W, H) {
-  return canvasTex(W, H, (g) => {
-    g.fillStyle = '#141516'; g.fillRect(0, 0, W, H);
-    for (let i = 0; i < 4000; i++) { g.fillStyle = `rgba(255,255,255,${Math.random() * 0.025})`; g.fillRect(Math.random() * W, Math.random() * H, 2, 2); }
-    g.fillStyle = '#74777b'; g.textAlign = 'center'; g.textBaseline = 'middle';
-    lines.forEach(([t, size, y, w]) => { g.font = `${w} ${size * H}px Barlow, Arial, sans-serif`; g.fillText(t, W / 2, y * H); });
-    g.beginPath(); g.arc(W * 0.08, H * 0.88, H * 0.035, 0, 7); g.fill();   // pin 1
-  });
-}
-// passives on the board: x, z (model mm), turned 90 deg
-const PASSIVES = [[12.0, -3.2], [13.3, -3.2], [14.6, -3.2], [12.0, -4.6], [13.3, -4.6], [14.6, -4.6],
-  [29.5, 2.6], [29.5, 1.0], [29.5, -1.0], [29.5, -2.6], [30.9, 1.8], [30.9, -1.8], [8.9, 3.0], [8.9, -3.0], [15.9, 3.6, 1], [15.9, -3.9, 1]];
-function buildBoard() {
-  const g = new THREE.Group(), top = 4.9;
-  const flat = (w, d, map, x, y, z, rough = 0.5) => {
-    const m = new THREE.Mesh(new THREE.PlaneGeometry(w, d), new THREE.MeshStandardMaterial({ map, roughness: rough, metalness: 0.05 }));
-    m.rotation.x = -Math.PI / 2; m.position.set(x, y, z); g.add(m); return m;
-  };
-  flat(26, 12.4, boardTexture(), 21, top + 0.004, 0, 0.42);
-  const epoxy = () => new THREE.MeshStandardMaterial({ color: 0x151617, roughness: 0.62 });
-  const box = (w, h, d, mat, x, y, z) => { const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), mat); m.position.set(x, y, z); g.add(m); return m; };
-  const nand = box(12, 1.0, 11.5, epoxy(), 22.4, top + 0.5, 0);
-  const nandTop = flat(12, 11.5, chipTexture([['BD-NV256T', 0.12, 0.38, 700], ['256GB  3D TLC', 0.075, 0.55, 600], ['2611  KR  4A1', 0.065, 0.69, 500]], 1024, 980), 22.4, top + 1.004, 0, 0.6);
-  const ctrl = box(4.5, 0.85, 4.5, epoxy(), 13.15, top + 0.425, 0);
-  flat(4.5, 4.5, chipTexture([['BD-C3S', 0.17, 0.42, 700], ['2611', 0.13, 0.62, 500]], 512, 512), 13.15, top + 0.854, 0, 0.6);
-  box(2.6, 0.25, 2.5, new THREE.MeshStandardMaterial({ color: 0x8a6a45, roughness: 0.5 }), 12.8, top + 0.125, 4.65);
-  box(2.3, 0.55, 2.2, new THREE.MeshStandardMaterial({ color: 0xc8c9cb, metalness: 1, roughness: 0.3 }), 12.8, top + 0.52, 4.65);
-  const cer = new THREE.MeshStandardMaterial({ color: 0xa8865a, roughness: 0.5 }), tin = new THREE.MeshStandardMaterial({ color: 0xcfd0d2, metalness: 1, roughness: 0.32 });
-  for (const [x, z, rot] of PASSIVES) {
-    const along = rot ? 'z' : 'x', p = box(rot ? 0.5 : 0.6, 0.45, rot ? 0.6 : 0.5, cer, x, top + 0.225, z);
-    for (const s of [-1, 1]) { const e = box(rot ? 0.5 : 0.2, 0.47, rot ? 0.2 : 0.5, tin, x, top + 0.235, z); e.position[along] += s * 0.4; }
-  }
-  chipMats = [nand.material, nandTop.material];
-  return g;
-}
-
-/* ---------- soft contact shadow (rendered from below, blurred) ---------- */
-const SH = { w: 12, h: 8, height: 2.6, res: 512, blur: 3.0, opacity: 0.6, darkness: 1.25 };
-const shadowGroup = new THREE.Group(); shadowGroup.position.y = -1.05; rig.add(shadowGroup);
-const rtA = new THREE.WebGLRenderTarget(SH.res * 2, SH.res); rtA.texture.generateMipmaps = false;
-const rtB = new THREE.WebGLRenderTarget(SH.res * 2, SH.res); rtB.texture.generateMipmaps = false;
-const shPlaneGeo = new THREE.PlaneGeometry(SH.w, SH.h).rotateX(Math.PI / 2);
-const shPlane = new THREE.Mesh(shPlaneGeo, new THREE.MeshBasicMaterial({ map: rtA.texture, opacity: SH.opacity, transparent: true, depthWrite: false }));
-shPlane.renderOrder = 1; shPlane.scale.y = -1; shadowGroup.add(shPlane);
-const blurPlane = new THREE.Mesh(shPlaneGeo); blurPlane.visible = false; shadowGroup.add(blurPlane);
-const shCam = new THREE.OrthographicCamera(-SH.w / 2, SH.w / 2, SH.h / 2, -SH.h / 2, 0, SH.height);
-shCam.rotation.x = Math.PI / 2; shadowGroup.add(shCam);
-const depthMat = new THREE.MeshDepthMaterial();
-depthMat.userData.darkness = { value: SH.darkness };
-depthMat.onBeforeCompile = shader => {
-  shader.uniforms.darkness = depthMat.userData.darkness;
-  shader.fragmentShader = 'uniform float darkness;\n' + shader.fragmentShader.replace(
-    'gl_FragColor = vec4( vec3( 1.0 - fragCoordZ ), opacity );',
-    'gl_FragColor = vec4( vec3( 0.0 ), ( 1.0 - fragCoordZ ) * darkness );');
-};
-depthMat.depthTest = false; depthMat.depthWrite = false;
-const blurVS = 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }';
-const blurFS = dir => `uniform sampler2D tDiffuse; uniform float d; varying vec2 vUv;
-  void main(){ vec4 s = vec4(0.0); vec2 o = ${dir};
-  s += texture2D(tDiffuse, vUv - 4.0*o) * 0.051; s += texture2D(tDiffuse, vUv - 3.0*o) * 0.0918;
-  s += texture2D(tDiffuse, vUv - 2.0*o) * 0.12245; s += texture2D(tDiffuse, vUv - 1.0*o) * 0.1531;
-  s += texture2D(tDiffuse, vUv) * 0.1633;
-  s += texture2D(tDiffuse, vUv + 1.0*o) * 0.1531; s += texture2D(tDiffuse, vUv + 2.0*o) * 0.12245;
-  s += texture2D(tDiffuse, vUv + 3.0*o) * 0.0918; s += texture2D(tDiffuse, vUv + 4.0*o) * 0.051;
-  gl_FragColor = s; }`;
-const hBlur = new THREE.ShaderMaterial({ uniforms: { tDiffuse: { value: null }, d: { value: 0 } }, vertexShader: blurVS, fragmentShader: blurFS('vec2(d, 0.0)'), depthTest: false });
-const vBlur = new THREE.ShaderMaterial({ uniforms: { tDiffuse: { value: null }, d: { value: 0 } }, vertexShader: blurVS, fragmentShader: blurFS('vec2(0.0, d)'), depthTest: false });
-function blurShadow(amount) {
-  blurPlane.visible = true;
-  blurPlane.material = hBlur; hBlur.uniforms.tDiffuse.value = rtA.texture; hBlur.uniforms.d.value = amount / 256;
-  renderer.setRenderTarget(rtB); renderer.render(blurPlane, shCam);
-  blurPlane.material = vBlur; vBlur.uniforms.tDiffuse.value = rtB.texture; vBlur.uniforms.d.value = amount / 256;
-  renderer.setRenderTarget(rtA); renderer.render(blurPlane, shCam);
-  blurPlane.visible = false;
-}
-function renderShadow() {
-  shPlane.visible = false;
-  const cardVis = cards.map(c => c.visible); cards.forEach(c => (c.visible = false));
-  scene.overrideMaterial = depthMat;
-  const a = renderer.getClearAlpha(); renderer.setClearAlpha(0);
-  renderer.setRenderTarget(rtA); renderer.clear(); renderer.render(scene, shCam);
-  scene.overrideMaterial = null;
-  blurShadow(SH.blur);
-  renderer.setRenderTarget(null); renderer.setClearAlpha(a);
-  shPlane.visible = true; cards.forEach((c, i) => (c.visible = cardVis[i]));
-}
-
-/* ---------- the nine stops ----------
-   yaw: turntable angle (0 = top face toward you). sway: slow breathing at the ends. fx: point along the drive (mm) at
-   screen fraction (sx, sy). xray: steel to glass. glow: the flash chip lights. cards: library cards rise from the chip.
-   q: where the cap is (0 on the plug, 0.3 slid off the front, 0.7 slid off the back, 1 clicked onto the back).
-   lay: 1 = the drive lies flat (for the exploded view). explode: the parts lift apart. labels: name the parts. */
-const STOPS = [
-  { yaw: 0,     pitch: 0.26, zoom: 1.0,  fx: 22.3, sx: 0, sy: 0.11,  q: 0,   xray: 0, glow: 0, sway: 1, lay: 0, explode: 0, labels: 0, cards: [0, 0, 0] },
-  { yaw: -0.3,  pitch: 0.36, zoom: 1.1,  fx: 21,   sx: 0, sy: 0.05,  q: 0,   xray: 1, glow: 1, sway: 0, lay: 0, explode: 0, labels: 0, cards: [0, 0, 0] },
-  { yaw: -0.3,  pitch: 0.3,  zoom: 0.68, fx: 21,   sx: 0, sy: -0.01, q: 0,   xray: 1, glow: 1, sway: 0, lay: 0, explode: 0, labels: 0, cards: [1, 0, 0] },
-  { yaw: -0.3,  pitch: 0.3,  zoom: 0.68, fx: 21,   sx: 0, sy: -0.01, q: 0,   xray: 1, glow: 1, sway: 0, lay: 0, explode: 0, labels: 0, cards: [1, 1, 0] },
-  { yaw: -0.3,  pitch: 0.3,  zoom: 0.68, fx: 21,   sx: 0, sy: -0.01, q: 0,   xray: 1, glow: 1, sway: 0, lay: 0, explode: 0, labels: 0, cards: [1, 1, 1] },
-  { yaw: -0.7,  pitch: 0.3,  zoom: 0.6,  fx: 46,   sx: 0, sy: 0.06,  q: 0.3, xray: 0, glow: 0, sway: 0, lay: 0, explode: 0, labels: 0, cards: [0, 0, 0] },
-  { yaw: -0.35, pitch: 0.3,  zoom: 0.84, fx: 16,   sx: 0, sy: 0.08,  q: 1,   xray: 0, glow: 0, sway: 0, lay: 0, explode: 0, labels: 0, cards: [0, 0, 0] },
-  { yaw: -0.45, pitch: 0.52, zoom: 0.56, fx: -4,   sx: 0, sy: 0.03,  q: 0.7, xray: 0, glow: 0, sway: 0, lay: 1, explode: 1, labels: 1, cards: [0, 0, 0] },
-  { yaw: 0,     pitch: 0.22, zoom: 0.8,  fx: 22.3, sx: 0, sy: 0.14,  q: 0,   xray: 0, glow: 0, sway: 1, lay: 0, explode: 0, labels: 0, cards: [0, 0, 0] },
-];
-const clamp = (x, a, b) => Math.min(Math.max(x, a), b);
-const ss = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * (3 - 2 * t); };
-const wrap = a => { a = (a + Math.PI) % (Math.PI * 2); if (a < 0) a += Math.PI * 2; return a - Math.PI; };
-const lerpAngle = (a, b, t) => a + wrap(b - a) * t;
-const FIELDS = ['pitch', 'zoom', 'fx', 'sx', 'sy', 'q', 'xray', 'glow', 'sway', 'lay', 'explode', 'labels'];
-function pose(p) {
-  const i = Math.min(Math.floor(p), STOPS.length - 2), e = ss(0.1, 0.9, p - i), A = STOPS[i], B = STOPS[i + 1], o = { A, B, e };
-  for (const f of FIELDS) o[f] = A[f] + (B[f] - A[f]) * e;
-  o.cards = A.cards.map((v, j) => v + (B.cards[j] - v) * e);
-  return o;
-}
-function scrollStop() {
-  const h = steps[0].offsetHeight || innerHeight;
-  if (!(h > 0)) return 0;   // the viewer can load the page in a zero-height frame first
-  const p = -story.getBoundingClientRect().top / h;
-  return Number.isFinite(p) ? clamp(p, 0, STOPS.length - 1) : 0;
-}
-
-/* The cap moves at its own steady pace toward where the stop wants it, so a fast scroll never whips it round.
-   Path: slide straight off the front along the channel until the arm clears, lift and turn over the top, drop behind,
-   slide onto the back step. The stops park it only at phase ends, so it always comes to rest gently. */
-const sm = (a, b, x) => { const t = clamp((x - a) / (b - a), 0, 1); return t * t * t * (t * (6 * t - 15) + 10); };
-function capPose(q) {   // q: 0 = on the plug, 1 = clicked onto the back
-  const a = sm(0, 0.3, q), t = sm(0.3, 0.7, q), c = sm(0.7, 1, q), mid = G.L / 2, off = G.OFF;
-  return { x: mid + off * a - 2 * off * t + off * c, y: G.LIFT * Math.sin(Math.PI * t), r: Math.PI * t };
-}
-// speed and acceleration limits (per second): the cap crosses from front to back in about 4 s, easing in and out
-const CAP = { v: 0.19, a: 0.32 }, EXP = { v: 0.42, a: 0.8 };
-let capQ = 0, capV = 0, explodeE = 0, expV = 0;
-function glide(x, v, target, lim, dt) {
-  const d = target - x, want = Math.sign(d) * Math.min(lim.v, Math.sqrt(2 * lim.a * Math.abs(d)));
-  v += clamp(want - v, -lim.a * dt, lim.a * dt);
-  let nx = x + v * dt;
-  if ((target - x) * (target - nx) <= 0) { nx = target; v = 0; }
-  return [nx, v];
-}
-
-/* ---------- drag to turn (sideways only; vertical swipes still scroll the page) ---------- */
-// on touch, the drive turns only once the finger has clearly moved sideways; an up/down swipe never turns it
-let dragging = false, lastX = 0, lastT = 0, vel = 0, dragOff = 0, lastDrag = -1e9, axisSet = true, x0 = 0, y0 = 0;
-canvas.addEventListener('pointerdown', e => {
-  if (e.pointerType === 'mouse' && e.button !== 0) return;
-  dragging = true; lastX = x0 = e.clientX; y0 = e.clientY; lastT = performance.now();
-  axisSet = e.pointerType !== 'touch';
-  if (axisSet) vel = 0;
-  try { canvas.setPointerCapture(e.pointerId); } catch (_) {}
-  canvas.classList.add('drag');
-});
-canvas.addEventListener('pointermove', e => {
-  if (!dragging) return;
-  if (!axisSet) {
-    const ax = Math.abs(e.clientX - x0), ay = Math.abs(e.clientY - y0);
-    if (ax < 8 && ay < 8) return;
-    if (ay >= ax) { dragging = false; canvas.classList.remove('drag'); return; }
-    axisSet = true; vel = 0; lastT = performance.now();
-  }
-  const now = performance.now(), dx = e.clientX - lastX, d = dx * 0.009;
-  dragOff += d; lastX = e.clientX;
-  const dt = Math.max((now - lastT) / 1000, 1 / 240); lastT = now; lastDrag = now;
-  vel = vel * 0.6 + (d / dt) * 0.4;
-});
-const endDrag = () => { if (!dragging) return; if (!axisSet) { dragging = false; canvas.classList.remove('drag'); return; } dragging = false; canvas.classList.remove('drag'); lastDrag = performance.now(); if (performance.now() - lastT > 90) vel = 0; vel = clamp(vel, -9, 9); };
-canvas.addEventListener('pointerup', endDrag);
-canvas.addEventListener('pointercancel', endDrag);
-canvas.addEventListener('keydown', e => {
-  if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') { e.preventDefault(); vel += e.key === 'ArrowLeft' ? -2.2 : 2.2; lastDrag = performance.now(); }
-});
-
-/* ---------- sizing ---------- */
-let visW = 1, visH = 1, fitScale = 1;
-function resize() {
-  const w = stageEl.clientWidth, h = stageEl.clientHeight;
-  if (!(w > 0 && h > 0)) return;
-  renderer.setSize(w, h, false);
-  camera.aspect = w / h; camera.updateProjectionMatrix();
-  visH = 2 * camera.position.z * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)); visW = visH * camera.aspect;
-  const portrait = camera.aspect < 0.9;
-  fitScale = Math.min(visW * (portrait ? 0.66 : 0.36), visH * 0.8) / 4.4;
-}
-new ResizeObserver(resize).observe(stageEl); resize();
-
-/* ---------- per frame ---------- */
-let pS = scrollStop(), spinYaw = -0.62;
-const SPIN = (Math.PI * 2) / 16;   // one turn every 16 s, clockwise seen from above
-const focus = new THREE.Vector3();
-const labelsEl = document.getElementById('labels'), leaders = document.getElementById('leaders');
-const LABELS = [   // part, point in that part's own frame (model mm), name, note
-  ['cap', [20.8, 9, 6], 'Cap and clip', 'one piece'],
-  ['screw0', [0, 0.3, 0], 'Torx screws', 'M1.6'],
-  ['cover', [21, 8.4, 6], 'Cover', ''],
-  ['pad', [24, 6.95, 4], 'Thermal pad', ''],
-  [null, [22.4, 5.9, 3], 'Flash chip', '256 GB'],
-  [null, [13.15, 5.75, 1.5], 'Controller', ''],
-  ['plug', [38, 5.7, 0], 'USB-C plug', ''],
-  ['plunger0', [1.5, 4.5, 9.8], 'Click balls', ''],
-  ['body', [5, 4.5, 10.2], 'Steel body', '316L'],
-];
-const labelEls = LABELS.map(([, , name, note]) => {
-  const d = document.createElement('div'); d.className = 'lab';
-  d.innerHTML = name + (note ? `<small>${note}</small>` : ''); labelsEl.appendChild(d); return d;
-});
-const tmpV = new THREE.Vector3();
-function updateLabels(k) {
-  const w = stageEl.clientWidth, h = stageEl.clientHeight;
-  labelsEl.style.opacity = w < 720 ? 0 : k;
-  if (k < 0.01 || w < 720 || !loaded) return;
-  const pts = LABELS.map(([n, pt], i) => {
-    const o = n ? parts[n] : board; tmpV.set(...pt); if (!n) tmpV.y += 0; o.localToWorld(tmpV); tmpV.project(camera);
-    return { i, x: (tmpV.x + 1) / 2 * w, y: (1 - tmpV.y) / 2 * h };
-  });
-  const cx = pts.reduce((a, p) => a + p.x, 0) / pts.length;
-  const sides = [pts.filter(p => p.x < cx).sort((a, b) => a.y - b.y), pts.filter(p => p.x >= cx).sort((a, b) => a.y - b.y)];
-  let svg = '';
-  sides.forEach((list, side) => {
-    const gap = 46, top = h * 0.12, bot = h * 0.66;
-    let y = top;
-    const ys = list.map(p => (y = Math.max(y, Math.min(p.y, bot)), (y += gap) - gap));
-    const over = ys.length ? ys[ys.length - 1] - bot : 0;
-    list.forEach((p, j) => {
-      const ly = ys[j] - Math.max(0, over), el = labelEls[p.i];
-      const colX = side ? Math.min(w - 24, Math.max(p.x + 60, w * 0.74)) : Math.max(24, Math.min(p.x - 60, w * 0.26));
-      el.classList.toggle('l', !side);
-      el.style.transform = `translate(${side ? colX : colX - el.offsetWidth}px, ${ly}px) translateY(-50%)`;
-      const ex = side ? colX - 8 : colX + 8;
-      svg += `<line x1="${ex}" y1="${ly}" x2="${p.x}" y2="${p.y}"/><circle cx="${p.x}" cy="${p.y}" r="2.6"/>`;
-    });
-  });
-  leaders.innerHTML = svg;
-}
-function setXray(x) {   // shell materials are already transparent; only opacity and depth writes change
-  for (const n of SHELL) {
-    const o = parts[n]; if (!o) continue;
-    o.traverse(m => {
-      if (!m.isMesh) return;
-      const mat = m.material, faint = n === 'pad' || n.startsWith('screw') || n.startsWith('logo');
-      mat.opacity = faint ? 1 - x : 1 - 0.87 * x;
-      mat.depthWrite = x < 0.35;
-      m.castShadow = x < 0.35;
-      m.visible = !(faint && x > 0.98);
-    });
-  }
-}
-function update(dt, now) {
-  const target = FORCE ?? scrollStop();
-  if (FORCE !== null) pS = FORCE;
-  pS = reduce || !Number.isFinite(pS) ? target : pS + (target - pS) * (1 - Math.exp(-dt * 6.5));
-  if (Math.abs(target - pS) < 1e-4) pS = target;
-  const P = pose(pS);
-
-  if (!dragging) { dragOff += vel * dt; vel *= Math.exp(-dt * 3.2); }
-  if (!dragging && Math.abs(vel) < 0.05 && now - lastDrag > 1500) dragOff = wrap(dragOff) * Math.exp(-dt * 2.2);
-  const sway = reduce ? 0 : P.sway * 0.16 * Math.sin(now / 1000 * (Math.PI * 2 / 11));   // ends stay front-on, just breathing
-  spinner.rotation.y = lerpAngle(P.A.yaw, P.B.yaw, P.e) + dragOff + sway;
-  rig.rotation.x = P.pitch;
-  rig.scale.setScalar(fitScale * P.zoom);
-  // stand the drive on its edge (top toward you), or lay it flat for the exploded view
-  const alpha = Math.PI / 2 * (1 - sm(0, 1, P.lay));
-  drive.rotation.x = alpha;
-  drive.position.set(-G.CENTER * 0.1, -0.45 * Math.cos(alpha), -0.45 * Math.sin(alpha));
-  shadowGroup.position.y = -(1.02 * Math.sin(alpha) + 0.45 * Math.abs(Math.cos(alpha))) - 0.03;
-
-  if (loaded) {
-    // the cap waits while the drive is apart, and the drive only comes apart once the cap is off the back
-    const capTarget = explodeE > 0.01 ? 0.7 : P.q;
-    const expTarget = Math.abs(capQ - 0.7) > 0.02 ? 0 : P.explode;
-    if (reduce || FORCE !== null) { capQ = capTarget; explodeE = P.explode > 0.5 ? 1 : 0; if (P.explode > 0.5) capQ = 0.7; }
-    else { [capQ, capV] = glide(capQ, capV, capTarget, CAP, dt); [explodeE, expV] = glide(explodeE, expV, expTarget, EXP, dt); }
-    const cp = capPose(capQ);
-    parts.capgrp.position.set(cp.x, base.capgrp.p.y + cp.y, base.capgrp.p.z);
-    parts.capgrp.rotation.y = cp.r;
-    // exploded view: screws first, then the cover, the pad, the board with its plug; click balls out to the sides
-    const E = explodeE, up = (n, d, a0, a1) => { const o = parts[n]; if (o) o.position.y = base[n].p.y + d * sm(a0, a1, E); };
-    for (let i = 0; i < 4; i++) up('screw' + i, 26, 0, 0.4);
-    up('cover', 18, 0.12, 0.55); up('pad', 12, 0.25, 0.68);
-    const by = 9 * sm(0.4, 0.85, E);
-    for (const n of ['pcb', 'bot', 'plug']) if (parts[n]) parts[n].position.y = base[n].p.y + by;
-    if (board) board.position.y = by;
-    for (let i = 0; i < 4; i++) { const o = parts['plunger' + i]; if (o) o.position.z = base['plunger' + i].p.z + (i % 2 ? -5 : 5) * sm(0.3, 0.8, E); }
-    setXray(P.xray);
-    // the chip glows warm in the inside stop, breathing slowly
-    const pulse = 0.75 + 0.25 * Math.sin(now / 1000 * 2.2);
-    for (const m of chipMats) { m.emissive.setHex(0xff5a14); m.emissiveIntensity = 0.9 * P.glow * pulse; }
-    halo.visible = P.glow > 0.01; halo.material.opacity = 0.55 * P.glow * pulse;
-    updateLabels(P.labels * sm(0.85, 1, explodeE));
-  }
-  // the library cards come up out of the glowing chip: small and faint at the chip, full size above the drive
-  cards.forEach((c, j) => {
-    const k = clamp(P.cards[j], 0, 1), e = sm(0, 1, k);
-    c.visible = k > 0.001;
-    c.position.set(CHIP.x + (fanX[j] + 0.0) * e, CHIP.y + (1.95 - CHIP.y) * e, CHIP.z + (0.35 + fanZ[j] - CHIP.z) * e);
-    c.scale.setScalar(0.2 + 0.8 * e);
-    c.rotation.z = fanR[j] * e;
-    const o = sm(0, 0.4, k);
-    c.traverse(m => { if (m.material) m.material.opacity = o; });
-  });
-
-  // put the focus point where this stop wants it on screen
-  rig.position.set(0, 0, 0); rig.updateMatrixWorld(true);
-  focus.set(P.fx, 4.5, 0); drive.localToWorld(focus);
-  rig.position.set(P.sx * visW - focus.x, P.sy * visH - focus.y, 0);
-  rig.updateMatrixWorld(true);
-}
-
-let running = false, last = 0, frameNo = 0;
-function frame(now) {
-  if (!running) return;
-  const dt = Math.min(Math.max((now - last) / 1000, 0), 0.05); last = now;
-  try {
-    if (!(visH > 0)) resize();
-    update(dt, now);
-    renderShadow();
-    renderer.shadowMap.needsUpdate = true;
-    renderer.render(scene, camera);
-  } catch (err) { console.error(err); }
-  if (loaded && !canvas.classList.contains('ready')) canvas.classList.add('ready');
-  requestAnimationFrame(frame);
-}
-new IntersectionObserver(([en]) => {
-  if (en.isIntersecting && !running) { running = true; last = performance.now(); requestAnimationFrame(frame); }
-  else if (!en.isIntersecting) running = false;
-}).observe(story);
-canvas.addEventListener('webglcontextlost', e => e.preventDefault());
-if (FORCE !== null) window.__frame = () => {   // local preview only: draw one frame on demand (hidden panes throttle animation)
-  resize(); update(0.05, performance.now()); renderShadow(); renderer.shadowMap.needsUpdate = true; renderer.render(scene, camera);
-  canvas.style.transition = 'none'; canvas.classList.add('ready'); return loaded;
-};
-</script>
-
 </body>
 </html>
