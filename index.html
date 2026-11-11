@@ -198,7 +198,7 @@ footer span{user-select:all}
   .tree .r{font-size:12px}
 }
 
-/* checkout preview */
+/* waitlist */
 .co{position:fixed;inset:0;z-index:20;background:var(--paper);overflow:auto;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 .co[hidden]{display:none}
 .co-top{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:20px;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));border-bottom:1px solid var(--rule)}
@@ -211,10 +211,22 @@ footer span{user-select:all}
 .co label{display:grid;gap:6px;font:500 12px/1.2 var(--label);letter-spacing:.06em;color:var(--steel);min-width:0}
 .co input,.co select{font:400 15px/1.3 var(--display);color:var(--ink);background:#fff;border:1px solid #cfd1d4;border-radius:0;padding:12px 12px;width:100%;box-sizing:border-box;min-width:0}
 .co input:focus,.co select:focus{outline:2px solid var(--ink);outline-offset:-1px}
-.co .row{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.8fr) minmax(0,.8fr);gap:12px}
-.pay-note{padding:16px;border:1px dashed #b9bcc0;color:var(--steel);font-size:14px;line-height:1.5}
+.co-lede{margin:-12px 0 32px;max-width:46ch;color:#3d4043;line-height:1.6}
+.co-pick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.co-pick label{position:relative;cursor:pointer}
+.co-pick input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.co-pick span{display:grid;gap:4px;padding:14px 16px;border:1px solid #cfd1d4}
+.co-pick b{font:600 11px/1.3 var(--label);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.co-pick em{font-style:normal;color:var(--steel);font-size:14px;font-variant-numeric:tabular-nums}
+.co-pick input:checked + span{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.co-pick input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px}
+.sr > :not(input){position:absolute}
+.co label.sr{font-size:0;gap:0}
+.co-note{margin:12px 0 0;color:var(--steel);font-size:13px}
+.co-err{margin:12px 0 0;color:#b3261e;font-size:14px}
+.co-done h2{margin:0 0 28px}
+.co-done:focus{outline:none}
 .co .add{width:100%;margin-top:4px}
-.co-done{margin:14px 0 0;padding:14px 16px;background:#f2f3f4;font-size:14px;line-height:1.5}
 .co-sum{align-self:start;position:sticky;top:24px;border:1px solid var(--rule);padding:24px;display:grid;gap:18px}
 .co-item{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:center}
 .co-item img{width:96px;height:72px;object-fit:cover;background:#ececee;display:block}
@@ -226,7 +238,7 @@ footer span{user-select:all}
 .co-lines{display:grid;gap:8px;border-top:1px solid var(--rule);padding-top:16px;font-variant-numeric:tabular-nums}
 .co-lines div{display:flex;justify-content:space-between;gap:12px;color:#3d4043;font-size:14px}
 .co-lines .tot{color:var(--ink);font-weight:600;font-size:16px;border-top:1px solid var(--rule);padding-top:10px;margin-top:4px}
-@media (max-width:820px){.co-grid{grid-template-columns:minmax(0,1fr);gap:36px}.co-sum{position:static;order:-1}.co .row{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:820px){.co-grid{grid-template-columns:minmax(0,1fr);gap:36px;padding-block:36px 72px}.co-sum{position:static}}
 </style>
 
 <header class="top">
@@ -235,7 +247,7 @@ footer span{user-select:all}
     <a href="#film">Film</a>
     <a href="#specs">Specs</a>
     <a href="#faq">FAQ</a>
-    <button type="button" id="buy-top">Buy</button>
+    <button type="button" id="buy-top">Waitlist</button>
   </nav>
 </header>
 
@@ -254,7 +266,7 @@ footer span{user-select:all}
             <button type="button" role="radio" aria-checked="true" id="opt-drive" data-opt="drive">256 GB Drive</button>
             <button type="button" role="radio" aria-checked="false" id="opt-download" data-opt="download">Download</button>
           </div>
-          <button type="button" class="add" id="add">Buy now</button>
+          <button type="button" class="add" id="add">Join the waitlist</button>
           <p class="hint"><span class="h-fine">Drag to turn · Scroll to look inside</span><span class="h-touch">Swipe up to look inside</span></p>
         </div>
         <div class="layer"><p class="eyebrow">01 / Inside</p><h2>One chip. The whole library.</h2><p class="body">256 GB on a single flash chip, clamped in a pocket cut to fit it and sealed in steel.</p></div>
@@ -402,7 +414,8 @@ footer span{user-select:all}
       <h2 class="eyebrow" id="faq-h">FAQ</h2>
       <dl>
         <div><dt>How it opens</dt><dd>Plug it in and double-click Open Library (Mac, Windows or Linux). Your browser opens the library: search, Wikipedia, maps. On a phone, open START.html from the Files app, or use the free Kiwix app.</dd></div>
-        <div><dt>Shipping</dt><dd>Ships in 2–3 days from the US. Free worldwide. Tracked.</dd></div>
+        <div><dt>Waitlist</dt><dd>Blackstart is machined in small batches. Join the waitlist and you get one email when the next batch opens. No payment until then.</dd></div>
+        <div><dt>Shipping</dt><dd>Ships from the US. Free worldwide. Tracked.</dd></div>
         <div><dt>Returns</dt><dd>30 days, any reason. The drive comes back, the money goes back.</dd></div>
         <div><dt>Updates</dt><dd>For life. Every time we update the library, you can download the new version, or have a refreshed drive sent at cost.</dd></div>
         <div><dt>Download</dt><dd>Same library, $49. You bring the 256 GB drive. One file, verified.</dd></div>
@@ -419,44 +432,42 @@ footer span{user-select:all}
 
 <nav class="dots off" id="dots" aria-label="Stops"></nav>
 
-<div class="co" id="checkout" hidden role="dialog" aria-modal="true" aria-labelledby="co-h">
+<div class="co" id="waitlist" hidden role="dialog" aria-modal="true" aria-labelledby="co-h">
   <div class="co-top">
     <button type="button" class="co-back" id="co-back">← Back</button>
     <span class="mark">BABEL DRIVE</span>
-    <span class="co-tag">Checkout preview</span>
+    <span class="co-tag">Waitlist</span>
   </div>
   <div class="co-grid">
-    <form id="co-form">
-      <h2 id="co-h">Checkout</h2>
+    <form id="co-form" novalidate>
+      <h2 id="co-h">Join the waitlist</h2>
+      <p class="co-lede">Blackstart is machined in small batches. Leave your email and you'll hear first when the next batch opens. No payment now.</p>
       <fieldset>
-        <legend>Contact</legend>
-        <label>Email<input type="email" name="email" autocomplete="email" required></label>
-      </fieldset>
-      <fieldset id="co-ship">
-        <legend>Shipping</legend>
-        <label>Full name<input name="name" autocomplete="name" required></label>
-        <label>Address<input name="address" autocomplete="street-address" required></label>
-        <div class="row">
-          <label>City<input name="city" autocomplete="address-level2" required></label>
-          <label>State<input name="state" autocomplete="address-level1"></label>
-          <label>ZIP<input name="zip" autocomplete="postal-code" required></label>
+        <legend>Format</legend>
+        <div class="co-pick" role="radiogroup" aria-label="Format">
+          <label><input type="radio" name="format" value="drive" checked><span><b>256 GB Drive</b><em>$199</em></span></label>
+          <label><input type="radio" name="format" value="download"><span><b>Download</b><em>$49</em></span></label>
         </div>
-        <label>Country<select name="country" autocomplete="country-name"><option>United States</option><option>Canada</option><option>United Kingdom</option><option>Australia</option><option>Other</option></select></label>
       </fieldset>
       <fieldset>
-        <legend>Payment</legend>
-        <div class="pay-note">Card payments open at launch. This preview doesn't ask for or take any payment details.</div>
+        <legend>Email</legend>
+        <label class="sr">Email<input type="email" name="email" id="co-email" autocomplete="email" inputmode="email" placeholder="you@example.com" required></label>
       </fieldset>
-      <button type="submit" class="add">Place order</button>
-      <p class="co-done" id="co-done" hidden>This is a preview checkout. No order was placed and nothing was charged.</p>
+      <button type="submit" class="add" id="co-go">Join the waitlist</button>
+      <p class="co-note">One email when your batch is ready. Never shared, never sold.</p>
+      <p class="co-err" id="co-err" role="alert" hidden></p>
     </form>
-    <aside class="co-sum" aria-label="Order summary">
+    <div class="co-done" id="co-done" hidden tabindex="-1">
+      <h2>You're on the list.</h2>
+      <p class="co-lede">We'll email <b id="co-who"></b> when the next batch of Blackstart opens. Nothing to pay until then.</p>
+      <button type="button" class="co-back" id="co-close">Back to Blackstart</button>
+    </div>
+    <aside class="co-sum" aria-label="Your reservation">
       <div class="co-item"><img src="babel-drive-thumb.jpg" alt="Blackstart drive"><div><b>Blackstart</b><span id="co-what">256 GB USB-C drive</span></div></div>
-      <div class="qty" aria-label="Quantity"><button type="button" id="q-minus" aria-label="One fewer">−</button><output id="q-n">1</output><button type="button" id="q-plus" aria-label="One more">+</button></div>
       <div class="co-lines">
-        <div><span>Subtotal</span><span id="co-sub">$199</span></div>
+        <div><span>Price at launch</span><span id="co-price">$199</span></div>
         <div><span id="co-ship-l">Shipping</span><span id="co-ship-v">Free</span></div>
-        <div class="tot"><span>Total</span><span id="co-tot">$199</span></div>
+        <div class="tot"><span>Due today</span><span>$0</span></div>
       </div>
     </aside>
   </div>
@@ -476,31 +487,50 @@ footer span{user-select:all}
     });
   });
 
-  /* checkout preview: opens on #checkout, takes no payment */
-  var co = document.getElementById('checkout'), form = document.getElementById('co-form'), done = document.getElementById('co-done');
-  var qn = 1, unit = { drive: 199, download: 49 };
-  function money(v) { return '$' + v.toLocaleString('en-US'); }
+  /* waitlist: opens on #waitlist; each signup is one row in Alex's Google Form (Babel Drive waitlist) */
+  var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeAXm_0712F5B9SYgVnl3TkMGeMNudEaREGeyKtNkV_ahYuZQ/formResponse';
+  var F_EMAIL = 'entry.1320750901', F_FORMAT = 'entry.897673328', F_LABEL = { drive: '256 GB Drive', download: 'Download' };
+  var co = document.getElementById('waitlist'), form = document.getElementById('co-form'), done = document.getElementById('co-done');
+  var email = document.getElementById('co-email'), err = document.getElementById('co-err'), go = document.getElementById('co-go');
+  var picks = form.querySelectorAll('input[name="format"]');
   function sum() {
-    document.getElementById('q-n').textContent = qn;
+    picks.forEach(function (r) { r.checked = r.value === choice; });
     document.getElementById('co-what').textContent = choice === 'drive' ? '256 GB USB-C drive' : 'Library download, you bring the drive';
-    document.getElementById('co-sub').textContent = money(unit[choice] * qn);
-    document.getElementById('co-tot').textContent = money(unit[choice] * qn);
-    document.getElementById('co-ship').hidden = choice !== 'drive';
+    document.getElementById('co-price').textContent = choice === 'drive' ? '$199' : '$49';
     document.getElementById('co-ship-l').textContent = choice === 'drive' ? 'Shipping' : 'Delivery';
     document.getElementById('co-ship-v').textContent = choice === 'drive' ? 'Free' : 'Download link';
   }
+  picks.forEach(function (r) {
+    r.addEventListener('change', function () {
+      choice = r.value; price.textContent = lines[choice];
+      opts.forEach(function (o) { o.setAttribute('aria-checked', o.dataset.opt === choice ? 'true' : 'false'); });
+      sum();
+    });
+  });
   function route() {
-    var open = location.hash === '#checkout';
+    if (location.hash === '#checkout') { history.replaceState(null, '', '#waitlist'); }
+    var open = location.hash === '#waitlist';
     co.hidden = !open; document.documentElement.classList.toggle('co-open', open);
-    if (open) { sum(); done.hidden = true; co.scrollTop = 0; setTimeout(function () { var f = form.querySelector('input'); if (f) f.focus({ preventScroll: true }); }, 50); }
+    if (open) { sum(); err.hidden = true; co.scrollTop = 0; if (done.hidden) setTimeout(function () { email.focus({ preventScroll: true }); }, 50); }
   }
-  function buy() { if (location.hash !== '#checkout') location.hash = 'checkout'; else route(); }
-  add.addEventListener('click', buy);
-  document.getElementById('buy-top').addEventListener('click', buy);
+  function join() { if (location.hash !== '#waitlist') location.hash = 'waitlist'; else route(); }
+  add.addEventListener('click', join);
+  document.getElementById('buy-top').addEventListener('click', join);
   document.getElementById('co-back').addEventListener('click', function () { location.hash = ''; });
-  document.getElementById('q-minus').addEventListener('click', function () { qn = Math.max(1, qn - 1); sum(); });
-  document.getElementById('q-plus').addEventListener('click', function () { qn = Math.min(5, qn + 1); sum(); });
-  form.addEventListener('submit', function (e) { e.preventDefault(); if (!form.reportValidity()) return; done.hidden = false; });
+  document.getElementById('co-close').addEventListener('click', function () { location.hash = ''; });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var v = email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.textContent = 'Please enter a valid email address.'; err.hidden = false; email.focus(); return; }
+    err.hidden = true; go.disabled = true; go.textContent = 'Joining…';
+    var body = new URLSearchParams(); body.append(F_EMAIL, v); body.append(F_FORMAT, F_LABEL[choice]);
+    fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: body }).then(function () {
+      document.getElementById('co-who').textContent = v;
+      form.hidden = true; done.hidden = false; done.focus({ preventScroll: true });
+    }).catch(function () {
+      err.textContent = 'That didn\'t go through. Check your connection and try again.'; err.hidden = false;
+    }).then(function () { go.disabled = false; go.textContent = 'Join the waitlist'; });
+  });
   addEventListener('hashchange', route); route();
 
   /* the film: click to play with sound */
