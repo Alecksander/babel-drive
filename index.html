@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Blackstart by Babel Drive: the whole offline library on one solid-steel USB-C drive. English Wikipedia, wikiHow, 2,000+ how-to books and manuals, North America maps.">
+<meta name="description" content="Blackstart by Babel Drive. 256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, and North America maps. Offline.">
 <meta property="og:title" content="Babel Drive Blackstart">
-<meta property="og:description" content="The whole offline library on one solid-steel USB-C drive. When the grid is down, this isn't.">
+<meta property="og:description" content="English Wikipedia, wikiHow, books, manuals and maps on a solid-steel USB-C drive. Offline.">
 <meta property="og:image" content="https://babel.petersenventures.com/life-slate.jpg">
 <meta property="og:url" content="https://babel.petersenventures.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -133,7 +133,6 @@ footer span{user-select:all}
 .film{background:#0b0b0c;color:#e8e9ea;border-top:0}
 .film .eyebrow{color:#8b8e92}
 .film-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:22px}
-.film-head h2{margin:10px 0 0;font:500 clamp(26px,3.2vw,40px)/1.1 var(--display);font-stretch:112%;color:#f3f3f4}
 .film-head p{margin:0;color:#8b8e92;font:500 12px/1.4 var(--label);letter-spacing:.14em;text-transform:uppercase}
 .player{position:relative;aspect-ratio:16/9;max-width:100%;background:#000;overflow:hidden}
 .player video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover;background:#000}
@@ -182,6 +181,7 @@ footer span{user-select:all}
 .tree .r{display:grid;grid-template-columns:minmax(0,26rem) minmax(0,1fr);gap:4px 24px;padding:5px 18px;font:400 13px/1.5 var(--mono);color:#3d4043}
 .tree .n{white-space:pre;color:var(--ink)}
 .tree .n i{font-style:normal;color:#b9bcc0}
+.tree .d:empty{display:none}
 .tree .d{min-width:0;color:var(--steel);font:400 13px/1.5 var(--display)}
 .tree .d em{font-style:normal;font-variant-numeric:tabular-nums;color:#9a9da1;margin-left:6px}
 .tree .r.dir .n{font-weight:600}
@@ -267,16 +267,16 @@ footer span{user-select:all}
             <button type="button" role="radio" aria-checked="false" id="opt-download" data-opt="download">Download</button>
           </div>
           <button type="button" class="add" id="add">Join the waitlist</button>
-          <p class="hint"><span class="h-fine">Drag to turn · Scroll to look inside</span><span class="h-touch">Swipe up to look inside</span></p>
+          <p class="hint"><span class="h-fine">Drag to turn · Scroll</span><span class="h-touch">Swipe up</span></p>
         </div>
-        <div class="layer"><p class="eyebrow">01 / Inside</p><h2>One chip. The whole library.</h2><p class="body">256 GB on a single flash chip, clamped in a pocket cut to fit it and sealed in steel.</p></div>
-        <div class="layer"><p class="eyebrow">02 / Inside</p><h2>English Wikipedia</h2><p class="body">6.8 million articles. Every one of them, offline.</p></div>
-        <div class="layer"><p class="eyebrow">03 / Inside</p><h2>2,000+ how-to books and manuals</h2><p class="body">Water, power, shelter, medicine, repair. The ones people kept.</p></div>
-        <div class="layer"><p class="eyebrow">04 / Inside</p><h2>North America maps</h2><p class="body">Roads, terrain, towns, in the map viewer built into the drive. No signal needed.</p></div>
-        <div class="layer"><p class="eyebrow">05 / Outside</p><h2>USB-C, uncovered</h2><p class="body">Pull the cap and it's ready. Plugs into anything made this decade: laptop, phone, tablet.</p></div>
-        <div class="layer"><p class="eyebrow">06 / Outside</p><h2>Capped like a marker</h2><p class="body">The cap clicks onto the back while you use it, so you can't lose it. Four spring-loaded balls hold it, front or back.</p></div>
-        <div class="layer"><p class="eyebrow">07 / Inside</p><h2>Every part. Nothing extra.</h2><p class="body">55 grams of steel, four Torx screws, one board. The cap and its clip are a single machined piece.</p></div>
-        <div class="layer end"><h2>When the grid is down, this isn't.</h2><p class="eyebrow">No internet. No account. No AI.</p></div>
+        <div class="layer"><p class="eyebrow">01 / Inside</p><h2>256 GB. One chip.</h2></div>
+        <div class="layer"><p class="eyebrow">02 / Inside</p><h2>English Wikipedia</h2><p class="body">6.8 million articles. Offline.</p></div>
+        <div class="layer"><p class="eyebrow">03 / Inside</p><h2>2,000+ books and manuals</h2></div>
+        <div class="layer"><p class="eyebrow">04 / Inside</p><h2>North America maps</h2><p class="body">Offline map viewer.</p></div>
+        <div class="layer"><p class="eyebrow">05 / Outside</p><h2>USB-C</h2><p class="body">Laptop, phone, tablet.</p></div>
+        <div class="layer"><p class="eyebrow">06 / Outside</p><h2>Cap posts on the back</h2></div>
+        <div class="layer"><p class="eyebrow">07 / Inside</p><h2>Every part</h2><p class="body">Steel body. Four screws. One board.</p></div>
+        <div class="layer end"><h2>Blackstart</h2><p class="eyebrow">256 GB · USB-C · Solid steel</p></div>
       </div>
     </div>
     <div class="steps" aria-hidden="true">
@@ -286,22 +286,22 @@ footer span{user-select:all}
       <div class="step" data-name="Books and manuals"></div>
       <div class="step" data-name="Maps"></div>
       <div class="step" data-name="USB-C"></div>
-      <div class="step" data-name="Capped like a marker"></div>
+      <div class="step" data-name="Cap"></div>
       <div class="step" data-name="Every part"></div>
-      <div class="step" data-name="When the grid is down"></div>
+      <div class="step" data-name="Blackstart"></div>
     </div>
   </div>
 
   <section class="sec" id="library" aria-labelledby="lib-h">
     <div class="wrap">
-      <p class="eyebrow">Blackstart</p>
+      <p class="eyebrow">Library</p>
       <h2 class="big" id="lib-h">The most capable Babel Drive.</h2>
-      <p class="lede">The whole library on one drive: every article of English Wikipedia and all of wikiHow, plus thousands of how-to books and manuals and maps of North America. Offline, searchable, and readable on any laptop, phone or tablet.</p>
+      <p class="lede">English Wikipedia, wikiHow, 2,000+ books and manuals, and maps of North America. Offline.</p>
       <ul class="lib">
-        <li><b>English Wikipedia</b><span>All 6.8 million articles, with pictures.</span></li>
-        <li><b>wikiHow</b><span>Step-by-step guides for nearly everything.</span></li>
-        <li><b>Books and manuals</b><span>2,000+ on water, power, shelter, medicine and repair.</span></li>
-        <li><b>Maps</b><span>North America. Roads, terrain, towns. No signal needed.</span></li>
+        <li><b>English Wikipedia</b><span>6.8 million articles, with pictures.</span></li>
+        <li><b>wikiHow</b><span>Step-by-step guides.</span></li>
+        <li><b>Books and manuals</b><span>2,000+</span></li>
+        <li><b>Maps</b><span>North America.</span></li>
       </ul>
     </div>
   </section>
@@ -310,83 +310,82 @@ footer span{user-select:all}
     <div class="wrap">
       <div class="head">
         <div>
-          <p class="eyebrow">On the drive</p>
+          <p class="eyebrow">Software</p>
           <h2 class="big" id="od-h">Plug it in. Open Library.</h2>
         </div>
-        <p class="lede">Blackstart carries its own programs. Double-click Open Library and the whole library opens in your web browser, running on your own computer: one search box, Wikipedia with pictures, and maps you can pan and zoom. Nothing to install. No internet. No account.</p>
+        <p class="lede">Search, Wikipedia and maps open in your browser. No install. No internet. No account.</p>
       </div>
       <ul class="progs">
-        <li><b>Search</b><span>Type a word and search Wikipedia, the dictionary, the how-to archives and the Q&amp;A sites, plus a catalog of every book and manual.</span></li>
-        <li><b>Map viewer</b><span>North America, offline. Pan and zoom roads, terrain and towns with no signal at all.</span></li>
-        <li><b>Runs on anything</b><span>Launchers for Mac, Windows and Linux, and the Kiwix app for Android. Every file is in an open format, so it opens without our programs too.</span></li>
+        <li><b>Search</b><span>Wikipedia, dictionary, how-to and Q&amp;A archives, books and manuals.</span></li>
+        <li><b>Map viewer</b><span>North America, offline.</span></li>
+        <li><b>Runs on</b><span>Mac, Windows, Linux, Android.</span></li>
       </ul>
       <figure class="tree" aria-label="The folders on a Blackstart drive">
-        <figcaption class="tree-bar"><span><b>BLACKSTART</b> · 256 GB · USB-C</span><span class="key">Programs you double-click</span></figcaption>
+        <figcaption class="tree-bar"><span><b>BLACKSTART</b> · 256 GB · USB-C</span><span class="key">Programs</span></figcaption>
         <div class="tree-body" role="list">
-          <div class="r dir"><span class="n">BLACKSTART/</span><span class="d">256 GB drive</span></div>
-          <div class="r p" style="--i:0"><span class="n"><i>├── </i>START.html</span><span class="d">Library home. Search every book and manual, browse all 11 subjects</span></div>
-          <div class="r p" style="--i:0"><span class="n"><i>├── </i>Open Library (Mac).command</span><span class="d">Double-click: Wikipedia, the maps and search open in your browser</span></div>
-          <div class="r p" style="--i:0"><span class="n"><i>├── </i>Open Library (Windows).bat</span><span class="d">The same on Windows</span></div>
-          <div class="r p" style="--i:0"><span class="n"><i>├── </i>open-library-linux.sh</span><span class="d">The same on Linux and Raspberry Pi</span></div>
-          <div class="r dir" style="--i:0"><span class="n"><i>├── </i>apps/</span><span class="d">The programs</span></div>
-          <div class="r p" style="--i:1"><span class="n"><i>│   ├── </i>kiwix-serve/</span><span class="d">The reader the launchers start, for every computer</span></div>
-          <div class="r p" style="--i:1"><span class="n"><i>│   ├── </i>macos/  windows/  linux/</span><span class="d">Kiwix desktop apps, if you prefer an app window</span></div>
-          <div class="r p" style="--i:1"><span class="n"><i>│   └── </i>android/</span><span class="d">Kiwix for Android phones and tablets</span></div>
+          <div class="r dir"><span class="n">BLACKSTART/</span><span class="d"></span></div>
+          <div class="r p" style="--i:0"><span class="n"><i>├── </i>START.html</span><span class="d">Library home</span></div>
+          <div class="r p" style="--i:0"><span class="n"><i>├── </i>Open Library (Mac).command</span><span class="d">Opens the library</span></div>
+          <div class="r p" style="--i:0"><span class="n"><i>├── </i>Open Library (Windows).bat</span><span class="d">Windows</span></div>
+          <div class="r p" style="--i:0"><span class="n"><i>├── </i>open-library-linux.sh</span><span class="d">Linux</span></div>
+          <div class="r dir" style="--i:0"><span class="n"><i>├── </i>apps/</span><span class="d"></span></div>
+          <div class="r p" style="--i:1"><span class="n"><i>│   ├── </i>kiwix-serve/</span><span class="d">Reader</span></div>
+          <div class="r p" style="--i:1"><span class="n"><i>│   ├── </i>macos/  windows/  linux/</span><span class="d">Desktop apps</span></div>
+          <div class="r p" style="--i:1"><span class="n"><i>│   └── </i>android/</span><span class="d">Android app</span></div>
           <div class="r dir" style="--i:0"><span class="n"><i>├── </i>library/</span><span class="d"><em>224 GB</em></span></div>
-          <div class="r dir" style="--i:1"><span class="n"><i>│   ├── </i>wikipedia/</span><span class="d">Wikipedia and the other reference archives</span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wikipedia_en_all_maxi.zim</span><span class="d">English Wikipedia, every article, with pictures<em>127 GB</em></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>maps_en_north-america.zim</span><span class="d">Maps of North America for the map viewer<em>23 GB</em></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wiktionary_en_all.zim</span><span class="d">The English dictionary<em>9 GB</em></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wikibooks, wikivoyage, …</span><span class="d">Textbooks, travel guides, Appropedia, medical wiki, World Factbook<em>25 GB</em></span></div>
-          <div class="r" style="--i:2"><span class="n"><i>│   │   └── </i>29 Q&amp;A archives</span><span class="d">Home repair, electronics, gardening, car repair, physics and more<em>14 GB</em></span></div>
-          <div class="r" style="--i:1"><span class="n"><i>│   ├── </i>books/</span><span class="d">250 classic books, each as a web page and an EPUB<em>10 GB</em></span></div>
-          <div class="r" style="--i:1"><span class="n"><i>│   ├── </i>manuals/</span><span class="d">Government field manuals (PDF)</span></div>
-          <div class="r" style="--i:1"><span class="n"><i>│   └── </i>historical/</span><span class="d">1,800+ old how-to books and USDA bulletins, one folder per subject<em>26 GB</em></span></div>
-          <div class="r" style="--i:0"><span class="n"><i>├── </i>SOURCES.csv</span><span class="d">Where every file came from, and its license</span></div>
-          <div class="r" style="--i:0"><span class="n"><i>├── </i>CHECK/</span><span class="d">A fingerprint for every file, to confirm nothing changed</span></div>
-          <div class="r" style="--i:0"><span class="n"><i>└── </i>README.txt</span><span class="d">How to open it on any device</span></div>
+          <div class="r dir" style="--i:1"><span class="n"><i>│   ├── </i>wikipedia/</span><span class="d"></span></div>
+          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wikipedia_en_all_maxi.zim</span><span class="d">English Wikipedia<em>127 GB</em></span></div>
+          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>maps_en_north-america.zim</span><span class="d">North America maps<em>23 GB</em></span></div>
+          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wiktionary_en_all.zim</span><span class="d">Dictionary<em>9 GB</em></span></div>
+          <div class="r" style="--i:2"><span class="n"><i>│   │   ├── </i>wikibooks, wikivoyage, …</span><span class="d">Wikibooks, Wikivoyage, Appropedia, more<em>25 GB</em></span></div>
+          <div class="r" style="--i:2"><span class="n"><i>│   │   └── </i>29 Q&amp;A archives</span><span class="d">Q&amp;A archives<em>14 GB</em></span></div>
+          <div class="r" style="--i:1"><span class="n"><i>│   ├── </i>books/</span><span class="d">250 books<em>10 GB</em></span></div>
+          <div class="r" style="--i:1"><span class="n"><i>│   ├── </i>manuals/</span><span class="d">Field manuals</span></div>
+          <div class="r" style="--i:1"><span class="n"><i>│   └── </i>historical/</span><span class="d">1,800+ how-to books<em>26 GB</em></span></div>
+          <div class="r" style="--i:0"><span class="n"><i>├── </i>SOURCES.csv</span><span class="d">Sources and licenses</span></div>
+          <div class="r" style="--i:0"><span class="n"><i>├── </i>CHECK/</span><span class="d">Checksums</span></div>
+          <div class="r" style="--i:0"><span class="n"><i>└── </i>README.txt</span><span class="d">Instructions</span></div>
         </div>
       </figure>
-      <p class="tree-foot">Plain folders, nothing hidden. Copy it to every computer you own, and check every file against its fingerprint any time.</p>
+    </div>
+  </section>
+
+  <section class="sec film" id="film" aria-labelledby="film-h">
+    <div class="wrap">
+      <div class="film-head"><h2 class="eyebrow" id="film-h">Film</h2><p>0:43 · Sound on</p></div>
+      <div class="player" id="player">
+        <video id="film-video" src="babel-drive-film.mp4" poster="babel-drive-film-poster.jpg" preload="metadata" playsinline></video>
+        <button type="button" class="play" id="film-play"><i></i>Play</button>
+      </div>
     </div>
   </section>
 
   <figure class="still life"><img src="life-slate.jpg" alt="Blackstart, capped, on dark slate" loading="lazy" decoding="async"></figure>
 
-  <section class="sec film" id="film" aria-labelledby="film-h">
-    <div class="wrap">
-      <div class="film-head"><div><p class="eyebrow">The film</p><h2 id="film-h">When the grid goes down.</h2></div><p>0:43 · Sound on</p></div>
-      <div class="player" id="player">
-        <video id="film-video" src="babel-drive-film.mp4" poster="babel-drive-film-poster.jpg" preload="metadata" playsinline></video>
-        <button type="button" class="play" id="film-play"><i></i>Play the film</button>
-      </div>
-    </div>
-  </section>
-
   <section class="sec gallery" id="gallery" aria-labelledby="gal-h">
     <div class="wrap">
-      <h2 class="eyebrow" id="gal-h">Every angle</h2>
+      <h2 class="eyebrow" id="gal-h">Gallery</h2>
       <div class="grid">
         <figure class="wide"><img src="gallery-capped.jpg" alt="Blackstart, capped, three-quarter view" loading="lazy" decoding="async"><figcaption>Capped</figcaption></figure>
         <figure><img src="gallery-capoff.jpg" alt="The cap pulled off, USB-C plug exposed" loading="lazy" decoding="async"><figcaption>Cap off</figcaption></figure>
-        <figure><img src="gallery-posted.jpg" alt="The cap clicked onto the back while in use" loading="lazy" decoding="async"><figcaption>Cap on the back, in use</figcaption></figure>
-        <figure><img src="gallery-top.jpg" alt="Top view, the flat steel plate with the logo" loading="lazy" decoding="async"><figcaption>Head on</figcaption></figure>
-        <figure><img src="gallery-exploded.jpg" alt="Taken apart: body, board, thermal pad, cover, screws and cap" loading="lazy" decoding="async"><figcaption>Every part</figcaption></figure>
+        <figure><img src="gallery-posted.jpg" alt="The cap clicked onto the back while in use" loading="lazy" decoding="async"><figcaption>Cap posted</figcaption></figure>
+        <figure><img src="gallery-top.jpg" alt="Top view, the flat steel plate with the logo" loading="lazy" decoding="async"><figcaption>Top</figcaption></figure>
+        <figure><img src="gallery-exploded.jpg" alt="Taken apart: body, board, thermal pad, cover, screws and cap" loading="lazy" decoding="async"><figcaption>Exploded</figcaption></figure>
       </div>
     </div>
   </section>
 
   <section class="pair" aria-label="In use">
-    <figure><img src="life-desk.jpg" alt="Plugged into a laptop, the cap clicked onto the back" loading="lazy" decoding="async"><figcaption>Cap on the back while it works</figcaption></figure>
-    <figure><img src="life-bench.jpg" alt="The cap pulled off, USB-C plug ready" loading="lazy" decoding="async"><figcaption>Cap off, plug ready</figcaption></figure>
+    <figure><img src="life-desk.jpg" alt="Plugged into a laptop, the cap clicked onto the back" loading="lazy" decoding="async"><figcaption>In use</figcaption></figure>
+    <figure><img src="life-bench.jpg" alt="The cap pulled off, USB-C plug ready" loading="lazy" decoding="async"><figcaption>Cap off</figcaption></figure>
   </section>
 
-  <figure class="still"><img src="babel-drive-parts.jpg" alt="Every part of the Blackstart laid out: steel body, cover, four Torx screws, click balls, thermal pad, the 256 GB board with its USB-C plug, and the cap with its clip" loading="lazy" decoding="async"><figcaption>Every part, laid out. Four screws open it.</figcaption></figure>
+  <figure class="still"><img src="babel-drive-parts.jpg" alt="Every part of the Blackstart laid out: steel body, cover, four Torx screws, click balls, thermal pad, the 256 GB board with its USB-C plug, and the cap with its clip" loading="lazy" decoding="async"><figcaption>Parts</figcaption></figure>
 
   <section class="sec" id="made">
     <div class="wrap two">
-      <div><p class="eyebrow">Built</p><h3>Solid steel, small batches.</h3><p class="body">Every Blackstart is machined from solid stainless steel and put together by hand, a small batch at a time. The cap and its clip are one piece, cut to sit flush with the top.</p></div>
-      <div><p class="eyebrow">Kept current</p><h3>A lifetime of updates.</h3><p class="body">Every purchase comes with a lifetime of updates. Whenever we update the library, you get the new version.</p></div>
+      <div><p class="eyebrow">Build</p><h3>Solid steel, small batches.</h3><p class="body">Machined from solid stainless steel. Cap and clip are one piece.</p></div>
+      <div><p class="eyebrow">Updates</p><h3>A lifetime of updates.</h3><p class="body">Included with every purchase.</p></div>
     </div>
   </section>
 
@@ -396,15 +395,15 @@ footer span{user-select:all}
       <dl>
         <div><dt>Capacity</dt><dd>256 GB</dd></div>
         <div><dt>Connector</dt><dd>USB-C</dd></div>
-        <div><dt>Size</dt><dd>44.7 × 20.4 × 9 mm with the cap on</dd></div>
+        <div><dt>Size</dt><dd>44.7 × 20.4 × 9 mm, capped</dd></div>
         <div><dt>Weight</dt><dd>55 g</dd></div>
         <div><dt>Body</dt><dd>Solid 316L stainless steel, bead-blasted</dd></div>
         <div><dt>Cap and clip</dt><dd>One piece of 17-4PH stainless steel</dd></div>
         <div><dt>Works with</dt><dd>Windows, macOS, Linux, Android, and iPad or iPhone with USB-C</dd></div>
-        <div><dt>Library</dt><dd>Offline. No account, no internet, no AI.</dd></div>
-        <div><dt>Programs</dt><dd>Search and map viewer for Mac, Windows and Linux, built in. Kiwix app for Android.</dd></div>
-        <div><dt>Updates</dt><dd>For life, whenever the library is updated</dd></div>
-        <div><dt>Made</dt><dd>In small batches</dd></div>
+        <div><dt>Library</dt><dd>Offline</dd></div>
+        <div><dt>Programs</dt><dd>Search, map viewer. Mac, Windows, Linux, Android.</dd></div>
+        <div><dt>Updates</dt><dd>Lifetime</dd></div>
+        <div><dt>Made</dt><dd>Small batches</dd></div>
       </dl>
     </div>
   </section>
@@ -413,13 +412,13 @@ footer span{user-select:all}
     <div class="faq-in">
       <h2 class="eyebrow" id="faq-h">FAQ</h2>
       <dl>
-        <div><dt>How it opens</dt><dd>Plug it in and double-click Open Library (Mac, Windows or Linux). Your browser opens the library: search, Wikipedia, maps. On a phone, open START.html from the Files app, or use the free Kiwix app.</dd></div>
-        <div><dt>Waitlist</dt><dd>Blackstart is machined in small batches. Join the waitlist and you get one email when the next batch opens. No payment until then.</dd></div>
-        <div><dt>Shipping</dt><dd>Ships from the US. Free worldwide. Tracked.</dd></div>
-        <div><dt>Returns</dt><dd>30 days, any reason. The drive comes back, the money goes back.</dd></div>
-        <div><dt>Updates</dt><dd>For life. Every time we update the library, you can download the new version, or have a refreshed drive sent at cost.</dd></div>
-        <div><dt>Download</dt><dd>Same library, $49. You bring the 256 GB drive. One file, verified.</dd></div>
-        <div><dt>Privacy</dt><dd>No account. No telemetry. Nothing phones home, because nothing can.</dd></div>
+        <div><dt>How it opens</dt><dd>Double-click Open Library (Mac, Windows, Linux). On a phone, open START.html or use Kiwix.</dd></div>
+        <div><dt>Waitlist</dt><dd>One email when the next batch opens. No payment until then.</dd></div>
+        <div><dt>Shipping</dt><dd>From the US. Free worldwide. Tracked.</dd></div>
+        <div><dt>Returns</dt><dd>30 days.</dd></div>
+        <div><dt>Updates</dt><dd>Lifetime. Download each new library, or get a refreshed drive at cost.</dd></div>
+        <div><dt>Download</dt><dd>Same library, $49. Bring your own 256 GB drive.</dd></div>
+        <div><dt>Privacy</dt><dd>No account. No telemetry.</dd></div>
       </dl>
     </div>
   </section>
@@ -441,7 +440,7 @@ footer span{user-select:all}
   <div class="co-grid">
     <form id="co-form" novalidate>
       <h2 id="co-h">Join the waitlist</h2>
-      <p class="co-lede">Blackstart is machined in small batches. Leave your email and you'll hear first when the next batch opens. No payment now.</p>
+      <p class="co-lede">Made in small batches. One email when the next batch opens. No payment now.</p>
       <fieldset>
         <legend>Format</legend>
         <div class="co-pick" role="radiogroup" aria-label="Format">
@@ -454,13 +453,13 @@ footer span{user-select:all}
         <label class="sr">Email<input type="email" name="email" id="co-email" autocomplete="email" inputmode="email" placeholder="you@example.com" required></label>
       </fieldset>
       <button type="submit" class="add" id="co-go">Join the waitlist</button>
-      <p class="co-note">One email when your batch is ready. Never shared, never sold.</p>
+      <p class="co-note">Never shared.</p>
       <p class="co-err" id="co-err" role="alert" hidden></p>
     </form>
     <div class="co-done" id="co-done" hidden tabindex="-1">
       <h2>You're on the list.</h2>
-      <p class="co-lede">We'll email <b id="co-who"></b> when the next batch of Blackstart opens. Nothing to pay until then.</p>
-      <button type="button" class="co-back" id="co-close">Back to Blackstart</button>
+      <p class="co-lede">We'll email <b id="co-who"></b> when the next batch opens.</p>
+      <button type="button" class="co-back" id="co-close">Back</button>
     </div>
     <aside class="co-sum" aria-label="Your reservation">
       <div class="co-item"><img src="babel-drive-thumb.jpg" alt="Blackstart drive"><div><b>Blackstart</b><span id="co-what">256 GB USB-C drive</span></div></div>
@@ -1066,15 +1065,15 @@ const SPIN = (Math.PI * 2) / 16;   // one turn every 16 s, clockwise seen from a
 const focus = new THREE.Vector3();
 const labelsEl = document.getElementById('labels'), leaders = document.getElementById('leaders');
 const LABELS = [   // part, point in that part's own frame (model mm), name, note
-  ['cap', [20.8, 9, 6], 'Cap and clip', 'one machined piece'],
-  ['screw0', [0, 0.3, 0], 'Four Torx screws', 'M1.6, flush'],
-  ['cover', [21, 8.4, 6], 'Cover', 'seals the board in'],
-  ['pad', [24, 6.95, 4], 'Thermal pad', 'presses the board down'],
-  [null, [22.4, 5.9, 3], '256 GB flash chip', 'the whole library'],
+  ['cap', [20.8, 9, 6], 'Cap and clip', 'one piece'],
+  ['screw0', [0, 0.3, 0], 'Torx screws', 'M1.6'],
+  ['cover', [21, 8.4, 6], 'Cover', ''],
+  ['pad', [24, 6.95, 4], 'Thermal pad', ''],
+  [null, [22.4, 5.9, 3], 'Flash chip', '256 GB'],
   [null, [13.15, 5.75, 1.5], 'Controller', ''],
-  ['plug', [38, 5.7, 0], 'USB-C plug', 'held in steel on four sides'],
-  ['plunger0', [1.5, 4.5, 9.8], 'Click balls', 'four, one each side at each end'],
-  ['body', [5, 4.5, 10.2], 'Steel body', '316L, machined from solid'],
+  ['plug', [38, 5.7, 0], 'USB-C plug', ''],
+  ['plunger0', [1.5, 4.5, 9.8], 'Click balls', ''],
+  ['body', [5, 4.5, 10.2], 'Steel body', '316L'],
 ];
 const labelEls = LABELS.map(([, , name, note]) => {
   const d = document.createElement('div'); d.className = 'lab';
