@@ -18,7 +18,7 @@ export function start(root) {
   renderer.setPixelRatio(Math.min(devicePixelRatio || 1, coarse ? 1.75 : 2));
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.0;
+  renderer.toneMappingExposure = 1.15;
   renderer.setClearColor(0x000000, 0);
 
   const scene = new THREE.Scene();
@@ -28,17 +28,19 @@ export function start(root) {
   // so flat tops read bright and the sides fall off darker, like the renders
   {
     const pm = new THREE.PMREMGenerator(renderer), env = new THREE.Scene();
-    env.background = new THREE.Color(0.06, 0.062, 0.066);
+    env.background = new THREE.Color(0.012, 0.012, 0.014);
     const box = (w, h, x, y, z, k) => {
       const m = new THREE.Mesh(new THREE.PlaneGeometry(w, h), new THREE.MeshBasicMaterial({ color: new THREE.Color(k, k, k), side: THREE.DoubleSide }));
       m.position.set(x, y, z); m.lookAt(0, 0, 0); env.add(m);
     };
-    box(110, 46, 0, 22, -46, 2.4);   // big soft wall behind and above: what the flat tops mirror
-    box(70, 50, 0, 44, 0, 1.2);      // overhead
+    box(110, 24, 0, 34, -46, 1.5);   // high wall behind: the top plate mirrors it
+    box(110, 18, 0, 12, -46, 0.45);  // low wall behind: the top fades darker toward the front
+    box(26, 60, -40, 16, -34, 1.1);  // tall strip, back left
+    box(70, 50, 0, 44, 0, 0.35);     // overhead
     box(14, 46, -42, 12, 14, 1.3);   // tall strip, front left
     box(30, 18, 40, 8, -10, 0.8);    // fill, right
-    box(90, 90, 0, -30, 0, 0.75);    // the white table below
-    box(40, 10, 0, 4, 44, 0.35);     // low front bounce
+    box(90, 90, 0, -30, 0, 0.05);    // black table below
+    box(60, 12, 0, 2, 44, 1.8);      // low front strip: the long side's sheen
     scene.environment = pm.fromScene(env, 0.035).texture; pm.dispose();
   }
 
