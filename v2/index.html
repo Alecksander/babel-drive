@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Blackstart · Babel Drive</title>
+<meta name="description" content="Blackstart is a 256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, and North America maps. Works offline on any computer.">
+<link rel="canonical" href="https://babel.petersenventures.com/v2/">
+<meta property="og:type" content="product">
+<meta property="og:title" content="Blackstart · Babel Drive">
+<meta property="og:description" content="English Wikipedia, wikiHow, 2,000+ books and manuals, and North America maps. 256 GB. Solid steel. Offline.">
+<meta property="og:image" content="https://babel.petersenventures.com/v2/img/og.jpg">
+<meta property="og:url" content="https://babel.petersenventures.com/v2/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='3' y='10' width='26' height='12' rx='2.5' fill='%230b0b0c'/%3E%3Crect x='25' y='14' width='5' height='4' rx='1' fill='%23ea5a1a'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
+<link rel="preload" as="image" href="img/hero-1600.jpg" imagesrcset="img/hero-1000.jpg 1000w, img/hero-1600.jpg 1600w, img/hero-2400.jpg 2400w" imagesizes="(min-width: 900px) 62vw, 100vw" fetchpriority="high">
+<script>document.documentElement.classList.add("js")</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Product","name":"Blackstart","brand":{"@type":"Brand","name":"Babel Drive"},
+"description":"256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, and North America maps. Works offline.",
+"image":"https://babel.petersenventures.com/v2/img/hero-1600.jpg",
+"offers":[{"@type":"Offer","name":"Blackstart 256 GB drive","price":"199","priceCurrency":"USD","availability":"https://schema.org/PreOrder"},
+{"@type":"Offer","name":"Blackstart download","price":"49","priceCurrency":"USD","availability":"https://schema.org/PreOrder"}]}
+</script>
+<style>
+:root{
+  --bg:#ffffff; --bg2:#f4f4f2; --ink:#0b0b0c; --ink2:#36373a; --mute:#66686c; --line:#e6e6e3; --line2:#d3d3cf;
+  --signal:#ea5a1a; --night:#0b0b0c; --night2:#a3a5a8;
+  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --wide:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --gut:max(20px,4vw); --max:1320px; --head:60px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--head) + 12px)}
+body{margin:0;background:var(--bg);color:var(--ink2);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg,video,canvas{display:block;max-width:100%}
+img{height:auto}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+[hidden]{display:none!important}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.wrap{max-width:var(--max);margin-inline:auto;padding-left:max(var(--gut),env(safe-area-inset-left,0px));padding-right:max(var(--gut),env(safe-area-inset-right,0px))}
+.sec{padding-block:clamp(88px,11vw,168px)}
+.eyebrow{margin:0 0 20px;font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--mute)}
+h1,h2,h3{color:var(--ink);font-family:var(--sans);margin:0;text-wrap:balance}
+h2{font-weight:500;font-size:clamp(34px,4.8vw,68px);line-height:1.02;letter-spacing:-.038em;max-width:15ch}
+.lede{margin:24px 0 0;max-width:46ch;font-size:clamp(17px,1.35vw,19px);line-height:1.5;color:var(--ink2);text-wrap:pretty}
+.mono{font-family:var(--mono)}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(255,255,255,.86);-webkit-backdrop-filter:saturate(1.6) blur(14px);backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid transparent;transition:border-color .25s}
+.top.lined{border-bottom-color:var(--line)}
+.top .wrap{height:var(--head);display:flex;align-items:center;justify-content:space-between;gap:24px}
+.mark{font:700 13px/1 var(--wide);font-stretch:125%;letter-spacing:.24em;color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a{font-size:14px;color:var(--ink2);text-decoration:none}
+.nav a:hover{color:var(--ink)}
+.nav a.btn,.nav a.btn:hover{color:#fff}
+.hp{display:none;font:500 14px var(--sans);color:var(--ink);white-space:nowrap}
+.hp em{font:400 13px var(--mono);font-style:normal;color:var(--mute);margin-left:6px}
+@media (min-width:1100px){.top.lined .hp{display:inline}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:44px;padding:0 20px;border:0;border-radius:999px;background:var(--ink);color:#fff;font:500 15px/1 var(--sans);text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s,transform .15s}
+.btn:hover{background:#26272a}
+.btn:active{transform:translateY(1px)}
+.btn.sm{height:36px;padding:0 16px;font-size:14px}
+@media (max-width:899px){.nav a:not(.btn){display:none}.nav .hp{display:none!important}}
+
+/* hero */
+.hero{padding-top:clamp(28px,5vw,72px);padding-bottom:clamp(16px,2vw,32px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero h1{font-weight:500;font-size:clamp(56px,8.4vw,128px);line-height:.92;letter-spacing:-.055em}
+.hero .lede{margin-top:22px;max-width:30ch}
+.hero-media{margin:0 calc(-1 * var(--gut)) 0 0}
+.hero-media img{width:100%;aspect-ratio:1.6;object-fit:cover}
+.specline{list-style:none;margin:clamp(28px,4vw,56px) 0 0;padding:18px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:10px 34px;font:400 13px/1.2 var(--mono);color:var(--mute)}
+.specline li b{font-weight:500;color:var(--ink)}
+@media (max-width:899px){
+  .hero-grid{grid-template-columns:minmax(0,1fr)}
+  .hero-media{order:-1;margin:0 -4px}
+  .hero .lede{max-width:34ch}
+}
+
+/* waitlist form */
+.join{margin-top:30px;max-width:440px}
+.fmt{display:flex;gap:8px;margin-bottom:12px}
+.fmt label{position:relative;cursor:pointer}
+.fmt input{position:absolute;opacity:0;width:1px;height:1px;pointer-events:none}
+.fmt span{display:inline-flex;align-items:baseline;gap:8px;height:36px;padding:0 14px;align-items:center;border:1px solid var(--line2);border-radius:999px;font-size:14px;color:var(--ink2);transition:border-color .15s,background .15s}
+.fmt em{font:400 13px var(--mono);font-style:normal;color:var(--mute)}
+.fmt input:checked + span{border-color:var(--ink);color:var(--ink);background:var(--bg2)}
+.fmt input:focus-visible + span{outline:2px solid var(--ink);outline-offset:2px}
+.field{display:flex;gap:8px;padding:6px;border:1px solid var(--line2);border-radius:999px;background:#fff;transition:border-color .15s}
+.field:focus-within{border-color:var(--ink)}
+.field input{flex:1;min-width:0;border:0;background:transparent;padding:0 14px;height:44px;font-size:16px;color:var(--ink)}
+.field input:focus{outline:none}
+.field input::placeholder{color:#8d8f93}
+.fine{margin:12px 0 0;font:400 13px/1.45 var(--mono);color:var(--mute)}
+.fine b{font-weight:500;color:var(--ink)}
+.err{margin:10px 0 0;font-size:14px;color:#b3261e}
+.ok{margin:0;padding:18px 20px;border:1px solid var(--line);border-radius:18px;background:var(--bg2)}
+.ok b{display:block;color:var(--ink);font-weight:500;font-size:17px}
+.ok span{font-size:14px;color:var(--mute)}
+
+/* sticky bar, phones */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:25;display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));
+  background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .3s ease}
+.bar.on{transform:none}
+.bar span{font:500 15px/1.2 var(--sans);color:var(--ink)}
+.bar em{font:400 13px var(--mono);font-style:normal;color:var(--mute);margin-left:8px}
+@media (min-width:900px){.bar{display:none}}
+
+/* library + capacity */
+.cap{margin-top:clamp(48px,6vw,80px)}
+.cap-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;font:400 13px/1 var(--mono);color:var(--mute);margin-bottom:14px}
+.cap-head b{font-weight:500;color:var(--ink)}
+.meter{display:flex;height:56px;border-radius:10px;overflow:hidden;background:var(--bg2);gap:2px}
+.meter i{display:block;height:100%;flex:0 0 auto;width:0;background:var(--ink);transition:width 1.1s cubic-bezier(.2,.7,.1,1)}
+.meter i:nth-child(2){background:#3b3c3f}.meter i:nth-child(3){background:#56585c}.meter i:nth-child(4){background:#76787c}
+.meter i:nth-child(5){background:#96989b}.meter i:nth-child(6){background:#b3b5b7}.meter i:nth-child(7){background:#c9cacc}
+.meter i.sw{background:var(--signal)}
+.legend{list-style:none;margin:22px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px 24px;font:400 13px/1.35 var(--mono);color:var(--mute)}
+.legend li{display:grid;grid-template-columns:10px minmax(0,1fr);gap:10px;align-items:start}
+.legend li::before{content:"";width:10px;height:10px;border-radius:3px;margin-top:3px;background:var(--c)}
+.legend b{display:block;font-weight:500;color:var(--ink)}
+.lib{list-style:none;margin:clamp(56px,7vw,96px) 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line)}
+.lib li{padding:26px 28px 30px 0;border-bottom:1px solid var(--line);min-width:0}
+.lib b{display:block;font:500 20px/1.25 var(--sans);letter-spacing:-.015em;color:var(--ink)}
+.lib span{display:block;margin-top:6px;color:var(--mute);font-size:15px}
+@media (max-width:899px){.legend{grid-template-columns:repeat(2,minmax(0,1fr))}.lib{grid-template-columns:repeat(2,minmax(0,1fr))}.lib li{padding:20px 16px 22px 0}.lib b{font-size:17px}.lib span{font-size:14px}}
+
+/* catalog search */
+.search{background:var(--bg2)}
+.find{margin-top:clamp(36px,5vw,56px);max-width:820px}
+.find .box{display:flex;align-items:center;gap:12px;height:68px;padding:0 22px;border-radius:18px;background:#fff;border:1px solid var(--line);box-shadow:0 1px 0 rgba(0,0,0,.02),0 12px 32px -18px rgba(0,0,0,.18)}
+.find .box:focus-within{border-color:var(--ink)}
+.find svg{flex:none;color:var(--mute)}
+.find input{flex:1;min-width:0;border:0;background:transparent;font-size:clamp(18px,1.6vw,22px);color:var(--ink);height:100%}
+.find input:focus{outline:none}
+.find .count{font:400 13px var(--mono);color:var(--mute);white-space:nowrap}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips button{height:34px;padding:0 14px;border:1px solid var(--line2);border-radius:999px;background:transparent;font-size:14px;color:var(--ink2);cursor:pointer}
+.chips button:hover{border-color:var(--ink);color:var(--ink)}
+.results{list-style:none;margin:22px 0 0;padding:0;border-top:1px solid var(--line2);min-height:420px}
+.results li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 20px;padding:14px 0;border-bottom:1px solid var(--line2);align-items:baseline}
+.results .t{color:var(--ink);font-size:16px;line-height:1.35;min-width:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.results .t mark{background:none;color:var(--ink);font-weight:600}
+.results .k{font:400 12px/1.3 var(--mono);color:var(--mute);text-align:right;white-space:nowrap}
+.results .none{display:block;color:var(--mute)}
+.find .note{margin:16px 0 0;font:400 13px/1.5 var(--mono);color:var(--mute)}
+@media (max-width:599px){.results li{grid-template-columns:minmax(0,1fr)}.results .k{text-align:left}.find .count{display:none}}
+
+/* software */
+.soft-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center}
+.facts{list-style:none;margin:36px 0 0;padding:0;border-top:1px solid var(--line)}
+.facts li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line);font-size:15px}
+.facts b{font:500 12px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.win{border-radius:14px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:0 30px 80px -40px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.04);font-size:13px}
+.win-bar{display:flex;align-items:center;gap:7px;height:38px;padding:0 14px;background:var(--bg2);border-bottom:1px solid var(--line)}
+.win-bar i{width:11px;height:11px;border-radius:50%;background:#dcdcd9}
+.win-bar span{margin-left:12px;flex:1;max-width:320px;height:24px;display:flex;align-items:center;justify-content:center;border-radius:7px;background:#fff;font:400 12px var(--mono);color:var(--mute)}
+.win-body{display:grid;grid-template-columns:170px minmax(0,1fr);min-height:400px}
+.win-side{padding:18px 0 18px 16px;border-right:1px solid var(--line);font-size:12.5px}
+.win-side p{margin:0 0 10px;font:500 11px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.win-side ul{list-style:none;margin:0;padding:0;display:grid;gap:7px;color:var(--ink2)}
+.win-side li.on{color:var(--ink);font-weight:500}
+.win-main{padding:18px 20px}
+.win-q{display:flex;align-items:center;gap:10px;height:38px;padding:0 12px;border:1px solid var(--line2);border-radius:9px;color:var(--ink)}
+.win-q kbd{margin-left:auto;font:400 11px var(--mono);color:var(--mute)}
+.win-n{margin:12px 0 8px;font:400 11.5px var(--mono);color:var(--mute)}
+.win-r{padding:11px 0;border-top:1px solid var(--line)}
+.win-r small{display:block;font:400 11px var(--mono);color:var(--mute);text-transform:uppercase;letter-spacing:.05em}
+.win-r b{display:block;margin-top:3px;font-weight:500;color:var(--ink);font-size:14px}
+.win-r p{margin:3px 0 0;color:var(--mute);font-size:12.5px;line-height:1.45}
+@media (max-width:899px){.soft-grid{grid-template-columns:minmax(0,1fr)}.facts li{grid-template-columns:100px minmax(0,1fr)}}
+@media (max-width:599px){.win-body{grid-template-columns:minmax(0,1fr)}.win-side{display:none}}
+.tree{margin-top:28px}
+.tree summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.tree summary::-webkit-details-marker{display:none}
+.tree summary::before{content:"+";display:inline-grid;place-items:center;width:20px;height:20px;border:1px solid var(--line2);border-radius:50%;font:400 14px/1 var(--mono)}
+.tree[open] summary::before{content:"−"}
+.tree pre{margin:18px 0 0;padding:20px 22px;overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--bg2);font:400 12.5px/1.75 var(--mono);color:var(--ink2)}
+.tree pre b{font-weight:500;color:var(--ink)}
+.tree pre i{font-style:normal;color:#a1a3a6}
+.tree pre em{font-style:normal;color:var(--signal)}
+
+
+/* compared */
+.tbl{margin-top:clamp(36px,5vw,56px);overflow-x:auto}
+.tbl table{width:100%;min-width:560px;border-collapse:collapse;font-size:15px}
+.tbl th,.tbl td{text-align:left;padding:16px 16px 16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl thead th{font:500 12px/1.4 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);border-bottom-color:var(--ink)}
+.tbl thead th:last-child{color:var(--ink)}
+.tbl tbody th{width:18%;font:500 12px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.tbl td{width:41%;color:var(--mute)}
+.tbl td:last-child{color:var(--ink);font-weight:500}
+.winfig .cap-row{padding-top:12px}
+@media (max-width:599px){
+  .tbl table{min-width:0}
+  .tbl thead{display:none}
+  .tbl tr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4px 16px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .tbl tbody th{grid-column:1/-1;width:auto;padding:0 0 4px;border:0}
+  .tbl td{width:auto;padding:0;border:0;font-size:14px}
+  .tbl td::before{content:attr(data-l);display:block;font:400 11px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:400}
+}
+.never{list-style:none;margin:clamp(40px,5vw,64px) 0 0;padding:18px 0 0;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:8px 32px;font:400 13px var(--mono);color:var(--mute)}
+.never b{font-weight:500;color:var(--ink)}
+
+/* full-bleed images */
+.bleed{margin:0}
+.bleed img{width:100%}
+.cap-row{display:flex;justify-content:space-between;gap:16px;padding-top:14px;font:400 13px/1.4 var(--mono);color:var(--mute)}
+.inuse img{aspect-ratio:16/9;object-fit:cover}
+
+/* design */
+.design-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,1.6vw,24px);margin-top:clamp(12px,1.6vw,24px)}
+.pair figure{margin:0;min-width:0}
+.pair img{width:100%;aspect-ratio:1.6;object-fit:cover;background:#fff}
+@media (max-width:699px){.pair{grid-template-columns:minmax(0,1fr)}}
+
+/* 3D viewer */
+.viewer{position:relative;margin-top:clamp(40px,6vw,88px);border-radius:22px;background:#fff;border:1px solid var(--line);overflow:hidden}
+.viewer canvas{width:100%;height:clamp(340px,52vw,620px);touch-action:pan-y;cursor:grab;outline:none;opacity:0;transition:opacity .8s ease}
+.viewer.live canvas{opacity:1}
+.viewer canvas.drag{cursor:grabbing}
+.viewer .vlabel{position:absolute;left:22px;top:20px;font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.viewer .vhint{position:absolute;right:22px;top:20px;font:400 12px var(--mono);color:var(--mute)}
+.states{position:absolute;left:50%;bottom:20px;transform:translateX(-50%);display:flex;gap:4px;padding:4px;border-radius:999px;background:rgba(255,255,255,.9);border:1px solid var(--line);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.states button{height:36px;padding:0 16px;border:0;border-radius:999px;background:transparent;font-size:14px;color:var(--ink2);cursor:pointer;white-space:nowrap}
+.states button[aria-pressed="true"]{background:var(--ink);color:#fff}
+@media (max-width:599px){.states button{padding:0 12px;font-size:13px}.viewer .vhint{display:none}}
+
+/* drawing */
+.draw-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,5vw,80px);align-items:center}
+.drawing{width:100%;height:auto;color:var(--ink)}
+.drawing text{font:400 11px var(--mono);fill:var(--ink);stroke:none;text-anchor:middle}
+.drawing text[text-anchor="start"]{text-anchor:start}
+.drawing .ext{opacity:.45}
+.drawing .ar{stroke:none}
+.dims{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 24px}
+.dims b{display:block;font:500 clamp(28px,3vw,40px)/1 var(--sans);letter-spacing:-.03em;color:var(--ink)}
+.dims span{display:block;margin-top:8px;font:400 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+@media (max-width:899px){.draw-grid{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:599px){.drawing text{font-size:19px}}
+
+/* parts */
+.parts-key{list-style:none;margin:0;padding:18px 0 0;display:flex;flex-wrap:wrap;gap:8px 28px;font:400 13px var(--mono);color:var(--mute)}
+.parts-key b{font-weight:500;color:var(--ink);margin-right:6px}
+
+/* film */
+.film{background:var(--night);color:var(--night2)}
+.film .eyebrow{color:var(--night2)}
+.film-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:22px}
+.film-head p{margin:0;font:400 13px var(--mono);color:var(--night2)}
+.player{position:relative;aspect-ratio:16/9;background:#000;border-radius:16px;overflow:hidden}
+.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:inline-flex;align-items:center;gap:12px;height:52px;padding:0 24px 0 20px;border:0;border-radius:999px;background:rgba(255,255,255,.92);color:var(--ink);font:500 15px var(--sans);cursor:pointer;transition:transform .2s,opacity .3s}
+.play:hover{transform:translate(-50%,-50%) scale(1.03)}
+.play i{width:0;height:0;border-left:11px solid var(--ink);border-top:7px solid transparent;border-bottom:7px solid transparent}
+.player.playing .play{opacity:0;pointer-events:none}
+
+/* promises */
+.three{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,4vw,56px)}
+.three li{border-top:1px solid var(--ink);padding-top:20px}
+.three b{display:block;font:500 clamp(22px,2vw,28px)/1.15 var(--sans);letter-spacing:-.02em;color:var(--ink)}
+.three span{display:block;margin-top:10px;color:var(--mute)}
+@media (max-width:799px){.three{grid-template-columns:minmax(0,1fr)}}
+
+/* specs */
+.specs{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px)}
+.specs dl{margin:0;border-top:1px solid var(--line)}
+.specs dl div{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,2fr);gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.specs dt{font:500 12px/1.6 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
+.specs dd{margin:0;min-width:0;color:var(--ink2)}
+@media (max-width:799px){.specs{grid-template-columns:minmax(0,1fr)}.specs dl div{grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:12px;padding:14px 0}.specs dt{font-size:11px}.specs dd{font-size:15px}}
+
+/* faq */
+.faq{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(24px,4vw,64px)}
+.qa{border-top:1px solid var(--line)}
+.qa details{border-bottom:1px solid var(--line)}
+.qa summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font:500 18px/1.35 var(--sans);letter-spacing:-.01em;color:var(--ink)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+";flex:none;font:300 22px/1 var(--sans);color:var(--mute);transition:transform .2s}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa p{margin:-4px 0 22px;max-width:62ch;color:var(--ink2)}
+@media (max-width:799px){.faq{grid-template-columns:minmax(0,1fr)}}
+
+/* end */
+.end{text-align:center;border-top:1px solid var(--line)}
+.end h2{margin-inline:auto;font-size:clamp(56px,8.4vw,128px);letter-spacing:-.055em;line-height:.92;max-width:none}
+.end .lede{margin-inline:auto}
+.end .join{margin:34px auto 0}
+.end .fmt{justify-content:center}
+.end img{margin:clamp(36px,5vw,64px) auto 0;width:min(820px,100%)}
+footer{border-top:1px solid var(--line);padding-block:28px calc(28px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;font:400 12.5px/1.6 var(--mono);color:var(--mute)}
+@media (max-width:899px){footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+
+/* entrance: images only, once */
+.js .rise{opacity:0;transform:translateY(16px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.1,1)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.js .rise{opacity:1;transform:none;transition:none}.meter i{transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="mark" href="#">BABEL DRIVE</a>
+    <nav class="nav" aria-label="Page">
+      <a href="#library">Library</a>
+      <a href="#software">Software</a>
+      <a href="#design">Design</a>
+      <a href="#specs">Specs</a>
+      <a href="#faq">FAQ</a>
+      <span class="hp">Blackstart <em>$199</em></span>
+      <a class="btn sm" href="#join" data-go-join>Join the waitlist</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow">Babel Drive</p>
+          <h1>Blackstart</h1>
+          <p class="lede">English Wikipedia, wikiHow, 2,000+ books and manuals, and North America maps. On a solid-steel USB-C drive.</p>
+          <form class="join" data-join novalidate>
+            <div class="fmt" role="radiogroup" aria-label="Format">
+              <label><input type="radio" name="fmt-a" value="drive" checked><span>256 GB Drive <em>$199</em></span></label>
+              <label><input type="radio" name="fmt-a" value="download"><span>Download <em>$49</em></span></label>
+            </div>
+            <div class="field">
+              <label class="sr" for="email-a">Email</label>
+              <input id="email-a" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Email address" required>
+              <button class="btn" type="submit">Join the waitlist</button>
+            </div>
+            <p class="fine"><b>Nothing due today.</b> One email when the next batch opens.</p>
+            <p class="err" role="alert" hidden></p>
+          </form>
+        </div>
+        <figure class="hero-media" style="margin-block:0">
+          <img src="img/hero-1600.jpg" srcset="img/hero-1000.jpg 1000w, img/hero-1600.jpg 1600w, img/hero-2400.jpg 2400w" sizes="(min-width: 900px) 62vw, 100vw" width="2400" height="1500" alt="Blackstart, a solid stainless steel USB-C drive with its flush cap on" fetchpriority="high">
+        </figure>
+      </div>
+      <ul class="specline" aria-label="Key specs">
+        <li><b>256 GB</b></li><li>USB-C</li><li>316L stainless</li><li>55 g</li><li>44.7 × 20.4 × 9 mm</li><li>Works offline</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="library" aria-labelledby="lib-h" style="padding-top:clamp(56px,7vw,112px)">
+    <div class="wrap">
+      <p class="eyebrow">Library</p>
+      <h2 id="lib-h">224.6 GB of reference. Offline.</h2>
+      <div class="cap" id="cap">
+        <div class="cap-head"><span><b>256 GB</b> drive</span><span>224.6 GB used</span></div>
+        <div class="meter" role="img" aria-label="How the 256 GB is used: Wikipedia 127.4 GB, historical books 25.5 GB, reference wikis 24.8 GB, maps 22.7 GB, Q&amp;A archives 13.9 GB, dictionary 9.2 GB, books, manuals and software 1.2 GB, 31.4 GB free"></div>
+        <ul class="legend" id="legend"></ul>
+      </div>
+      <ul class="lib">
+        <li><b>English Wikipedia</b><span>6.8 million articles, with pictures</span></li>
+        <li><b>wikiHow</b><span>Step-by-step guides</span></li>
+        <li><b>Books and manuals</b><span>2,000+ titles, PDF and EPUB</span></li>
+        <li><b>Maps</b><span>North America, offline</span></li>
+        <li><b>Q&amp;A</b><span>29 Stack Exchange archives</span></li>
+        <li><b>Reference</b><span>Wiktionary, Wikibooks, Wikivoyage, Wikisource, World Factbook</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec search" id="catalog" aria-labelledby="cat-h">
+    <div class="wrap">
+      <p class="eyebrow">Catalog</p>
+      <h2 id="cat-h">Search every title.</h2>
+      <div class="find">
+        <div class="box">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="8.5" cy="8.5" r="6"/><path d="M13 13l5 5"/></svg>
+          <label class="sr" for="q">Search the catalog</label>
+          <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Search 2,101 titles">
+          <span class="count" id="qcount"></span>
+        </div>
+        <div class="chips" aria-label="Examples">
+          <button type="button">canning</button><button type="button">radio</button><button type="button">first aid</button><button type="button">well</button><button type="button">bees</button><button type="button">welding</button>
+        </div>
+        <ul class="results" id="results" aria-live="polite"></ul>
+        <p class="note">Titles from the books, manuals and archives on the drive. Wikipedia and the archives add full-text search across millions of pages.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="software" aria-labelledby="soft-h">
+    <div class="wrap soft-grid">
+      <div>
+        <p class="eyebrow">Software</p>
+        <h2 id="soft-h">Plug it in. Open Library.</h2>
+        <p class="lede">Search, Wikipedia and maps open in your browser. No install. No internet. No account.</p>
+        <ul class="facts">
+          <li><b>Search</b><span>One box across every archive</span></li>
+          <li><b>Maps</b><span>North America map viewer</span></li>
+          <li><b>Runs on</b><span>Mac, Windows, Linux, Android</span></li>
+          <li><b>Formats</b><span>ZIM, PDF, EPUB, HTML. Open without our software too.</span></li>
+        </ul>
+        <details class="tree">
+          <summary>Files on the drive</summary>
+<pre><b>BLACKSTART/</b>
+<i>├─</i> <em>START.html</em>
+<i>├─</i> <em>Open Library (Mac).command</em>
+<i>├─</i> <em>Open Library (Windows).bat</em>
+<i>├─</i> <em>open-library-linux.sh</em>
+<i>├─</i> <b>apps/</b>             kiwix-serve, Kiwix apps
+<i>├─</i> <b>library/</b>          224.6 GB
+<i>│  ├─</i> wikipedia/      Wikipedia, maps, Q&amp;A, wikis
+<i>│  ├─</i> books/          EPUB, HTML
+<i>│  ├─</i> manuals/        PDF
+<i>│  └─</i> historical/     PDF, by subject
+<i>├─</i> SOURCES.csv       sources and licenses
+<i>├─</i> CHECK/            checksums
+<i>└─</i> README.txt</pre>
+        </details>
+      </div>
+      <figure class="winfig" style="margin:0"><div class="win rise" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i><span>localhost · Blackstart Library</span></div>
+        <div class="win-body">
+          <div class="win-side">
+            <p>Subjects</p>
+            <ul>
+              <li>Medicine &amp; Health</li><li>Farming &amp; Livestock</li><li class="on">Food &amp; Cooking</li><li>Building &amp; Woodworking</li><li>Trades &amp; Crafts</li><li>Engineering &amp; Machines</li><li>Survival &amp; Defense</li><li>Radio, Maps &amp; Navigation</li><li>School &amp; Children</li><li>Reference &amp; Science</li><li>Literature</li>
+            </ul>
+          </div>
+          <div class="win-main">
+            <div class="win-q"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="8.5" cy="8.5" r="6"/><path d="M13 13l5 5"/></svg>drinking water<kbd>return</kbd></div>
+            <p class="win-n">Wikipedia · Manuals · Q&amp;A · Books</p>
+            <div class="win-r"><small>Wikipedia</small><b>Water purification</b><p>Methods for making water safe to drink: boiling, filtration, chlorination, distillation.</p></div>
+            <div class="win-r"><small>Manual · EPA</small><b>Emergency Disinfection of Drinking Water</b></div>
+            <div class="win-r"><small>Manual · U.S. Army</small><b>TB MED 577 Sanitary Control and Surveillance of Field Water Supplies</b></div>
+            <div class="win-r"><small>Q&amp;A</small><b>Sustainable Living</b></div>
+          </div>
+        </div>
+      </div><figcaption class="cap-row"><span>Interface preview · Wi-Fi off</span><span>Open Library</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sec diy" aria-labelledby="diy-h" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Compared</p>
+      <h2 id="diy-h">Why not download it yourself?</h2>
+      <div class="tbl">
+        <table>
+          <thead><tr><th scope="col"><span class="sr">Step</span></th><th scope="col">Do it yourself</th><th scope="col">Blackstart</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Content</th><td data-l="Do it yourself">2,100+ files from dozens of sources</td><td data-l="Blackstart">Preloaded</td></tr>
+            <tr><th scope="row">Download</th><td data-l="Do it yourself">224.6 GB</td><td data-l="Blackstart">None</td></tr>
+            <tr><th scope="row">Software</th><td data-l="Do it yourself">Find, install and set up a reader on each computer</td><td data-l="Blackstart">Double-click Open Library</td></tr>
+            <tr><th scope="row">Maps</th><td data-l="Do it yourself">Separate download and viewer</td><td data-l="Blackstart">Included</td></tr>
+            <tr><th scope="row">Checked</th><td data-l="Do it yourself">Up to you</td><td data-l="Blackstart">Every file checksummed</td></tr>
+            <tr><th scope="row">Housing</th><td data-l="Do it yourself">Plastic stick</td><td data-l="Blackstart">Solid 316L steel</td></tr>
+            <tr><th scope="row">Updates</th><td data-l="Do it yourself">Repeat all of it</td><td data-l="Blackstart">Lifetime, included</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <figure class="bleed inuse">
+    <img class="rise" src="img/desk-1600.jpg" srcset="img/desk-1000.jpg 1000w, img/desk-1600.jpg 1600w" sizes="100vw" width="1672" height="942" loading="lazy" decoding="async" alt="Blackstart plugged into a laptop, its cap clicked onto the back">
+  </figure>
+
+  <section class="sec" id="design" aria-labelledby="design-h">
+    <div class="wrap">
+      <div class="design-head">
+        <div>
+          <p class="eyebrow">Design</p>
+          <h2 id="design-h">Solid steel. Small batches.</h2>
+        </div>
+        <p class="lede" style="margin:0;max-width:38ch">Machined from solid 316L stainless. The cap and its clip are one piece of 17-4PH steel and click onto either end.</p>
+      </div>
+      <figure class="bleed" style="margin-top:clamp(40px,6vw,88px)">
+        <img class="rise" src="img/plug-1600.jpg" srcset="img/plug-1000.jpg 1000w, img/plug-1600.jpg 1600w, img/plug-2400.jpg 2400w" sizes="(min-width: 1320px) 1240px, 92vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Close-up of the USB-C plug held in the steel body">
+        <figcaption class="cap-row"><span>USB-C, held in steel on four sides</span><span>01</span></figcaption>
+      </figure>
+      <div class="pair">
+        <figure><img class="rise" src="img/logo-1000.jpg" srcset="img/logo-1000.jpg 1000w, img/logo-1600.jpg 1600w" sizes="(min-width: 700px) 46vw, 92vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Laser-marked Babel Drive logo on the steel top plate"><figcaption class="cap-row"><span>Laser-marked, flush top plate</span><span>02</span></figcaption></figure>
+        <figure><img class="rise" src="img/posted-1000.jpg" srcset="img/posted-1000.jpg 1000w, img/posted-1600.jpg 1600w" sizes="(min-width: 700px) 46vw, 92vw" width="1600" height="1000" loading="lazy" decoding="async" alt="The cap clicked onto the back while the drive is in use"><figcaption class="cap-row"><span>Cap posts on the back</span><span>03</span></figcaption></figure>
+      </div>
+
+      <div class="viewer" id="viewer">
+        <canvas id="v3d" tabindex="0" aria-label="3D model of Blackstart. Drag sideways or use the arrow keys to turn it."></canvas>
+        <span class="vlabel">3D</span>
+        <span class="vhint">Drag to turn</span>
+        <div class="states" role="group" aria-label="Cap position">
+          <button type="button" data-q="0" aria-pressed="true">Capped</button>
+          <button type="button" data-q="0.3" aria-pressed="false">Cap off</button>
+          <button type="button" data-q="1" aria-pressed="false">Posted</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="dim-h" style="padding-top:0">
+    <div class="wrap draw-grid">
+      <div>
+        <p class="eyebrow">Dimensions</p>
+        <h2 id="dim-h">Pocket size. 55 grams.</h2>
+        <ul class="dims">
+          <li><b>44.7</b><span>Length, mm</span></li>
+          <li><b>20.4</b><span>Width, mm</span></li>
+          <li><b>9.0</b><span>Height, mm</span></li>
+          <li><b>55</b><span>Weight, g</span></li>
+        </ul>
+      </div>
+      <div id="drawing" class="rise"></div>
+    </div>
+  </section>
+
+  <figure class="bleed">
+    <img class="rise" src="img/parts-1600.jpg" srcset="img/parts-1000.jpg 1000w, img/parts-1600.jpg 1600w, img/parts-2400.jpg 2400w" sizes="100vw" width="2400" height="1350" loading="lazy" decoding="async" alt="Every part laid out: steel body, cover, four Torx screws, four click balls, thermal pad, the 256 GB board with its USB-C plug, and the cap">
+    <div class="wrap"><ul class="parts-key">
+      <li><b>01</b>Body</li><li><b>02</b>Cover</li><li><b>03</b>Torx screws ×4</li><li><b>04</b>Click balls ×4</li><li><b>05</b>Thermal pad</li><li><b>06</b>256 GB board</li><li><b>07</b>Cap and clip</li>
+    </ul></div>
+  </figure>
+
+  <section class="sec film" id="film" aria-labelledby="film-h">
+    <div class="wrap">
+      <div class="film-head"><h2 class="eyebrow" id="film-h" style="margin:0">Film</h2><p>0:43 · Sound on</p></div>
+      <div class="player" id="player">
+        <video id="video" src="../babel-drive-film.mp4" poster="../babel-drive-film-poster.jpg" preload="none" playsinline></video>
+        <button class="play" type="button" id="play"><i></i>Play</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Promises">
+    <div class="wrap">
+      <ul class="three">
+        <li><b>Lifetime updates</b><span>Every library update, included with every purchase.</span></li>
+        <li><b>Small batches</b><span>Machined and assembled a batch at a time.</span></li>
+        <li><b>30-day returns</b><span>Any reason.</span></li>
+      </ul>
+      <ul class="never" aria-label="Never">
+        <li><b>Never</b></li><li>Accounts</li><li>Subscriptions</li><li>Tracking</li><li>AI</li><li>Internet</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec" id="specs" aria-labelledby="specs-h" style="padding-top:0">
+    <div class="wrap specs">
+      <div><p class="eyebrow">Specs</p><h2 id="specs-h">Blackstart</h2></div>
+      <dl>
+        <div><dt>Capacity</dt><dd>256 GB</dd></div>
+        <div><dt>Library</dt><dd>224.6 GB, preloaded</dd></div>
+        <div><dt>Connector</dt><dd>USB-C</dd></div>
+        <div><dt>Size</dt><dd>44.7 × 20.4 × 9 mm, capped</dd></div>
+        <div><dt>Weight</dt><dd>55 g</dd></div>
+        <div><dt>Body</dt><dd>316L stainless steel, bead-blasted</dd></div>
+        <div><dt>Cap and clip</dt><dd>One piece, 17-4PH stainless steel</dd></div>
+        <div><dt>Software</dt><dd>Search and map viewer for Mac, Windows and Linux. Kiwix app for Android.</dd></div>
+        <div><dt>Works with</dt><dd>Mac, Windows, Linux, Android, iPad and iPhone with USB-C</dd></div>
+        <div><dt>Internet</dt><dd>Not needed</dd></div>
+        <div><dt>Updates</dt><dd>Lifetime</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="sec" id="faq" aria-labelledby="faq-h" style="padding-top:0">
+    <div class="wrap faq">
+      <div><p class="eyebrow">FAQ</p><h2 id="faq-h">Questions</h2></div>
+      <div class="qa">
+        <details><summary>Isn't this content free online?</summary><p>Online, yes. Blackstart has it downloaded, checked and working with no connection, on any computer.</p></details>
+        <details><summary>How do I open it?</summary><p>Plug it in and double-click Open Library (Mac, Windows or Linux). The library opens in your browser. On Android, use the Kiwix app included on the drive.</p></details>
+        <details><summary>Does it need the internet or an account?</summary><p>No. No internet, no account, no subscription, no tracking.</p></details>
+        <details><summary>How do updates work?</summary><p>When the library is updated, you can download the new version, or have a refreshed drive sent at cost.</p></details>
+        <details><summary>What is the Download version?</summary><p>The same library for $49. You bring a 256 GB drive.</p></details>
+        <details><summary>When does it ship?</summary><p>Blackstart is made in small batches. The waitlist gets one email when the next batch opens. No payment until then.</p></details>
+        <details><summary>Shipping and returns?</summary><p>Ships from the US, free worldwide, tracked. 30-day returns.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec end" id="join" aria-labelledby="end-h">
+    <div class="wrap">
+      <h2 id="end-h">Blackstart</h2>
+      <p class="lede">256 GB. Solid steel. Offline.</p>
+      <form class="join" data-join novalidate>
+        <div class="fmt" role="radiogroup" aria-label="Format">
+          <label><input type="radio" name="fmt-b" value="drive" checked><span>256 GB Drive <em>$199</em></span></label>
+          <label><input type="radio" name="fmt-b" value="download"><span>Download <em>$49</em></span></label>
+        </div>
+        <div class="field">
+          <label class="sr" for="email-b">Email</label>
+          <input id="email-b" type="email" name="email" autocomplete="email" inputmode="email" placeholder="Email address" required>
+          <button class="btn" type="submit">Join the waitlist</button>
+        </div>
+        <p class="fine"><b>Nothing due today.</b> One email when the next batch opens.</p>
+        <p class="err" role="alert" hidden></p>
+      </form>
+      <img class="rise" src="img/hero-1600.jpg" srcset="img/hero-1000.jpg 1000w, img/hero-1600.jpg 1600w" sizes="(min-width: 900px) 820px, 100vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Blackstart, capped">
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="mark" style="font-size:11px">BABEL DRIVE</span>
+    <span>Library content is openly licensed or public domain. Every source is listed on the drive in SOURCES.csv.</span>
+    <span>No cookies. No tracking. © 2026 Babel Drive</span>
+  </div>
+</footer>
+
+<div class="bar" id="bar" aria-hidden="true">
+  <span>Blackstart<em>$199</em></span>
+  <a class="btn sm" href="#join" data-go-join tabindex="-1">Join the waitlist</a>
+</div>
+
+<script>
+(function () {
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]static/.test(location.search);   // ?static: preview shots without motion
+
+  /* header line + phone bar */
+  var top = document.getElementById('top'), bar = document.getElementById('bar'), hero = document.getElementById('hero'), end = document.getElementById('join');
+  var heroOut = false, endIn = false;
+  function syncBar() { var on = heroOut && !endIn; bar.classList.toggle('on', on); bar.setAttribute('aria-hidden', on ? 'false' : 'true'); bar.querySelector('a').tabIndex = on ? 0 : -1; }
+  new IntersectionObserver(function (e) { heroOut = !e[0].isIntersecting; top.classList.toggle('lined', heroOut); syncBar(); }, { rootMargin: '-120px 0px 0px 0px' }).observe(hero);
+  new IntersectionObserver(function (e) { endIn = e[0].isIntersecting; syncBar(); }).observe(end);
+  addEventListener('scroll', function () { top.classList.toggle('lined', scrollY > 8); }, { passive: true });
+
+  /* jump to the last form and focus it */
+  document.querySelectorAll('[data-go-join]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      end.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      setTimeout(function () { var i = document.getElementById('email-b'); if (i && !i.closest('form').hidden) i.focus({ preventScroll: true }); }, reduce ? 0 : 650);
+    });
+  });
+
+  /* waitlist: each signup is one row in the "Babel Drive waitlist" Google Form */
+  var FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSeAXm_0712F5B9SYgVnl3TkMGeMNudEaREGeyKtNkV_ahYuZQ/formResponse';
+  var F_EMAIL = 'entry.1320750901', F_FORMAT = 'entry.897673328', LABEL = { drive: '256 GB Drive', download: 'Download' };
+  var forms = Array.prototype.slice.call(document.querySelectorAll('[data-join]'));
+  function done(email) {
+    forms.forEach(function (f) {
+      var ok = document.createElement('div'); ok.className = 'ok'; ok.setAttribute('tabindex', '-1');
+      ok.innerHTML = '<b>You’re on the list.</b><span></span>';
+      ok.querySelector('span').textContent = 'We’ll email ' + email + ' when the next batch opens.';
+      f.hidden = true; f.parentNode.insertBefore(ok, f.nextSibling);
+    });
+  }
+  forms.forEach(function (f) {
+    // keep both forms on the same format
+    f.querySelectorAll('input[type=radio]').forEach(function (r) {
+      r.addEventListener('change', function () { forms.forEach(function (g) { g.querySelectorAll('input[type=radio]').forEach(function (x) { x.checked = x.value === r.value; }); }); });
+    });
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = f.querySelector('input[type=email]'), err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]');
+      var v = input.value.trim(), fmt = (f.querySelector('input[type=radio]:checked') || {}).value || 'drive';
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.textContent = 'Enter a valid email address.'; err.hidden = false; input.focus(); return; }
+      err.hidden = true; btn.disabled = true; btn.textContent = 'Joining…';
+      var body = new URLSearchParams(); body.append(F_EMAIL, v); body.append(F_FORMAT, LABEL[fmt]);
+      fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: body })
+        .then(function () { done(v); })
+        .catch(function () { err.textContent = 'That didn’t go through. Check your connection and try again.'; err.hidden = false; btn.disabled = false; btn.textContent = 'Join the waitlist'; });
+    });
+  });
+
+  /* capacity meter: sizes in GB from the library build manifest */
+  var SEG = [
+    ['English Wikipedia', 127.4], ['Historical books', 25.5], ['Reference wikis', 24.8], ['Maps', 22.7],
+    ['Q&A archives', 13.9], ['Dictionary', 9.2], ['Books, manuals, software', 1.2]
+  ];
+  var TOTAL = 256, meter = document.querySelector('.meter'), legend = document.getElementById('legend');
+  var cols = ['#0b0b0c', '#3b3c3f', '#56585c', '#76787c', '#96989b', '#b3b5b7', '#ea5a1a'];
+  SEG.forEach(function (s, i) {
+    var el = document.createElement('i'); el.dataset.w = (s[1] / TOTAL * 100).toFixed(2) + '%'; if (i === SEG.length - 1) el.className = 'sw'; meter.appendChild(el);
+    var li = document.createElement('li'); li.style.setProperty('--c', cols[i]);
+    li.innerHTML = '<span><b></b></span>'; li.querySelector('b').textContent = s[0]; li.firstChild.appendChild(document.createTextNode(s[1].toFixed(1) + ' GB')); legend.appendChild(li);
+  });
+  var free = document.createElement('li'); free.style.setProperty('--c', '#ececea'); free.innerHTML = '<span><b>Free</b>31.4 GB</span>'; legend.appendChild(free);
+  function fill() { meter.querySelectorAll('i').forEach(function (el) { el.style.width = el.dataset.w; }); }
+  if (reduce || !('IntersectionObserver' in window)) fill();
+  else new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { fill(); o.disconnect(); } }, { threshold: .4 }).observe(meter);
+
+  /* catalog search over the real title list */
+  var DEFAULTS = ['wikipedia (english', 'offline maps', 'complete guide to home canning', 'emergency disinfection of drinking water', 'atp 3-50.21 survival', 'cert basic training', "the ship's medicine chest", 'wood handbook', 'amateur radio q&a', 'the mechanical engineers', 'topographic map symbols', 'electrical engineering q&a'];
+  var q = document.getElementById('q'), out = document.getElementById('results'), count = document.getElementById('qcount'), CAT = null, loading = null;
+  function load() {
+    if (!loading) loading = fetch('catalog.json').then(function (r) { return r.json(); }).then(function (d) {
+      CAT = d; CAT.low = d.items.map(function (it) { return it[0].toLowerCase(); }); return d;
+    });
+    return loading;
+  }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function mark(t, words) {
+    var s = esc(t);
+    words.forEach(function (w) { if (w.length > 1) s = s.replace(new RegExp('(' + w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'ig'), '<mark>$1</mark>'); });
+    return s;
+  }
+  function run() {
+    if (!CAT) { load().then(run); return; }
+    var v = q.value.trim().toLowerCase(), words = v.split(/\s+/).filter(Boolean), hits = [];
+    if (!words.length) {   // default view: a hand-picked spread
+      DEFAULTS.forEach(function (d) { var i = CAT.low.findIndex(function (t) { return t.indexOf(d) === 0; }); if (i >= 0) hits.push(i); });
+      count.textContent = CAT.items.length.toLocaleString() + ' titles';
+    } else {
+      for (var i = 0; i < CAT.low.length; i++) {
+        var t = CAT.low[i], ok = true;
+        for (var j = 0; j < words.length; j++) if (t.indexOf(words[j]) < 0) { ok = false; break; }
+        if (ok) hits.push(i);
+      }
+      var re = new RegExp('\\b' + words[0].replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+      hits.sort(function (a, b) {
+        var ka = CAT.items[a][2] === 3 ? 0 : 1, kb = CAT.items[b][2] === 3 ? 0 : 1;
+        var wa = re.test(CAT.low[a]) ? 0 : 1, wb = re.test(CAT.low[b]) ? 0 : 1;
+        return ka - kb || wa - wb || CAT.low[a].length - CAT.low[b].length;
+      });
+      count.textContent = hits.length.toLocaleString() + (hits.length === 1 ? ' title' : ' titles');
+    }
+    var html = hits.slice(0, 12).map(function (i) {
+      var it = CAT.items[i];
+      return '<li><span class="t">' + mark(it[0], words) + '</span><span class="k">' + esc(CAT.kinds[it[2]]) + ' · ' + esc(CAT.cats[it[1]]) + '</span></li>';
+    }).join('');
+    out.innerHTML = html || '<li><span class="none">No titles match. Wikipedia full-text search on the drive covers far more.</span></li>';
+  }
+  var tmr; q.addEventListener('input', function () { clearTimeout(tmr); tmr = setTimeout(run, 60); });
+  document.querySelectorAll('.chips button').forEach(function (b) { b.addEventListener('click', function () { q.value = b.textContent; run(); }); });
+  new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); run(); } }, { rootMargin: '400px' }).observe(out);
+
+  /* outline drawing (inline so it inherits the page's ink) */
+  fetch('img/drawing.svg').then(function (r) { return r.text(); }).then(function (s) { document.getElementById('drawing').innerHTML = s; });
+
+  /* film */
+  var video = document.getElementById('video'), player = document.getElementById('player');
+  document.getElementById('play').addEventListener('click', function () {
+    video.controls = true; player.classList.add('playing'); video.preload = 'auto';
+    var p = video.play(); if (p && p.catch) p.catch(function () { player.classList.remove('playing'); });
+  });
+  video.addEventListener('ended', function () { player.classList.remove('playing'); video.controls = false; video.currentTime = 0; });
+
+  /* images rise in once */
+  var rise = document.querySelectorAll('.rise');
+  if (reduce || !('IntersectionObserver' in window)) rise.forEach(function (el) { el.classList.add('in'); });
+  else { var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' }); rise.forEach(function (el) { io.observe(el); }); }
+
+  /* the 3D viewer loads only when it is about to be seen */
+  var vEl = document.getElementById('viewer');
+  new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); import('./viewer.js').then(function (m) { m.start(vEl); }).catch(function () {}); } }, { rootMargin: '300px' }).observe(vEl);
+})();
+</script>
+</body>
+</html>
