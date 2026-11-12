@@ -67,7 +67,7 @@ export function start(root) {
 
   let cx = 22, span = 46, ready = false;
 
-  new GLTFLoader().load(new URL('img/blackstart.glb', document.baseURI).href, gltf => {
+  new GLTFLoader().load(new URL('img/blackstart.glb?v=2', document.baseURI).href, gltf => {
     model = gltf.scene;
     model.traverse(o => {
       if (!o.isMesh) return;
@@ -155,11 +155,11 @@ export function start(root) {
     capPose(q);
 
     // framing follows the drive's current extent, measured in the model's own frame (mm):
-    // body + plug run 0..42.65; the cap and its arm span -14.9..26.65 around the cap group's origin
+    // body + plug run 0..42.65; the cap and its arm span -17.1..26.65 around the cap group's origin (arm tip runs past the rear step)
     let lo = 0, hi = 42.65;
     {
       const r = capgrp.rotation.y, c = Math.cos(r), s = Math.sin(r), px = capgrp.position.x;
-      for (const x of [-14.9, 26.65]) for (const z of [-10.2, 10.2]) {
+      for (const x of [-17.1, 26.65]) for (const z of [-10.2, 10.2]) {
         const xx = px + x * c + z * s; lo = Math.min(lo, xx); hi = Math.max(hi, xx);
       }
     }

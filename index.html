@@ -1142,7 +1142,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
 
   /* the 3D viewer loads only when it is about to be seen */
   var vEl = document.getElementById('viewer');
-  new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); import('./viewer.js?v=5').then(function (m) { m.start(vEl); }).catch(function () {}); } }, { rootMargin: '300px' }).observe(vEl);
+  new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); import('./viewer.js?v=6').then(function (m) { m.start(vEl); }).catch(function () {}); } }, { rootMargin: '300px' }).observe(vEl);
 })();
 </script>
 </body>
