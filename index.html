@@ -872,7 +872,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   function tryPlay() { if (userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
   if (!reduce) {
     var big = Math.max(innerWidth, innerHeight * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;
-    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=17';
+    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=18';
     film.preload = 'auto';
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
