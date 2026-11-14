@@ -705,7 +705,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
 
 
   <figure class="bleed inuse">
-    <img class="rise" src="img/desk-1600.jpg" srcset="img/desk-1000.jpg 1000w, img/desk-1600.jpg 1600w" sizes="100vw" width="1672" height="942" loading="lazy" decoding="async" alt="Blackstart plugged into a laptop, its cap clicked onto the back">
+    <img class="rise" src="img/desk-1600.jpg" srcset="img/desk-1000.jpg 1000w, img/desk-1600.jpg 1600w" sizes="100vw" width="1672" height="942" loading="lazy" decoding="async" alt="Blackstart plugged into a laptop, its cap on the back end">
   </figure>
 
   <section class="sec" id="design" aria-labelledby="design-h">
@@ -722,8 +722,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
         <figcaption class="cap-row"><span>USB-C, held in steel on four sides</span><span>01</span></figcaption>
       </figure>
       <div class="pair">
-        <figure><div class="zoom"><img class="rise" src="img/logo-1000.jpg" srcset="img/logo-1000.jpg 1000w, img/logo-1600.jpg 1600w" sizes="(min-width: 700px) 46vw, 92vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Laser-marked Babel Drive logo on the steel top plate"></div><figcaption class="cap-row"><span>Laser-marked, flush top plate</span><span>02</span></figcaption></figure>
-        <figure><div class="zoom"><img class="rise" src="img/posted-1000.jpg" srcset="img/posted-1000.jpg 1000w, img/posted-1600.jpg 1600w" sizes="(min-width: 700px) 46vw, 92vw" width="1600" height="1000" loading="lazy" decoding="async" alt="The cap clicked onto the back while the drive is in use"></div><figcaption class="cap-row"><span>Cap posts on the back</span><span>03</span></figcaption></figure>
+        <figure><div class="zoom"><img class="rise" src="img/logo-1000.jpg" srcset="img/logo-1000.jpg 1000w, img/logo-1600.jpg 1600w" sizes="(min-width: 700px) 46vw, 92vw" width="1600" height="1000" loading="lazy" decoding="async" alt="Laser-marked Babel Drive logo on the steel body"></div><figcaption class="cap-row"><span>Laser-marked on solid steel</span><span>02</span></figcaption></figure>
+        <figure><div class="zoom"><img class="rise" src="img/posted-1000.jpg" srcset="img/posted-1000.jpg 1000w, img/posted-1600.jpg 1600w" sizes="(min-width: 700px) 46vw, 92vw" width="1600" height="1000" loading="lazy" decoding="async" alt="The cap on the back end while the drive is in use"></div><figcaption class="cap-row"><span>Cap posts on the back</span><span>03</span></figcaption></figure>
       </div>
 
       <div class="viewer" id="viewer">
@@ -872,7 +872,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   function tryPlay() { if (userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
   if (!reduce) {
     var big = Math.max(innerWidth, innerHeight * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;
-    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=19';
+    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=20';
     film.preload = 'auto';
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
