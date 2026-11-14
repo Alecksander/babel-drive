@@ -67,11 +67,12 @@ export function start(root) {
 
   let cx = 22, span = 46, ready = false;
 
-  new GLTFLoader().load(new URL('img/blackstart.glb?v=2', document.baseURI).href, gltf => {
+  // the machined v2 drive (build/cad/options/_video/glb16.py): body, cover, screws, magnets, plug, engraving, and the
+  // cap with its two magnets under the node "capgrp"
+  new GLTFLoader().load(new URL('img/blackstart-v2.glb?v=1', document.baseURI).href, gltf => {
     model = gltf.scene;
     model.traverse(o => {
       if (!o.isMesh) return;
-      if (/^(pcb|top|bot|pad|plunger\d)$/.test(o.name)) { o.visible = false; return; }   // inside the steel
       const n = (o.material && o.material.name) || '';
       o.material = n === 'polished' ? polished : n === 'black_oxide' ? oxide : n === 'laser' ? laser : steel;
     });
@@ -80,11 +81,23 @@ export function start(root) {
     ready = true; resize(); kick();
   });
 
-  // cap path: slide off the plug, lift and turn over the top, drop onto the back step
+  // cap path (mm, in the model's frame), the same move as the film at the top of the page:
+  // 0..0.3 straight off the plug ("Cap off" rests at 0.3); 0.3..1 lift, travel back over the top while turning one
+  // smooth half turn about its own centre, come down behind the drive and slide onto the rear step ("Posted").
+  const CAP_C = 20.825;               // the cap's centre, measured from the cap group's origin (the body's middle, x = 18)
+  const CAP_HL = 5.825, CAP_HW = 10.2; // its half length and half width
+  const OFF = 16, BACK = 6.7, UP = 11.5;
+  let capX = 18 + CAP_C, capTh = 0;
   function capPose(v) {
-    const a = sm(0, 0.3, v), t = sm(0.3, 0.7, v), c = sm(0.7, 1, v);
-    capgrp.position.set(18 + 42 * a - 84 * t + 42 * c, 14 * Math.sin(Math.PI * t), 0);
-    capgrp.rotation.y = Math.PI * t;
+    const a = sm(0, 0.3, v), w = clamp((v - 0.3) / 0.7, 0, 1);
+    const up = sm(0, 0.22, w) - sm(0.66, 0.86, w), b = sm(0.16, 0.70, w), sl = sm(0.84, 1, w);
+    const th = Math.PI * sm(0.24, 0.64, w);
+    const x0 = 18 + CAP_C + OFF * a, xd = 18 - CAP_C - BACK, x1 = 18 - CAP_C;   // centre: in front, behind, posted
+    const px = x0 + (xd - x0) * b + (x1 - xd) * sl;
+    // the group turns about its own origin, so put that origin where it leaves the cap's centre at px
+    capgrp.position.set(px - CAP_C * Math.cos(th), UP * up, CAP_C * Math.sin(th));
+    capgrp.rotation.y = th;
+    capX = px; capTh = th;
   }
 
   // speed and acceleration limited glide toward the chosen state
@@ -146,6 +159,10 @@ export function start(root) {
   function kick() { if (!running && visible && ready) { running = true; last = performance.now(); idleSince = 0; requestAnimationFrame(frame); } }
   new IntersectionObserver(([e]) => { visible = e.isIntersecting; if (visible) kick(); }).observe(canvas);
 
+  // preview only (?vq=...): __v3d(0.62) draws one frame at that cap position, even when the page is hidden and the
+  // browser has paused animation frames. Returns false until the model has loaded.
+  if (VQ) window.__v3d = v => { if (!ready) return false; visible = true; q = target = v; qv = 0; resize(); first = true; frame(performance.now()); return true; };
+
   let first = true;
   function frame(now) {
     if (!visible) { running = false; return; }
@@ -155,14 +172,9 @@ export function start(root) {
     capPose(q);
 
     // framing follows the drive's current extent, measured in the model's own frame (mm):
-    // body + plug run 0..42.65; the cap and its arm span -17.1..26.65 around the cap group's origin (arm tip runs past the rear step)
-    let lo = 0, hi = 42.65;
-    {
-      const r = capgrp.rotation.y, c = Math.cos(r), s = Math.sin(r), px = capgrp.position.x;
-      for (const x of [-17.1, 26.65]) for (const z of [-10.2, 10.2]) {
-        const xx = px + x * c + z * s; lo = Math.min(lo, xx); hi = Math.max(hi, xx);
-      }
-    }
+    // body + plug run 0..42.65; the cap is a 11.65 x 20.4 block centred at capX, turned by capTh
+    const capEx = CAP_HL * Math.abs(Math.cos(capTh)) + CAP_HW * Math.abs(Math.sin(capTh));
+    const lo = Math.min(0, capX - capEx), hi = Math.max(42.65, capX + capEx);
     const ncx = (lo + hi) / 2, nspan = hi - lo;
     const k = first ? 1 : 1 - Math.exp(-dt * 5);
     cx += (ncx - cx) * k; span += (nspan - span) * k;

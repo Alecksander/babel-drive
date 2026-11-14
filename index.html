@@ -715,7 +715,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
           <p class="eyebrow">Design</p>
           <h2 id="design-h">Solid steel. <em>Small batches.</em></h2>
         </div>
-        <p class="lede">Machined from solid 316L stainless. The cap and its clip are one piece of 17-4PH steel and click onto either end.</p>
+        <p class="lede">Machined from solid 316L stainless. The cap is held by magnets and fits either end.</p>
       </div>
       <figure class="shot big">
         <div class="zoom"><img class="rise" src="img/plug-1600.jpg" srcset="img/plug-1000.jpg 1000w, img/plug-1600.jpg 1600w, img/plug-2400.jpg 2400w" sizes="(min-width: 1360px) 1280px, 92vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Close-up of the USB-C plug held in the steel body"></div>
@@ -790,7 +790,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
         <div><dt>Size</dt><dd>44.7 × 20.4 × 9 mm, capped</dd></div>
         <div><dt>Weight</dt><dd>55 g</dd></div>
         <div><dt>Body</dt><dd>316L stainless steel, bead-blasted</dd></div>
-        <div><dt>Cap and clip</dt><dd>One piece, 17-4PH stainless steel</dd></div>
+        <div><dt>Cap</dt><dd>Stainless steel, held by magnets, fits either end</dd></div>
         <div><dt>Software</dt><dd>Search and map viewer for Mac, Windows and Linux. Kiwix app for Android.</dd></div>
         <div><dt>Works with</dt><dd>Mac, Windows, Linux, Android, iPad and iPhone with USB-C</dd></div>
         <div><dt>Updates</dt><dd>Lifetime</dd></div>
@@ -872,7 +872,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   function tryPlay() { if (userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
   if (!reduce) {
     var big = Math.max(innerWidth, innerHeight * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;
-    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=18';
+    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=19';
     film.preload = 'auto';
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
@@ -1142,7 +1142,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
 
   /* the 3D viewer loads only when it is about to be seen */
   var vEl = document.getElementById('viewer');
-  new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); import('./viewer.js?v=6').then(function (m) { m.start(vEl); }).catch(function () {}); } }, { rootMargin: '300px' }).observe(vEl);
+  new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); import('./viewer.js?v=7').then(function (m) { m.start(vEl); }).catch(function () {}); } }, { rootMargin: '300px' }).observe(vEl);
 })();
 </script>
 </body>
