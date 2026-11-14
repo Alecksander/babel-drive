@@ -18,13 +18,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,300;125,700&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="preload" as="image" href="img/hero/poster-2560.jpg" imagesrcset="img/hero/poster-1280.jpg 1280w, img/hero/poster-2560.jpg 2560w" imagesizes="(min-width: 900px) 90vw, 100vw" fetchpriority="high">
+<link rel="preload" as="image" href="img/hero/poster-2560.jpg?v=16" imagesrcset="img/hero/poster-1280.jpg?v=16 1280w, img/hero/poster-2560.jpg?v=16 1920w" imagesizes="(min-width: 900px) 90vw, 100vw" fetchpriority="high">
 <script>document.documentElement.classList.add("js");if(/[?&]static/.test(location.search)){document.documentElement.classList.add("static");document.documentElement.style.setProperty("--shotvh",((location.search.match(/vh=(\d+)/)||[])[1]||900)+"px")}</script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Product","name":"Blackstart","brand":{"@type":"Brand","name":"Babel Drive"},
 "description":"256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, maps of the world, and more.",
-"image":"https://babel.petersenventures.com/img/hero/poster-2560.jpg",
+"image":"https://babel.petersenventures.com/img/hero/poster-2560.jpg?v=16",
 "offers":[{"@type":"Offer","name":"Blackstart 256 GB drive","price":"199","priceCurrency":"USD","availability":"https://schema.org/PreOrder"},
 {"@type":"Offer","name":"Blackstart download","price":"49","priceCurrency":"USD","availability":"https://schema.org/PreOrder"}]}
 </script>
@@ -585,8 +585,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
     </div>
 
     <div class="stage" id="stage">
-      <img src="img/hero/poster-1280.jpg" srcset="img/hero/poster-1280.jpg 1280w, img/hero/poster-2560.jpg 2560w" sizes="(min-width: 900px) 90vw, 100vw" width="2560" height="1600" alt="Blackstart, a solid stainless steel USB-C drive, on a black table" fetchpriority="high">
-      <video id="film" muted loop playsinline preload="none" aria-label="Blackstart taking itself apart down to the chip, then going back together" disablepictureinpicture></video>
+      <img src="img/hero/poster-1280.jpg?v=16" srcset="img/hero/poster-1280.jpg?v=16 1280w, img/hero/poster-2560.jpg?v=16 1920w" sizes="(min-width: 900px) 90vw, 100vw" width="1920" height="1200" alt="Blackstart, a solid stainless steel USB-C drive, on a black table" fetchpriority="high">
+      <video id="film" muted loop playsinline preload="none" aria-label="Blackstart taking its cap off, turning over and opening down to the board, then going back together" disablepictureinpicture></video>
       <button type="button" class="film-ctl" id="filmctl" aria-label="Pause the film"><i></i><span>Pause</span></button>
     </div>
 
@@ -872,7 +872,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   function tryPlay() { if (userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
   if (!reduce) {
     var big = Math.max(innerWidth, innerHeight * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;
-    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4';
+    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=16';
     film.preload = 'auto';
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
