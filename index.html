@@ -586,7 +586,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
 
     <div class="stage" id="stage">
       <img src="img/hero/poster-1280.jpg?v=16" srcset="img/hero/poster-1280.jpg?v=16 1280w, img/hero/poster-2560.jpg?v=16 1920w" sizes="(min-width: 900px) 90vw, 100vw" width="1920" height="1200" alt="Blackstart, a solid stainless steel USB-C drive, on a black table" fetchpriority="high">
-      <video id="film" muted loop playsinline preload="none" aria-label="Blackstart taking its cap off, turning over and opening down to the board, then going back together" disablepictureinpicture></video>
+      <video id="film" muted loop playsinline preload="none" aria-label="Blackstart taking its cap off, turning over and opening down to the board, going back together, then the cap moving onto the back end and returning to the front" disablepictureinpicture></video>
       <button type="button" class="film-ctl" id="filmctl" aria-label="Pause the film"><i></i><span>Pause</span></button>
     </div>
 
@@ -872,7 +872,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   function tryPlay() { if (userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
   if (!reduce) {
     var big = Math.max(innerWidth, innerHeight * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;
-    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=16';
+    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=17';
     film.preload = 'auto';
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
