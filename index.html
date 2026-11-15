@@ -111,7 +111,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .boot:not(.lit) .top,.boot:not(.lit) .stage,.boot:not(.lit) .hero h1,.boot:not(.lit) .hero .live,.boot:not(.lit) .hero-foot > *,.boot:not(.lit) #library{opacity:0}
 .boot .stage img:not(.ld){opacity:0}
 .late .stage img{transition:opacity 1.2s ease}
-.hero::before{content:"";position:absolute;left:50%;top:min(50%,50svh);z-index:2;width:7px;height:7px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px 1px rgba(255,91,31,.7);opacity:0;pointer-events:none;transition:opacity .5s ease}
+.hero::before{content:"";position:absolute;left:50%;top:50%;top:min(50%,50svh);z-index:2;width:7px;height:7px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px 1px rgba(255,91,31,.7);opacity:0;pointer-events:none;transition:opacity .5s ease}
 .wait:not(.lit) .hero::before{opacity:1}
 .wait .hero::before{animation:standby 1.5s ease-in-out infinite alternate}
 @keyframes standby{from{filter:brightness(.4)}to{filter:brightness(1)}}
@@ -120,7 +120,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .lit .stage img{animation:pull 1.8s var(--ease) both}
 @keyframes pull{0%{filter:blur(14px)}100%{filter:none}}
 .stage{background:var(--bg)}
-.stage::after{content:"";position:absolute;top:0;bottom:0;left:0;width:38%;z-index:1;pointer-events:none;opacity:0;background:linear-gradient(90deg,#000,#626262 50%,#000);mix-blend-mode:color-dodge;transform:translateX(-120%) skewX(-14deg)}
+.stage::after{content:"";position:absolute;top:0;bottom:0;left:0;width:38%;z-index:1;pointer-events:none;opacity:0;transform:translateX(-120%) skewX(-14deg)}
+@supports (mix-blend-mode:color-dodge){.stage::after{background:linear-gradient(90deg,#000,#626262 50%,#000);mix-blend-mode:color-dodge}}
 .lit .stage::after{animation:glint 1.6s cubic-bezier(.45,0,.25,1) .4s both}
 @keyframes glint{0%{opacity:0;transform:translateX(-120%) skewX(-14deg)}12%,88%{opacity:1}100%{opacity:0;transform:translateX(290%) skewX(-14deg)}}
 .lit .hero h1{animation:title 1.5s var(--ease) 1.25s both}
