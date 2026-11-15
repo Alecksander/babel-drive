@@ -97,11 +97,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero h1{font-size:min(10.3vw,150px);white-space:nowrap;text-align:center;
   background:linear-gradient(180deg,#f6f5f1 0%,#c9c8c4 45%,#6c6c70 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* Babel Drive is the brand, Blackstart the drive: the product's name sits under the wordmark */
-.model{display:flex;justify-content:center;align-items:center;gap:14px;margin:clamp(14px,2vh,26px) 0 0;white-space:nowrap}
-.model b{font:700 clamp(13px,1.35vw,19px)/1 var(--wide);font-stretch:125%;letter-spacing:.3em;text-transform:uppercase;color:var(--fg)}
-.model span{display:inline-flex;align-items:center;gap:14px;font:500 clamp(10.5px,.95vw,12px)/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
-.model span::before{content:"";width:1px;height:1.2em;background:var(--dim)}
-.hero .live{display:flex;justify-content:center;margin-top:clamp(10px,1.5vh,18px)}
+.model{margin:clamp(14px,2vh,26px) 0 0;text-align:center;font:700 clamp(14px,1.5vw,20px)/1 var(--wide);font-stretch:125%;letter-spacing:.32em;text-indent:.32em;text-transform:uppercase;white-space:nowrap;color:var(--fg)}
+.sub{margin:clamp(10px,1.5vh,16px) 0 0;text-align:center;font:500 clamp(10.5px,.95vw,12px)/1 var(--mono);letter-spacing:.14em;text-indent:.14em;text-transform:uppercase;white-space:nowrap;color:var(--fg2)}
 /* at the top of the page the big wordmark is the brand, so the header keeps its small one back until the page has scrolled */
 .top .mark{transition:opacity .35s}
 .top:not(.lined) .mark{opacity:0;pointer-events:none}
@@ -115,7 +112,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .stage:focus-visible{outline:2px solid var(--fg);outline-offset:-3px}
 /* load-in (script in <head>): dark until the hero photo and fonts are ready, then the drive comes up alone and into focus,
    a light crosses the steel, and the text follows. Nothing here applies without html.boot (reduced motion, ?static, no JS). */
-.boot:not(.lit) .top,.boot:not(.lit) .stage,.boot:not(.lit) .hero h1,.boot:not(.lit) .hero .model,.boot:not(.lit) .hero .live,.boot:not(.lit) .hero-foot > *,.boot:not(.lit) #library{opacity:0}
+.boot:not(.lit) .top,.boot:not(.lit) .stage,.boot:not(.lit) .hero h1,.boot:not(.lit) .hero .model,.boot:not(.lit) .hero .sub,.boot:not(.lit) .hero-foot > *,.boot:not(.lit) #library{opacity:0}
 .boot .stage img:not(.ld){opacity:0}
 .late .stage img{transition:opacity 1.2s ease}
 .hero::before{content:"";position:absolute;left:50%;top:50%;top:min(50%,50svh);z-index:2;width:7px;height:7px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px 1px rgba(255,91,31,.7);opacity:0;pointer-events:none;transition:opacity .5s ease}
@@ -135,9 +132,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @keyframes title{from{opacity:0;letter-spacing:.06em;filter:blur(8px)}to{opacity:1;letter-spacing:.02em;filter:none}}
 .lit .top{animation:down 1.1s var(--ease) 1.35s both}
 @keyframes down{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
-.lit .hero .model,.lit .hero .live,.lit .hero-foot > *{animation:up 1.1s var(--ease) both}
+.lit .hero .model,.lit .hero .sub,.lit .hero-foot > *{animation:up 1.1s var(--ease) both}
 .lit .hero .model{animation-delay:1.42s}
-.lit .hero .live{animation-delay:1.5s}
+.lit .hero .sub{animation-delay:1.5s}
 .lit .hero-foot > :nth-child(1){animation-delay:1.6s}
 .lit .hero-foot > :nth-child(2){animation-delay:1.7s}
 .lit .hero-foot > :nth-child(3){animation-delay:1.8s}
@@ -604,7 +601,7 @@ footer a:hover{color:var(--fg)}
   .js .blueprint.anim .part path,.js .blueprint.anim .dim line{stroke-dasharray:none;transition:none}
   .js .blueprint.anim text,.js .blueprint.anim .ar{opacity:1;transition:none}
   .js .rise{opacity:1;transform:none;transition:none}
-  .lit .stage,.lit .stage img,.lit .stage::after,.lit .top,.lit .hero h1,.lit .hero .model,.lit .hero .live,.lit .hero-foot > *,.lit #library{animation:none}
+  .lit .stage,.lit .stage img,.lit .stage::after,.lit .top,.lit .hero h1,.lit .hero .model,.lit .hero .sub,.lit .hero-foot > *,.lit #library{animation:none}
   .js .track .card,.js .card img{opacity:1;translate:none;transition:none}
   .live i::after{animation:none}
   .meter i,.results li{transition:none;animation:none}
@@ -631,8 +628,8 @@ footer a:hover{color:var(--fg)}
   <section class="hero" id="hero">
     <div class="hero-top wrap">
       <h1 class="wordmark">Babel Drive</h1>
-      <p class="model"><b>Blackstart</b><span>The flagship drive</span></p>
-      <p class="live"><i></i>Waitlist open</p>
+      <p class="model">Blackstart</p>
+      <p class="sub">Our most powerful drive</p>
     </div>
 
     <div class="stage" id="stage">
