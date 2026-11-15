@@ -168,6 +168,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .price{text-align:left}
 }
 
+/* quiet "add to cart" links at the points where someone has just read enough to want one (Alex, Nov 14) */
+.atc{margin:clamp(26px,3.2vw,44px) 0 0}
+.atc a{display:inline-flex;align-items:center;gap:10px;height:38px;padding:0 16px;border:1px solid var(--line2);border-radius:999px;font:500 11.5px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--fg);text-decoration:none;transition:border-color .2s,background .2s}
+.atc a::after{content:"\2192";font-family:var(--sans);letter-spacing:0;color:var(--mute);transition:transform .2s var(--ease),color .2s}
+.atc a:hover{border-color:var(--fg2);background:rgba(255,255,255,.05)}
+.atc a:hover::after{transform:translateX(3px);color:var(--fg)}
+@media (max-width:799px){.specs .atc{grid-column:auto!important}}
+
 /* waitlist form */
 .join{max-width:460px}
 .fmt{display:flex;gap:8px;margin-bottom:12px}
@@ -681,6 +689,7 @@ footer a:hover{color:var(--fg)}
         <ul class="legend" id="legend"></ul>
       </div>
       <p class="inside"><b>Inside</b>English Wikipedia · wikiHow · Wiktionary · Wikibooks · Wikivoyage · Wikisource · World Factbook · 29 Stack Exchange archives · 2,000+ books and manuals · World maps · and more</p>
+      <p class="atc rise"><a href="#join" data-go-join>Add to cart</a></p>
     </div>
   </section>
 
@@ -728,6 +737,7 @@ footer a:hover{color:var(--fg)}
           <li><b>Your files</b><span>Room on the drive to add your own</span></li>
           <li><b>Password</b><span>Lock your files with AES-256 encryption</span></li>
         </ul>
+        <p class="atc rise"><a href="#join" data-go-join>Add to cart</a></p>
       </div>
       <figure class="files rise" aria-label="Files on the drive">
         <div class="files-bar"><i></i><i></i><i></i><span>BLACKSTART · 256 GB</span></div>
@@ -782,6 +792,7 @@ footer a:hover{color:var(--fg)}
           <button type="button" data-q="0.3" aria-pressed="false">Cap off</button>
           <button type="button" data-q="1" aria-pressed="false">Posted</button>
         </div>
+      <p class="atc rise"><a href="#join" data-go-join>Add to cart</a></p>
       </div>
     </div>
   </section>
@@ -858,6 +869,7 @@ footer a:hover{color:var(--fg)}
         <div><dt>Works with</dt><dd>Mac, Windows, Linux, Android, iPad and iPhone with USB-C</dd></div>
         <div><dt>Updates</dt><dd>Lifetime</dd></div>
       </dl>
+      <p class="atc rise" style="grid-column:2"><a href="#join" data-go-join>Add to cart</a></p>
     </div>
   </section>
 
