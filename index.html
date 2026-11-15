@@ -97,7 +97,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero h1{font-size:min(10.3vw,150px);white-space:nowrap;text-align:center}
 .hero h1{background:linear-gradient(180deg,#f6f5f1 0%,#c9c8c4 45%,#6c6c70 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* Babel Drive is the brand, Blackstart the model: its name sits under the wordmark in the same wide light face, steel under a raking light */
-.model{margin:clamp(12px,1.8vh,22px) 0 0;text-align:center;font:300 clamp(16px,4.6vw,50px)/1.05 var(--wide);font-stretch:125%;letter-spacing:.28em;text-indent:.28em;text-transform:uppercase;white-space:nowrap;
+.model{margin:clamp(12px,1.8vh,22px) 0 0;text-align:center;font:300 clamp(22px,5.4vw,52px)/1.05 var(--wide);font-stretch:125%;letter-spacing:.28em;text-indent:.28em;text-transform:uppercase;white-space:nowrap;
   background:linear-gradient(100deg,#5e5e62 0%,#d9d8d4 16%,#f6f5f1 30%,#8f8f93 46%,#4a4a4e 58%,#c9c8c4 76%,#f1f0ec 88%,#77777a 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* the line typed under it, terminal style; the last word leans */
 .tty{margin:clamp(12px,1.8vh,22px) 0 0;text-align:center;font:500 clamp(10.5px,1.05vw,14px)/1.2 var(--mono);letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;white-space:nowrap;color:var(--fg2)}
@@ -126,26 +126,26 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .wait:not(.lit) .hero::before{opacity:1}
 .wait .hero::before{animation:standby 1.5s ease-in-out infinite alternate}
 @keyframes standby{from{filter:brightness(.4)}to{filter:brightness(1)}}
-.lit .stage{animation:power 2.2s var(--ease) both}
+.lit .stage{animation:power 1.6s var(--ease) both}
 @keyframes power{0%{opacity:0;transform:scale(1.05)}100%{opacity:1;transform:none}}
-.lit .stage img{animation:pull 1.8s var(--ease) both}
+.lit .stage img{animation:pull 1.3s var(--ease) both}
 @keyframes pull{0%{filter:blur(14px)}100%{filter:none}}
 .stage{background:var(--bg);overflow:hidden}   /* the light band starts and ends outside the stage: clip it, or the page scrolls sideways */
 .stage::after{content:"";position:absolute;top:0;bottom:0;left:0;width:38%;z-index:1;pointer-events:none;opacity:0;transform:translateX(-120%) skewX(-14deg)}
 @supports (mix-blend-mode:color-dodge){.stage::after{background:linear-gradient(90deg,#000,#626262 50%,#000);mix-blend-mode:color-dodge}}
-.lit .stage::after{animation:glint 1.6s cubic-bezier(.45,0,.25,1) .4s both}
+.lit .stage::after{animation:glint 1.3s cubic-bezier(.45,0,.25,1) .25s both}
 @keyframes glint{0%{opacity:0;transform:translateX(-120%) skewX(-14deg)}12%,88%{opacity:1}100%{opacity:0;transform:translateX(290%) skewX(-14deg)}}
-.lit .hero h1{animation:title 1.5s var(--ease) both}
+.lit .hero h1{animation:title 1.1s var(--ease) both}
 @keyframes title{from{opacity:0;letter-spacing:.06em;filter:blur(8px)}to{opacity:1;letter-spacing:.02em;filter:none}}
-.lit .top{animation:down 1.4s var(--ease) both}
+.lit .top{animation:down 1.1s var(--ease) both}
 @keyframes down{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
-.lit .hero-foot > *{animation:up 1.4s var(--ease) both}
+.lit .hero-foot > *{animation:up 1.1s var(--ease) both}
 /* the model's name wipes in from left to right, a beat after the wordmark has come up: a soft edge crossing the letters */
 .lit .hero .model{-webkit-mask:linear-gradient(90deg,#000 0%,#000 40%,transparent 60%,transparent 100%) 100% 0/250% 100% no-repeat;mask:linear-gradient(90deg,#000 0%,#000 40%,transparent 60%,transparent 100%) 100% 0/250% 100% no-repeat;
-  animation:wipe 1.7s cubic-bezier(.3,.1,.2,1) 1.9s both}
+  animation:wipe 1s cubic-bezier(.3,.1,.2,1) .7s both}
 @keyframes wipe{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0% 0;mask-position:0% 0}}
 @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.lit #library{animation:fade 1.4s ease both}   /* on a phone the next section's label peeks in under the hero */
+.lit #library{animation:fade 1.1s ease both}   /* on a phone the next section's label peeks in under the hero */
 @keyframes fade{from{opacity:0}to{opacity:1}}
 .hero-top,.hero-foot{width:100%}
 .hero-foot{position:relative;z-index:3;grid-row:3;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;padding-bottom:clamp(20px,3.6vh,44px)}
@@ -632,7 +632,7 @@ footer a:hover{color:var(--fg)}
   <section class="hero" id="hero">
     <div class="hero-top wrap">
       <h1 class="wordmark">Babel Drive</h1>
-      <p class="model">Blackstart Model</p>
+      <p class="model">Blackstart</p>
       <p class="tty" id="tty" aria-label="Our largest library yet"><span aria-hidden="true">Our largest library <em>yet</em></span></p>
     </div>
 
@@ -949,7 +949,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
       film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=20';
       film.preload = 'auto';
     });
-    afterLit(3700, function () { filmGo = true; tryPlay(); });   // once the model's name is in
+    afterLit(2000, function () { filmGo = true; tryPlay(); });   // once the model's name is in
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
     film.addEventListener('canplay', tryPlay, { once: true });
@@ -973,7 +973,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
     })(line);
     tty.classList.add('ready');
     if (reduce || !booting) { chars.forEach(function (u) { u.classList.add('on'); }); return; }
-    afterLit(1900 + 1700 + 200, function () {   // the wipe's delay and length, then a breath
+    afterLit(700 + 1000 + 200, function () {   // the wipe's delay and length, then a breath
       var i = 0;
       (function next() {
         if (i >= chars.length) return;
