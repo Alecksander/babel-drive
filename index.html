@@ -21,7 +21,7 @@
 <link rel="preload" as="image" href="img/hero/poster-2560.jpg?v=16" imagesrcset="img/hero/poster-1280.jpg?v=16 1280w, img/hero/poster-2560.jpg?v=16 1920w" imagesizes="(min-width: 900px) 90vw, 100vw" fetchpriority="high">
 <script>(function(){var d=document.documentElement,c=d.classList,st=/[?&]static/.test(location.search);c.add("js");
 if(st){c.add("static");d.style.setProperty("--shotvh",((location.search.match(/vh=(\d+)/)||[])[1]||900)+"px")}
-/* Load-in. The page stays dark until the hero photo and the fonts are ready (3 s at most), then the drive comes up alone and the text follows.
+/* Load-in. The page stays dark until the hero photo and the fonts are ready (3 s at most), then everything comes up together.
    html.boot = load-in in use, .wait = it is taking a moment (standby light on), .lit = go, .late = started before the photo arrived.
    The trigger sits right after the hero photo in the body; the styles are under "load-in" in the stylesheet. */
 var B=window.__bs={t:null,go:function(){if(B.t!=null)return;B.t=performance.now();c.add("lit");setTimeout(function(){c.remove("wait")},700);try{document.dispatchEvent(new Event("bs:lit"))}catch(e){}}};
@@ -116,8 +116,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .stage.on{cursor:pointer;-webkit-tap-highlight-color:transparent}
 .stage:focus{outline:none}
 .stage:focus-visible{outline:2px solid var(--fg);outline-offset:-3px}
-/* load-in (script in <head>): dark until the hero photo and fonts are ready, then the drive comes up alone and into focus,
-   a light crosses the steel, and the text follows. Nothing here applies without html.boot (reduced motion, ?static, no JS). */
+/* load-in (script in <head>): dark until the hero photo and fonts are ready, then the whole page comes up together in one
+   smooth fade (Alex, Nov 14: "have the whole site load at once, but smoothly"): the drive comes into focus with a light
+   crossing the steel, and the header, title and the rest fade in with it. Only the model's name and the typed line follow.
+   Nothing here applies without html.boot (reduced motion, ?static, no JS). */
 .boot:not(.lit) .top,.boot:not(.lit) .stage,.boot:not(.lit) .hero h1,.boot:not(.lit) .hero .model,.boot:not(.lit) .hero-foot > *,.boot:not(.lit) #library{opacity:0}
 .boot .stage img:not(.ld){opacity:0}
 .late .stage img{transition:opacity 1.2s ease}
@@ -134,20 +136,17 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @supports (mix-blend-mode:color-dodge){.stage::after{background:linear-gradient(90deg,#000,#626262 50%,#000);mix-blend-mode:color-dodge}}
 .lit .stage::after{animation:glint 1.6s cubic-bezier(.45,0,.25,1) .4s both}
 @keyframes glint{0%{opacity:0;transform:translateX(-120%) skewX(-14deg)}12%,88%{opacity:1}100%{opacity:0;transform:translateX(290%) skewX(-14deg)}}
-.lit .hero h1{animation:title 1.5s var(--ease) 1.25s both}
+.lit .hero h1{animation:title 1.5s var(--ease) both}
 @keyframes title{from{opacity:0;letter-spacing:.06em;filter:blur(8px)}to{opacity:1;letter-spacing:.02em;filter:none}}
-.lit .top{animation:down 1.1s var(--ease) 1.35s both}
+.lit .top{animation:down 1.4s var(--ease) both}
 @keyframes down{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
-.lit .hero-foot > *{animation:up 1.1s var(--ease) both}
-/* the model's name wipes in from left to right, two seconds after the wordmark has come up: a soft edge crossing the letters */
+.lit .hero-foot > *{animation:up 1.4s var(--ease) both}
+/* the model's name wipes in from left to right, a beat after the wordmark has come up: a soft edge crossing the letters */
 .lit .hero .model{-webkit-mask:linear-gradient(90deg,#000 0%,#000 40%,transparent 60%,transparent 100%) 100% 0/250% 100% no-repeat;mask:linear-gradient(90deg,#000 0%,#000 40%,transparent 60%,transparent 100%) 100% 0/250% 100% no-repeat;
-  animation:wipe 1.7s cubic-bezier(.3,.1,.2,1) 4.5s both}
+  animation:wipe 1.7s cubic-bezier(.3,.1,.2,1) 1.9s both}
 @keyframes wipe{from{-webkit-mask-position:100% 0;mask-position:100% 0}to{-webkit-mask-position:0% 0;mask-position:0% 0}}
-.lit .hero-foot > :nth-child(1){animation-delay:1.6s}
-.lit .hero-foot > :nth-child(2){animation-delay:1.7s}
-.lit .hero-foot > :nth-child(3){animation-delay:1.8s}
 @keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.lit #library{animation:fade 1.2s ease 1.9s both}   /* on a phone the next section's label peeks in under the hero */
+.lit #library{animation:fade 1.4s ease both}   /* on a phone the next section's label peeks in under the hero */
 @keyframes fade{from{opacity:0}to{opacity:1}}
 .hero-top,.hero-foot{width:100%}
 .hero-foot{position:relative;z-index:3;grid-row:3;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;padding-bottom:clamp(20px,3.6vh,44px)}
@@ -954,7 +953,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
       film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=20';
       film.preload = 'auto';
     });
-    afterLit(6300, function () { filmGo = true; tryPlay(); });   // once the model's name is in
+    afterLit(3700, function () { filmGo = true; tryPlay(); });   // once the model's name is in
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
     film.addEventListener('canplay', tryPlay, { once: true });
@@ -978,7 +977,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
     })(line);
     tty.classList.add('ready');
     if (reduce || !booting) { chars.forEach(function (u) { u.classList.add('on'); }); return; }
-    afterLit(4500 + 1700 + 200, function () {   // the wipe's delay and length, then a breath
+    afterLit(1900 + 1700 + 200, function () {   // the wipe's delay and length, then a breath
       var i = 0;
       (function next() {
         if (i >= chars.length) return;
@@ -1225,7 +1224,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   if (reduce || !('IntersectionObserver' in window)) rise.forEach(function (el) { el.classList.add('in'); });
   else {
     var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { arrive(e.target); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
-    afterLit(1900, function () { rise.forEach(function (el) { io.observe(el); }); });   // anything already on screen waits for the hero text
+    afterLit(300, function () { rise.forEach(function (el) { io.observe(el); }); });   // anything already on screen comes in with the rest
   }
 
   /* scroll: header progress, hero depth, slow drift on the full-bleed photo */
