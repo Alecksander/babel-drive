@@ -358,6 +358,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .end-img img{flex:none;width:min(1300px,140%);max-width:none;-webkit-mask-image:radial-gradient(70% 72% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(70% 72% at 50% 50%,#000 55%,transparent 100%)}
 footer{border-top:1px solid var(--line);padding-block:30px calc(30px + env(safe-area-inset-bottom,0px))}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;font:400 12px/1.6 var(--mono);color:var(--mute)}
+footer a{color:var(--fg2);text-decoration:none}
+footer a:hover{color:var(--fg)}
 @media (max-width:899px){footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 
 
@@ -840,6 +842,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 
   <div class="wrap">
     <span class="mark" style="font-size:11px">BABEL DRIVE</span>
     <span>Library content is openly licensed or public domain. Every source is listed on the drive in SOURCES.csv.</span>
+    <a href="mailto:library@babeldrives.com">library@babeldrives.com</a>
     <span>© 2026 Babel Drive</span>
   </div>
 </footer>
