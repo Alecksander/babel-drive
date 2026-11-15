@@ -49,7 +49,7 @@ if(!st&&!matchMedia("(prefers-reduced-motion: reduce)").matches){c.add("boot");s
   color-scheme:dark;
 }
 *,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--head) + 12px);background:var(--bg);overflow-x:hidden}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:16px;background:var(--bg);overflow-x:hidden}
 body{margin:0;background:var(--bg);color:var(--fg2);font:400 16px/1.55 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 img,svg,video,canvas{display:block;max-width:100%}
 img{height:auto}
@@ -71,8 +71,8 @@ h2 em{font-style:normal;color:var(--mute)}
 
 /* header */
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:40}
-.top{position:fixed;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:40;border-bottom:1px solid transparent;transition:background .35s,border-color .35s,-webkit-backdrop-filter .35s,backdrop-filter .35s}
-.top.lined{background:rgba(0,0,0,.7);-webkit-backdrop-filter:saturate(1.4) blur(18px);backdrop-filter:saturate(1.4) blur(18px);border-bottom-color:var(--line)}
+/* the header belongs to the top of the page and scrolls away with it: nothing follows the reader down (Alex, Nov 14) */
+.top{position:absolute;left:0;right:0;top:env(safe-area-inset-top,0px);z-index:40}
 .top .wrap{height:var(--head);display:flex;align-items:center;justify-content:space-between;gap:24px;max-width:none}
 .mark{font:700 12px/1 var(--wide);font-stretch:125%;letter-spacing:.28em;color:var(--fg);text-decoration:none;white-space:nowrap}
 .nav{display:flex;align-items:center;gap:32px}
@@ -106,8 +106,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tty u.on{visibility:visible}
 .boot .tty:not(.ready){visibility:hidden}
 /* at the top of the page the big wordmark is the brand, so the header keeps its small one back until the page has scrolled */
-.top .mark{transition:opacity .35s}
-.top:not(.lined) .mark{opacity:0;pointer-events:none}
+.top .mark{display:none}   /* the big wordmark right under it is the brand */
 .stage{position:relative;grid-row:2;min-height:0;margin:clamp(4px,1vh,16px) 0;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
 .stage img,.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 50%}
 .stage video{opacity:0;transition:opacity 1.2s ease}
@@ -161,8 +160,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 @media (max-width:899px){
   .hero{min-height:0;display:block;padding-bottom:8px}
   .hero-top{padding-top:calc(env(safe-area-inset-top,0px) + 34px)}   /* phones: the wordmark takes the header's place; the header comes in on scroll */
-  .top .nav .btn{transition:opacity .35s,background .2s,transform .15s,box-shadow .3s}
-  .top:not(.lined) .nav .btn{opacity:0;pointer-events:none}
+  .top{display:none}   /* phones: the wordmark takes the header's place */
   .stage{aspect-ratio:4/3;margin:6px 0 4px}
   .stage img,.stage video{object-fit:cover}
   .hero-foot{grid-template-columns:minmax(0,1fr);padding-bottom:28px}
@@ -516,8 +514,6 @@ footer a:hover{color:var(--fg)}
 #capnow b{color:var(--fg)}
 
 /* header: reading progress and the section you're in */
-.top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,var(--dim),var(--fg));transform-origin:0 50%;transform:scaleX(var(--sp,0));opacity:0;transition:opacity .35s}
-.top.lined::after{opacity:.6}
 .nav a:not(.btn){position:relative}
 .nav a:not(.btn)::after{content:"";position:absolute;left:50%;bottom:-10px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:var(--signal);opacity:0;transform:scale(.3);transition:opacity .3s,transform .4s var(--ease)}
 .nav a.on{color:var(--fg)}
@@ -927,7 +923,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   /* header + phone bar */
   var top = document.getElementById('top'), bar = document.getElementById('bar'), hero = document.getElementById('hero'), end = document.getElementById('join');
   var heroOut = false, endIn = false;
-  function syncBar() { var on = heroOut && !endIn; bar.classList.toggle('on', on); bar.setAttribute('aria-hidden', on ? 'false' : 'true'); bar.querySelector('a').tabIndex = on ? 0 : -1; }
+  function syncBar() { var on = heroOut; bar.classList.toggle('on', on); bar.setAttribute('aria-hidden', on ? 'false' : 'true'); bar.querySelector('a').tabIndex = on ? 0 : -1; }
   new IntersectionObserver(function (e) { heroOut = !e[0].isIntersecting; syncBar(); }, { rootMargin: '-60% 0px 0px 0px' }).observe(hero);
   new IntersectionObserver(function (e) { endIn = e[0].isIntersecting; syncBar(); }).observe(end);
   function lined() { top.classList.toggle('lined', scrollY > 24); }
