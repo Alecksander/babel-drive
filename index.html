@@ -95,17 +95,24 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero{position:relative;min-height:max(700px,100svh);display:grid;grid-template-rows:auto minmax(300px,1fr) auto;background:var(--bg)}
 .hero-top{position:relative;z-index:1;padding-top:calc(var(--head) + env(safe-area-inset-top,0px) + clamp(6px,1.6vh,28px))}
 .hero h1{font-size:min(10.3vw,150px);white-space:nowrap;text-align:center}
-/* the wordmark's text sits in a span so the heading keeps its height while the words get longer and smaller */
-#wm{display:inline-block;vertical-align:middle;font-size:1em;transition:font-size 1.15s var(--ease);
-  background:linear-gradient(180deg,#f6f5f1 0%,#c9c8c4 45%,#6c6c70 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
-#wm.long{font-size:var(--wm-long,.55em)}
+/* The heading holds two names in the same place. BABEL DRIVE (#wm) keeps the heading's size; THE BLACKSTART DRIVE (#wm2) is
+   laid over it, set exactly as wide. When the change comes, the first fades up and out and the second rolls in letter by letter. */
+.hero h1{position:relative}
+#wm,#wm2,#wm2 .wr i{background:linear-gradient(180deg,#f6f5f1 0%,#c9c8c4 45%,#6c6c70 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+#wm{display:inline-block;transition:opacity .9s ease,transform .9s var(--ease),filter .9s ease}
+#wm.out{opacity:0;transform:translateY(-.08em);filter:blur(6px)}
+#wm2{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:var(--wm-long,.545em);line-height:1;white-space:nowrap;visibility:hidden}
+#wm2 .wcs{position:absolute;inset:0;visibility:visible}
+#wm2 .wc{position:absolute;top:0;height:1em;overflow:hidden;animation:cellin .5s ease both;animation-delay:calc(var(--i) * 55ms + 250ms)}
+#wm2 .wr{display:block;animation:roll 1.25s cubic-bezier(.16,.84,.22,1) both;animation-delay:calc(var(--i) * 55ms + 250ms)}
+#wm2 .wr i{display:block;height:1em;line-height:1;font-style:normal;text-align:left}
+@keyframes roll{from{transform:translateY(100%)}to{transform:translateY(-66.667%)}}   /* two letters pass, the third stays */
+@keyframes cellin{from{opacity:0}to{opacity:1}}
 /* the line typed under it, terminal style; the last word leans */
 .tty{margin:clamp(12px,1.8vh,22px) 0 0;text-align:center;font:500 clamp(10.5px,1.05vw,14px)/1.2 var(--mono);letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;white-space:nowrap;color:var(--fg2)}
 .tty em{font-style:italic;font-weight:500;color:var(--fg);letter-spacing:.24em}
 .tty u{text-decoration:none;visibility:hidden}
 .tty u.on{visibility:visible}
-.tty .cur{display:inline-block;width:.62em;height:1.05em;margin-left:.12em;vertical-align:-.16em;background:var(--signal);box-shadow:0 0 10px 1px rgba(255,91,31,.55);animation:blink 1.05s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
 .boot .tty:not(.ready){visibility:hidden}
 /* at the top of the page the big wordmark is the brand, so the header keeps its small one back until the page has scrolled */
 .top .mark{transition:opacity .35s}
@@ -608,7 +615,7 @@ footer a:hover{color:var(--fg)}
   .js .blueprint.anim text,.js .blueprint.anim .ar{opacity:1;transition:none}
   .js .rise{opacity:1;transform:none;transition:none}
   .lit .stage,.lit .stage img,.lit .stage::after,.lit .top,.lit .hero h1,.lit .hero-foot > *,.lit #library{animation:none}
-  #wm{transition:none}.tty .cur{animation:none}
+  #wm{transition:none}
   .js .track .card,.js .card img{opacity:1;translate:none;transition:none}
   .live i::after{animation:none}
   .meter i,.results li{transition:none;animation:none}
@@ -951,7 +958,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
       film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=20';
       film.preload = 'auto';
     });
-    afterLit(5200, function () { filmGo = true; tryPlay(); });   // after the wordmark has changed and its line is typed
+    afterLit(7600, function () { filmGo = true; tryPlay(); });   // once the name has changed over
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
     film.addEventListener('canplay', tryPlay, { once: true });
@@ -963,19 +970,18 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
     stage.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFilm(); } });
   }
 
-  /* the wordmark: BABEL DRIVE comes up with the page, then every letter runs through the alphabet and settles as
-     THE BLACKSTART DRIVE, in the same place and the same width. Then the line under it is typed out, left to right. */
+  /* the wordmark: BABEL DRIVE comes up with the page and stays a while. Then it fades up and out while THE BLACKSTART DRIVE
+     rolls into the same place, one letter after another, each one passing two letters before it settles (no flicker: every
+     move is a slide). Then the line under it is typed out, left to right, unhurried. */
   (function () {
-    var wm = document.getElementById('wm'), tty = document.getElementById('tty'), line = tty.firstElementChild;
-    var TO = 'THE BLACKSTART DRIVE', GLYPHS = 'ABCDEFGHJKLMNOPQRSTUVWXYZ';
-    function fit() {   // the long name is set as wide as the short one was
-      var was = wm.textContent, cls = wm.className; wm.style.transition = 'none'; wm.className = '';
-      wm.textContent = 'BABEL DRIVE'; var a = wm.getBoundingClientRect().width; wm.textContent = TO; var b = wm.getBoundingClientRect().width;
-      wm.textContent = was; wm.className = cls;
-      if (a > 0 && b > 0) wm.style.setProperty('--wm-long', (a / b).toFixed(4) + 'em');
-      void wm.offsetWidth; wm.style.transition = '';
+    var h1 = document.querySelector('.hero h1'), wm = document.getElementById('wm'), tty = document.getElementById('tty'), line = tty.firstElementChild;
+    var TO = 'THE BLACKSTART DRIVE', GLYPHS = 'ABCDEFGHKLMNOPRSTUVXYZ';
+    var wm2 = document.createElement('span'); wm2.id = 'wm2'; wm2.setAttribute('aria-hidden', 'true'); wm2.textContent = TO; h1.appendChild(wm2);
+    function fit() {   // the long name is set exactly as wide as the short one
+      wm2.style.fontSize = '1em'; var a = wm.getBoundingClientRect().width, b = wm2.getBoundingClientRect().width; wm2.style.fontSize = '';
+      if (a > 0 && b > 0) h1.style.setProperty('--wm-long', (a / b).toFixed(4) + 'em');
     }
-    function done() { wm.textContent = TO; wm.classList.add('long'); }
+    function done() { var c = wm2.querySelector('.wcs'); if (c) wm2.removeChild(c); wm.classList.add('out'); wm.style.visibility = 'hidden'; wm2.style.visibility = 'visible'; }
     // the typed line: every character keeps its place from the start, so the line stays centred while it fills in
     var chars = [];
     (function split(node) {
@@ -984,8 +990,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
         else split(n);
       });
     })(line);
-    var cur = document.createElement('i'); cur.className = 'cur';
-    function typed() { chars.forEach(function (u) { u.classList.add('on'); }); chars[chars.length - 1].parentNode.appendChild(cur); }
+    function typed() { chars.forEach(function (u) { u.classList.add('on'); }); }
     var ready = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     ready.then(fit); addEventListener('resize', fit);
     if (reduce || !booting) { ready.then(function () { fit(); done(); typed(); tty.classList.add('ready'); }); return; }
@@ -993,27 +998,29 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
     function type() {
       var i = 0;
       (function next() {
-        if (i >= chars.length) { typed(); return; }
-        var u = chars[i++]; u.classList.add('on'); u.parentNode.insertBefore(cur, u.nextSibling);
-        setTimeout(next, u.textContent === ' ' ? 70 : 34 + Math.random() * 30);
+        if (i >= chars.length) return;
+        var u = chars[i++]; u.classList.add('on');
+        setTimeout(next, u.textContent === ' ' ? 170 : 75 + Math.random() * 45);
       })();
     }
-    function scramble() {
-      var from = wm.textContent.toUpperCase(), q = [], frame = 0, n = Math.max(from.length, TO.length);
-      for (var i = 0; i < n; i++) { var st = Math.round(i * 1.6 + Math.random() * 10); q.push({ f: from[i] || '', t: TO[i] || '', s: st, e: st + 16 + Math.round(Math.random() * 20), c: '' }); }
-      wm.classList.add('long');   // the letters tighten up while the name grows
-      (function step() {
-        var out = '', left = 0;
-        q.forEach(function (o) {
-          if (frame >= o.e) out += o.t;
-          else if (frame >= o.s) { left++; if (o.t === ' ') out += ' '; else { if (!o.c || Math.random() < .3) o.c = GLYPHS[Math.floor(Math.random() * GLYPHS.length)]; out += o.c; } }
-          else { left++; out += o.f; }
-        });
-        wm.textContent = out; frame++;
-        if (left) requestAnimationFrame(step); else { wm.textContent = TO; setTimeout(type, 260); }
-      })();
+    function roll() {
+      fit();
+      var fs = parseFloat(getComputedStyle(wm2).fontSize), box = wm2.getBoundingClientRect(), node = wm2.firstChild, rg = document.createRange();
+      var layer = document.createElement('span'), k = 0, last = null; layer.className = 'wcs';
+      for (var i = 0; i < TO.length; i++) {
+        if (TO[i] === ' ') continue;
+        rg.setStart(node, i); rg.setEnd(node, i + 1); var r = rg.getBoundingClientRect();   // each letter goes exactly where the finished name has it
+        var c = document.createElement('span'); c.className = 'wc'; c.style.left = ((r.left - box.left) / fs).toFixed(4) + 'em'; c.style.width = (r.width / fs + .02).toFixed(4) + 'em'; c.style.setProperty('--i', k++);
+        var reel = document.createElement('span'); reel.className = 'wr';
+        [GLYPHS[Math.floor(Math.random() * GLYPHS.length)], GLYPHS[Math.floor(Math.random() * GLYPHS.length)], TO[i]].forEach(function (ch) { var g = document.createElement('i'); g.textContent = ch; reel.appendChild(g); });
+        c.appendChild(reel); layer.appendChild(c); last = reel;
+      }
+      wm2.appendChild(layer); wm.classList.add('out');
+      var fin = false, end = function () { if (fin) return; fin = true; done(); setTimeout(type, 450); };
+      last.addEventListener('animationend', function (e) { if (e.animationName === 'roll') end(); });
+      setTimeout(end, 250 + k * 55 + 1250 + 400);   // in case the event never comes
     }
-    afterLit(3050, scramble);
+    afterLit(5200, roll);
   })();
 
   /* jump to the last form and focus it */
