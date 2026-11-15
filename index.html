@@ -101,11 +101,18 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .model{margin:0;text-align:center;font:300 clamp(22px,5.4vw,52px)/1.05 var(--wide);font-stretch:125%;letter-spacing:.28em;text-indent:.28em;text-transform:uppercase;white-space:nowrap;
   background:linear-gradient(100deg,#5e5e62 0%,#d9d8d4 16%,#f6f5f1 30%,#8f8f93 46%,#4a4a4e 58%,#c9c8c4 76%,#f1f0ec 88%,#77777a 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* the line typed under it, terminal style; the last word leans */
-.tty{margin:clamp(8px,1.2vh,14px) 0 0;text-align:center;font:500 clamp(10.5px,1.05vw,14px)/1.2 var(--mono);letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;white-space:nowrap;color:var(--fg2)}
+.tty{display:grid;margin:clamp(8px,1.2vh,14px) 0 0;text-align:center;font:500 clamp(10.5px,1.05vw,14px)/1.2 var(--mono);letter-spacing:.2em;text-indent:.2em;text-transform:uppercase;white-space:nowrap;color:var(--fg2)}
 .tty em{font-style:italic;font-weight:500;color:var(--fg);letter-spacing:.24em}
 .tty u{text-decoration:none;visibility:hidden}
 .tty u.on{visibility:visible}
 .boot .tty:not(.ready){visibility:hidden}
+/* a second line shares its spot. The first is typed once; after that the two trade places by fading, the way the button's label does */
+/* one fades out, then the other fades in: the lines differ in length, so a straight crossfade showed both at once */
+.tty .ta,.tty .tb{grid-area:1/1;transition:opacity .4s ease}
+.tty .ta{transition-delay:.4s}
+.tty .tb{opacity:0}
+.tty.alt .ta{opacity:0;transition-delay:0s}
+.tty.alt .tb{opacity:1;transition-delay:.4s}
 /* at the top of the page the big wordmark is the brand, so the header keeps its small one back until the page has scrolled */
 .top .mark{display:none}   /* the big wordmark right under it is the brand */
 .top .wrap{justify-content:flex-end}
@@ -154,7 +161,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 /* the name and its line sit where the description used to be; that sentence now runs under the spec line, close to it.
    The price, the button and the spec line are where they always were. */
 .hero-foot .lede{grid-column:1/-1;margin:-12px 0 0;font-size:13.5px;line-height:1.5;color:var(--mute)}
-@media (min-width:900px){.name .model,.name .tty{text-align:left;text-indent:0}}
+.name .model,.name .tty{text-align:left;text-indent:0}
 .buy{display:flex;align-items:center;gap:22px}
 .price{font:400 13px/1.5 var(--mono);color:var(--mute);text-align:right}
 .price b{display:block;font:400 22px/1.1 var(--sans);letter-spacing:-.02em;color:var(--fg)}
@@ -168,6 +175,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .stage{aspect-ratio:4/3;margin:6px 0 4px}
   .stage img,.stage video{object-fit:cover}
   .hero-foot{grid-template-columns:minmax(0,1fr);padding-bottom:14px}
+  .name{margin-bottom:-23px}   /* the price row comes right up under the name: the grid gap plus the price's own margin had left 37px of black */
   .buy{justify-content:space-between}
   .price{text-align:left}
 }
@@ -663,7 +671,7 @@ footer a:hover{color:var(--fg)}
     <div class="hero-foot wrap">
       <div class="name">
         <p class="model">Blackstart</p>
-        <p class="tty" id="tty" aria-label="Our largest library yet"><span aria-hidden="true">Our largest library <em>yet</em></span></p>
+        <p class="tty" id="tty" aria-label="Our largest library yet. Only 50 made."><span class="ta" aria-hidden="true">Our largest library <em>yet</em></span><span class="tb" aria-hidden="true">Only 50 made</span></p>
       </div>
       <div class="buy">
         <p class="price"><b>$199</b>256 GB drive</p>
@@ -977,8 +985,9 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
     stage.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleFilm(); } });
   }
 
-  /* under the wordmark: BLACKSTART MODEL wipes in (CSS), and once it is fully in the line under it is typed out, left to
-     right, unhurried. Every character keeps its place from the start, so the line stays centred while it fills in. */
+  /* under the film: BLACKSTART wipes in (CSS), and once it is fully in the line under it is typed out, left to right,
+     unhurried. That happens once. From then on the line trades places with a second one ("Only 50 made") every seven
+     seconds by fading, the way the button's label does; it is never typed again. */
   (function () {
     var tty = document.getElementById('tty'), line = tty.firstElementChild, chars = [];
     (function split(node) {
@@ -988,11 +997,12 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
       });
     })(line);
     tty.classList.add('ready');
-    if (reduce || !booting) { chars.forEach(function (u) { u.classList.add('on'); }); return; }
+    var trade = function () { if (/[?&]static/.test(location.search)) return; setInterval(function () { tty.classList.toggle('alt'); }, 7000); };
+    if (reduce || !booting) { chars.forEach(function (u) { u.classList.add('on'); }); trade(); return; }
     afterLit(700 + 1000 + 200, function () {   // the wipe's delay and length, then a breath
       var i = 0;
       (function next() {
-        if (i >= chars.length) return;
+        if (i >= chars.length) { trade(); return; }
         var u = chars[i++]; u.classList.add('on');
         setTimeout(next, u.textContent === ' ' ? 170 : 75 + Math.random() * 45);
       })();
