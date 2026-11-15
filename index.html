@@ -906,7 +906,7 @@ footer a:hover{color:var(--fg)}
       <p class="live" style="justify-content:center;display:flex;margin-bottom:28px"><i></i>Waitlist open</p>
       <h2 id="end-h" class="wordmark">Blackstart</h2>
       <p class="lede">256 GB. Solid steel.</p>
-      <form class="join" data-join novalidate>
+      <form class="join" data-join novalidate data-busy="Joining…" data-ok="You’re on the list." data-ok-note="We’ll email {email} when the next batch opens.">
         <div class="fmt" role="radiogroup" aria-label="Format">
           <label><input type="radio" name="fmt-b" value="drive" checked><span>256 GB Drive <em>$199</em></span></label>
           <label><input type="radio" name="fmt-b" value="download"><span>Download <em>$49</em></span></label>
@@ -1025,8 +1025,9 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   function done(email) {
     forms.forEach(function (f) {
       var ok = document.createElement('div'); ok.className = 'ok'; ok.setAttribute('tabindex', '-1');
-      ok.innerHTML = '<b>You’re on the list.</b><span></span>';
-      ok.querySelector('span').textContent = 'We’ll email ' + email + ' when the next batch opens.';
+      ok.innerHTML = '<b></b><span></span>';   // the words come from the form, so the store can say what fits (a reservation, or the waitlist)
+      ok.querySelector('b').textContent = f.getAttribute('data-ok') || 'You’re on the list.';
+      ok.querySelector('span').textContent = (f.getAttribute('data-ok-note') || 'We’ll email {email} when the next batch opens.').replace('{email}', email);
       f.hidden = true; f.parentNode.insertBefore(ok, f.nextSibling);
     });
   }
@@ -1036,11 +1037,12 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
       var input = f.querySelector('input[type=email]'), err = f.querySelector('.err'), btn = f.querySelector('button[type=submit]');
       var v = input.value.trim(), fmt = (f.querySelector('input[type=radio]:checked') || {}).value || 'drive';
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) { err.textContent = 'Enter a valid email address.'; err.hidden = false; input.focus(); return; }
-      err.hidden = true; btn.disabled = true; btn.textContent = 'Joining…';
+      var label = btn.textContent;
+      err.hidden = true; btn.disabled = true; btn.textContent = f.getAttribute('data-busy') || 'Joining…';
       var body = new URLSearchParams(); body.append(F_EMAIL, v); body.append(F_FORMAT, LABEL[fmt]);
       fetch(FORM_URL, { method: 'POST', mode: 'no-cors', body: body })
         .then(function () { done(v); })
-        .catch(function () { err.textContent = 'That didn’t go through. Check your connection and try again.'; err.hidden = false; btn.disabled = false; btn.textContent = 'Join the waitlist'; });
+        .catch(function () { err.textContent = 'That didn’t go through. Check your connection and try again.'; err.hidden = false; btn.disabled = false; btn.textContent = label; });
     });
   });
 
