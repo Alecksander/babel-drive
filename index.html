@@ -97,8 +97,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .hero h1{font-size:min(10.3vw,150px);white-space:nowrap;text-align:center;
   background:linear-gradient(180deg,#f6f5f1 0%,#c9c8c4 45%,#6c6c70 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
 /* Babel Drive is the brand, Blackstart the drive: the product's name sits under the wordmark */
-.model{margin:clamp(14px,2vh,26px) 0 0;text-align:center;font:700 clamp(14px,1.5vw,20px)/1 var(--wide);font-stretch:125%;letter-spacing:.32em;text-indent:.32em;text-transform:uppercase;white-space:nowrap;color:var(--fg)}
-.sub{margin:clamp(10px,1.5vh,16px) 0 0;text-align:center;font:500 clamp(10.5px,.95vw,12px)/1 var(--mono);letter-spacing:.14em;text-indent:.14em;text-transform:uppercase;white-space:nowrap;color:var(--fg2)}
+.model{margin:clamp(12px,1.8vh,22px) 0 0;text-align:center;font:300 clamp(24px,3.5vw,52px)/1.05 var(--wide);font-stretch:125%;letter-spacing:.3em;text-indent:.3em;text-transform:uppercase;white-space:nowrap;
+  background:linear-gradient(100deg,#5e5e62 0%,#d9d8d4 16%,#f6f5f1 30%,#8f8f93 46%,#4a4a4e 58%,#c9c8c4 76%,#f1f0ec 88%,#77777a 100%) 50% 0/240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent}   /* steel under a raking light: bright, shadow, bright */
+.sub{margin:clamp(9px,1.3vh,14px) 0 0;text-align:center;font:500 clamp(9px,.78vw,10.5px)/1 var(--mono);letter-spacing:.16em;text-indent:.16em;text-transform:uppercase;white-space:nowrap;color:var(--mute)}
 /* at the top of the page the big wordmark is the brand, so the header keeps its small one back until the page has scrolled */
 .top .mark{transition:opacity .35s}
 .top:not(.lined) .mark{opacity:0;pointer-events:none}
@@ -133,7 +134,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .lit .top{animation:down 1.1s var(--ease) 1.35s both}
 @keyframes down{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
 .lit .hero .model,.lit .hero .sub,.lit .hero-foot > *{animation:up 1.1s var(--ease) both}
-.lit .hero .model{animation-delay:1.42s}
+.lit .hero .model{animation:up 1.1s var(--ease) 1.42s both,sheen 3.2s cubic-bezier(.3,0,.2,1) 1.5s both}   /* the light crosses the name once, then rests */
+@keyframes sheen{from{background-position:100% 0}to{background-position:50% 0}}
 .lit .hero .sub{animation-delay:1.5s}
 .lit .hero-foot > :nth-child(1){animation-delay:1.6s}
 .lit .hero-foot > :nth-child(2){animation-delay:1.7s}
