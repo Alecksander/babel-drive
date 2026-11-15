@@ -825,21 +825,6 @@ footer a:hover{color:var(--fg)}
     </div>
   </section>
 
-  <section class="reel" id="reel" aria-label="Photos">
-    <div class="wrap reel-head">
-      <p class="eyebrow">In hand</p>
-      <div class="reel-nav"><button type="button" id="rprev" aria-label="Previous photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3L5 8l5 5"/></svg></button><button type="button" id="rnext" aria-label="Next photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l5 5-5 5"/></svg></button></div>
-    </div>
-    <div class="track" id="track" tabindex="0" aria-label="Photos of Blackstart, scroll sideways">
-      <figure class="card"><div class="ph"><img src="img/p/palm-900.jpg?v=2" srcset="img/p/palm-900.jpg?v=2 900w, img/p/palm-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" decoding="async" alt="Blackstart resting in an open palm" draggable="false"></div><figcaption><b>44.7 × 20.4 × 9 mm, 55 g</b><span>01 / 05</span></figcaption></figure>
-      <figure class="card"><div class="ph"><img src="img/p/hold-900.jpg?v=2" srcset="img/p/hold-900.jpg?v=2 900w, img/p/hold-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" decoding="async" alt="Blackstart held between thumb and finger against black" draggable="false"></div><figcaption><b>Solid 316L stainless</b><span>02 / 05</span></figcaption></figure>
-      <figure class="card"><div class="ph"><img src="img/p/lamp-900.jpg?v=2" srcset="img/p/lamp-900.jpg?v=2 900w, img/p/lamp-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a walnut desk under a warm lamp" draggable="false"></div><figcaption><b>Laser-marked body</b><span>03 / 05</span></figcaption></figure>
-      <figure class="card"><div class="ph"><img src="img/p/cabin-900.jpg?v=2" srcset="img/p/cabin-900.jpg?v=2 900w, img/p/cabin-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a cabin windowsill with snow outside" draggable="false"></div><figcaption><b>Magnetic cap, fits either end</b><span>04 / 05</span></figcaption></figure>
-      <figure class="card"><div class="ph"><img src="img/p/book-900.jpg?v=2" srcset="img/p/book-900.jpg?v=2 900w, img/p/book-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a desk beside a cloth-bound book" draggable="false"></div><figcaption><b>Bead-blasted finish</b><span>05 / 05</span></figcaption></figure>
-    </div>
-    <div class="wrap"><div class="reel-bar"><i id="rbar"></i></div></div>
-  </section>
-
   <figure class="bleed parts">
     <div class="parts-pan" id="ppan"><div class="parts-stage" id="parts"><img class="rise" src="img/parts-1600.jpg?v=2" srcset="img/parts-1000.jpg?v=2 1000w, img/parts-1600.jpg?v=2 1600w, img/parts-2400.jpg?v=2 2400w" sizes="(max-width: 699px) 190vw, 100vw" width="2400" height="1350" loading="lazy" decoding="async" alt="Every part laid out: steel body, cover and cap, the 256 GB board with its USB-C plug, thermal pad, four screws and six magnets"><button type="button" class="hs" data-i="0" style="left:22.8%;top:33.1%" aria-label="Body: 316L stainless, machined from solid">01</button><button type="button" class="hs" data-i="1" style="left:57.3%;top:33.1%" aria-label="Cover: Steel, held by four screws">02</button><button type="button" class="hs" data-i="2" style="left:90.5%;top:33.1%" aria-label="Cap: Solid steel, held by magnets">03</button><button type="button" class="hs" data-i="3" style="left:20.4%;top:73.0%" aria-label="256 GB board: One chip and the USB-C plug">04</button><button type="button" class="hs" data-i="4" style="left:55.6%;top:73.0%" aria-label="Thermal pad: Presses the board down">05</button><button type="button" class="hs" data-i="5" style="left:70.3%;top:60.0%" aria-label="Screws ×4: M1.6, flush">06</button><button type="button" class="hs" data-i="6" style="left:85.3%;top:60.0%" aria-label="Magnets ×6: Hold the cap on either end">07</button><div class="hs-tip" id="hstip"><b></b><span></span></div></div></div>
     <div class="wrap"><p class="pan-hint" aria-hidden="true"><i></i>Swipe to see every part</p><ul class="parts-key" id="pkey"><li data-i="0"><b>01</b>Body</li><li data-i="1"><b>02</b>Cover</li><li data-i="2"><b>03</b>Cap</li><li data-i="3"><b>04</b>256 GB board</li><li data-i="4"><b>05</b>Thermal pad</li><li data-i="5"><b>06</b>Screws ×4</li><li data-i="6"><b>07</b>Magnets ×6</li></ul></div>
@@ -1159,8 +1144,10 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   document.querySelectorAll('.try button').forEach(function (b) { b.addEventListener('click', function () { q.value = b.textContent; if (cat >= 0) setCat(-1); else run(); }); });
   new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { o.disconnect(); run(); } }, { rootMargin: '600px' }).observe(out);
 
-  /* photo reel: drag with the mouse, arrows, a slight parallax inside each frame */
+  /* photo reel: drag with the mouse, arrows, a slight parallax inside each frame. The gallery is off the page (Nov 14), so this stands down. */
+  (function () {
   var track = document.getElementById('track'), rprev = document.getElementById('rprev'), rnext = document.getElementById('rnext'), rbar = document.getElementById('rbar');
+  if (!track) return;
   var cards = Array.prototype.slice.call(track.querySelectorAll('.card'));
   cards.forEach(function (c, i) {   // cards arrive in sequence; each photo fades in once it has loaded
     c.style.setProperty('--i', i);
@@ -1194,6 +1181,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
         if (reduce) track.classList.remove('grab'); else requestAnimationFrame(f);
       }
     });
+  })();
   })();
 
   /* parts: hover or tap a number to name the part */
