@@ -19,7 +19,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,300;125,700&family=Geist:wght@300;400;500&family=Geist+Mono:wght@400;500&display=swap">
 <link rel="preload" as="image" href="img/hero/poster-2560.jpg?v=16" imagesrcset="img/hero/poster-1280.jpg?v=16 1280w, img/hero/poster-2560.jpg?v=16 1920w" imagesizes="(min-width: 900px) 90vw, 100vw" fetchpriority="high">
-<script>document.documentElement.classList.add("js");if(/[?&]static/.test(location.search)){document.documentElement.classList.add("static");document.documentElement.style.setProperty("--shotvh",((location.search.match(/vh=(\d+)/)||[])[1]||900)+"px")}</script>
+<script>(function(){var d=document.documentElement,c=d.classList,st=/[?&]static/.test(location.search);c.add("js");
+if(st){c.add("static");d.style.setProperty("--shotvh",((location.search.match(/vh=(\d+)/)||[])[1]||900)+"px")}
+/* Load-in. The page stays dark until the hero photo and the fonts are ready (3 s at most), then the drive comes up alone and the text follows.
+   html.boot = load-in in use, .wait = it is taking a moment (standby light on), .lit = go, .late = started before the photo arrived.
+   The trigger sits right after the hero photo in the body; the styles are under "load-in" in the stylesheet. */
+var B=window.__bs={t:null,go:function(){if(B.t!=null)return;B.t=performance.now();c.add("lit");setTimeout(function(){c.remove("wait")},700);try{document.dispatchEvent(new Event("bs:lit"))}catch(e){}}};
+if(!st&&!matchMedia("(prefers-reduced-motion: reduce)").matches){c.add("boot");setTimeout(function(){if(B.t==null)c.add("wait")},450);setTimeout(function(){if(B.t==null){c.add("late");B.go()}},3000)}
+})()</script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Product","name":"Blackstart","brand":{"@type":"Brand","name":"Babel Drive"},
@@ -99,10 +106,35 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .film-ctl:hover{color:var(--fg);border-color:var(--fg2)}
 .film-ctl i{width:8px;height:9px;border-left:2px solid currentColor;border-right:2px solid currentColor}
 .film-ctl.paused i{width:0;height:0;border:0;border-left:8px solid currentColor;border-top:5px solid transparent;border-bottom:5px solid transparent}
-.js .stage{animation:power 2.4s var(--ease) .1s both}
-@keyframes power{0%{opacity:0;transform:scale(1.02)}100%{opacity:1;transform:none}}
-.js .hero-top,.js .hero-foot{animation:up 1.4s var(--ease) .7s both}
-@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+/* load-in (script in <head>): dark until the hero photo and fonts are ready, then the drive comes up alone and into focus,
+   a light crosses the steel, and the text follows. Nothing here applies without html.boot (reduced motion, ?static, no JS). */
+.boot:not(.lit) .top,.boot:not(.lit) .stage,.boot:not(.lit) .hero h1,.boot:not(.lit) .hero .live,.boot:not(.lit) .hero-foot > *,.boot:not(.lit) #library{opacity:0}
+.boot .stage img:not(.ld){opacity:0}
+.late .stage img{transition:opacity 1.2s ease}
+.hero::before{content:"";position:absolute;left:50%;top:min(50%,50svh);z-index:2;width:7px;height:7px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--signal);box-shadow:0 0 10px 1px rgba(255,91,31,.7);opacity:0;pointer-events:none;transition:opacity .5s ease}
+.wait:not(.lit) .hero::before{opacity:1}
+.wait .hero::before{animation:standby 1.5s ease-in-out infinite alternate}
+@keyframes standby{from{filter:brightness(.4)}to{filter:brightness(1)}}
+.lit .stage{animation:power 2.2s var(--ease) both}
+@keyframes power{0%{opacity:0;transform:scale(1.05)}100%{opacity:1;transform:none}}
+.lit .stage img{animation:pull 1.8s var(--ease) both}
+@keyframes pull{0%{filter:blur(14px)}100%{filter:none}}
+.stage{background:var(--bg)}
+.stage::after{content:"";position:absolute;top:0;bottom:0;left:0;width:38%;z-index:1;pointer-events:none;opacity:0;background:linear-gradient(90deg,#000,#626262 50%,#000);mix-blend-mode:color-dodge;transform:translateX(-120%) skewX(-14deg)}
+.lit .stage::after{animation:glint 1.6s cubic-bezier(.45,0,.25,1) .4s both}
+@keyframes glint{0%{opacity:0;transform:translateX(-120%) skewX(-14deg)}12%,88%{opacity:1}100%{opacity:0;transform:translateX(290%) skewX(-14deg)}}
+.lit .hero h1{animation:title 1.5s var(--ease) 1.25s both}
+@keyframes title{from{opacity:0;letter-spacing:.06em;filter:blur(8px)}to{opacity:1;letter-spacing:.02em;filter:none}}
+.lit .top{animation:down 1.1s var(--ease) 1.35s both}
+@keyframes down{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:none}}
+.lit .hero .live,.lit .hero-foot > *{animation:up 1.1s var(--ease) both}
+.lit .hero .live{animation-delay:1.5s}
+.lit .hero-foot > :nth-child(1){animation-delay:1.6s}
+.lit .hero-foot > :nth-child(2){animation-delay:1.7s}
+.lit .hero-foot > :nth-child(3){animation-delay:1.8s}
+@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.lit #library{animation:fade 1.2s ease 1.9s both}   /* on a phone the next section's label peeks in under the hero */
+@keyframes fade{from{opacity:0}to{opacity:1}}
 .hero-top,.hero-foot{width:100%}
 .hero-foot{position:relative;z-index:3;grid-row:3;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px 48px;align-items:end;padding-bottom:clamp(20px,3.6vh,44px)}
 .hero-foot .lede{margin:0;max-width:36ch;font-size:16px;color:var(--mute)}
@@ -364,7 +396,7 @@ footer a:hover{color:var(--fg)}
 
 
 /* photo reel */
-.reel{padding-block:clamp(36px,4.5vw,72px) 0}
+.reel{padding-block:0 clamp(56px,7vw,104px)}
 .reel-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
 .reel-head .eyebrow{margin:0}
 .reel-nav{display:flex;gap:8px}
@@ -385,6 +417,11 @@ footer a:hover{color:var(--fg)}
 .reel-bar{margin-top:28px;height:1px;background:var(--line);position:relative;overflow:hidden}
 .reel-bar i{position:absolute;left:0;top:0;bottom:0;width:20%;background:var(--fg2);transform-origin:left;transition:transform .1s linear}
 @media (max-width:699px){.card{flex-basis:78vw}.reel-nav{display:none}}
+/* the cards arrive in sequence, and each photo fades in once it has loaded */
+.js .track .card{opacity:0;translate:0 18px;transition:opacity 1s ease,translate 1s var(--ease);transition-delay:calc(var(--i,0) * 80ms)}
+.js .track.in .card{opacity:1;translate:0 0}
+.js .card img{opacity:0;transition:opacity .9s ease}
+.js .card img.ld{opacity:1}
 
 /* live library window */
 .app{position:relative;margin-top:clamp(40px,5vw,64px);border-radius:14px;overflow:hidden;background:#fbfbfa;color:#2b2c2f;box-shadow:0 0 0 1px rgba(255,255,255,.12),0 50px 140px -40px rgba(170,180,255,.25),0 30px 60px -30px rgba(0,0,0,.9);font-size:14px}
@@ -539,9 +576,8 @@ footer a:hover{color:var(--fg)}
 /* entrance, once */
 .js .rise{opacity:0;transform:translateY(18px);transition:opacity 1.1s ease,transform 1.1s var(--ease)}
 .js .rise.in{opacity:1;transform:none}
-.static .stage,.static .hero-top,.static .hero-foot{animation:none!important}
 @media (min-width:900px){.static .hero{min-height:max(640px,var(--shotvh))}}
-.static .rise{opacity:1!important;transform:none!important;transition:none!important}
+.static .rise,.static .track .card,.static .card img{opacity:1!important;transform:none!important;translate:none!important;transition:none!important}
 .static .results li{animation:none!important}
 .static .rv,.static .zoom img,.static .specs dl > div,.static .qa details{clip-path:none!important;translate:none!important;scale:none!important;opacity:1!important;transition:none!important}
 .static .eyebrow::before{transform:none!important}
@@ -557,7 +593,8 @@ footer a:hover{color:var(--fg)}
   .js .blueprint.anim .part path,.js .blueprint.anim .dim line{stroke-dasharray:none;transition:none}
   .js .blueprint.anim text,.js .blueprint.anim .ar{opacity:1;transition:none}
   .js .rise{opacity:1;transform:none;transition:none}
-  .js .stage,.js .hero-top,.js .hero-foot{animation:none}
+  .lit .stage,.lit .stage img,.lit .stage::after,.lit .top,.lit .hero h1,.lit .hero .live,.lit .hero-foot > *,.lit #library{animation:none}
+  .js .track .card,.js .card img{opacity:1;translate:none;transition:none}
   .live i::after{animation:none}
   .meter i,.results li{transition:none;animation:none}
 }
@@ -591,6 +628,15 @@ footer a:hover{color:var(--fg)}
       <video id="film" muted loop playsinline preload="none" aria-label="Blackstart taking its cap off, turning over and opening down to the board, going back together, then the cap moving onto the back end and returning to the front" disablepictureinpicture></video>
       <button type="button" class="film-ctl" id="filmctl" aria-label="Pause the film"><i></i><span>Pause</span></button>
     </div>
+    <script>/* load-in trigger (see head): go once the hero photo is decoded and the fonts are in. ?hold=ms delays it, for testing. */
+    (function(){var B=window.__bs,im=document.querySelector("#stage img");if(!B||!document.documentElement.classList.contains("boot"))return;
+    function wait(ms){return new Promise(function(r){setTimeout(r,ms)})}
+    var hold=+((location.search.match(/[?&]hold=(\d+)/)||[])[1]||0);
+    var shot=new Promise(function(r){if(im.complete)r();else{im.addEventListener("load",r);im.addEventListener("error",r)}})
+      .then(function(){return im.decode?Promise.race([im.decode().catch(function(){}),wait(400)]):0}).then(function(){im.classList.add("ld")});   /* a hidden tab can leave decode() pending */
+    var F=document.fonts,type=F&&F.load?Promise.all(['300 expanded 16px Archivo','700 expanded 16px Archivo','400 16px Geist','500 16px Geist','400 12px "Geist Mono"','500 12px "Geist Mono"'].map(function(f){return F.load(f,"BLACKSTART 256 GB")})).catch(function(){}):Promise.resolve();
+    Promise.all([shot,Promise.race([type,wait(1500)]),wait(hold)]).then(B.go);
+    })()</script>
 
     <div class="hero-foot wrap">
       <div>
@@ -607,21 +653,6 @@ footer a:hover{color:var(--fg)}
   </section>
 
 
-  <section class="reel" id="reel" aria-label="Photos">
-    <div class="wrap reel-head">
-      <p class="eyebrow">In hand</p>
-      <div class="reel-nav"><button type="button" id="rprev" aria-label="Previous photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3L5 8l5 5"/></svg></button><button type="button" id="rnext" aria-label="Next photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l5 5-5 5"/></svg></button></div>
-    </div>
-    <div class="track" id="track" tabindex="0" aria-label="Photos of Blackstart, scroll sideways">
-      <figure class="card"><div class="ph"><img src="img/p/palm-900.jpg?v=2" srcset="img/p/palm-900.jpg?v=2 900w, img/p/palm-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" decoding="async" alt="Blackstart resting in an open palm" draggable="false"></div><figcaption><b>44.7 × 20.4 × 9 mm, 55 g</b><span>01 / 05</span></figcaption></figure>
-      <figure class="card"><div class="ph"><img src="img/p/hold-900.jpg?v=2" srcset="img/p/hold-900.jpg?v=2 900w, img/p/hold-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" decoding="async" alt="Blackstart held between thumb and finger against black" draggable="false"></div><figcaption><b>Solid 316L stainless</b><span>02 / 05</span></figcaption></figure>
-      <figure class="card"><div class="ph"><img src="img/p/lamp-900.jpg?v=2" srcset="img/p/lamp-900.jpg?v=2 900w, img/p/lamp-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a walnut desk under a warm lamp" draggable="false"></div><figcaption><b>Laser-marked body</b><span>03 / 05</span></figcaption></figure>
-      <figure class="card"><div class="ph"><img src="img/p/cabin-900.jpg?v=2" srcset="img/p/cabin-900.jpg?v=2 900w, img/p/cabin-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a cabin windowsill with snow outside" draggable="false"></div><figcaption><b>Magnetic cap, fits either end</b><span>04 / 05</span></figcaption></figure>
-      <figure class="card"><div class="ph"><img src="img/p/book-900.jpg?v=2" srcset="img/p/book-900.jpg?v=2 900w, img/p/book-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a desk beside a cloth-bound book" draggable="false"></div><figcaption><b>Bead-blasted finish</b><span>05 / 05</span></figcaption></figure>
-    </div>
-    <div class="wrap"><div class="reel-bar"><i id="rbar"></i></div></div>
-  </section>
-
   <section class="sec" id="library" aria-labelledby="lib-h">
     <div class="wrap">
       <p class="eyebrow">Library</p>
@@ -634,7 +665,7 @@ footer a:hover{color:var(--fg)}
       </ul>
       <div class="cap" id="cap">
         <div class="cap-head"><span><b>256 GB</b> drive</span><span>224.6 GB used</span></div>
-        <div class="meter" role="img" aria-label="How the 256 GB is used: Wikipedia 127.4 GB, historical books 25.5 GB, reference wikis 24.8 GB, maps 22.7 GB, Q&amp;A archives 13.9 GB, dictionary 9.2 GB, books, manuals and software 1.2 GB, 31.4 GB free"></div>
+        <div class="meter" role="img" aria-label="How the 256 GB is used: Wikipedia 127.4 GB, historical books 25.5 GB, reference wikis 24.8 GB, maps 22.7 GB, Q&amp;A archives 13.9 GB, dictionary 9.2 GB, books, manuals and software 1.2 GB. The rest is free for your own files"></div>
         <ul class="legend" id="legend"></ul>
       </div>
       <p class="inside"><b>Inside</b>English Wikipedia · wikiHow · Wiktionary · Wikibooks · Wikivoyage · Wikisource · World Factbook · 29 Stack Exchange archives · 2,000+ books and manuals · World maps · and more</p>
@@ -682,6 +713,8 @@ footer a:hover{color:var(--fg)}
           <li><b>Maps</b><span>World map viewer</span></li>
           <li><b>Runs on</b><span>Mac, Windows, Linux, Android</span></li>
           <li><b>Formats</b><span>Open formats: ZIM, PDF, EPUB, HTML</span></li>
+          <li><b>Your files</b><span>Room on the drive to add your own</span></li>
+          <li><b>Password</b><span>Lock your files with AES-256 encryption</span></li>
         </ul>
       </div>
       <figure class="files rise" aria-label="Files on the drive">
@@ -757,6 +790,21 @@ footer a:hover{color:var(--fg)}
     </div>
   </section>
 
+  <section class="reel" id="reel" aria-label="Photos">
+    <div class="wrap reel-head">
+      <p class="eyebrow">In hand</p>
+      <div class="reel-nav"><button type="button" id="rprev" aria-label="Previous photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M10 3L5 8l5 5"/></svg></button><button type="button" id="rnext" aria-label="Next photo"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 3l5 5-5 5"/></svg></button></div>
+    </div>
+    <div class="track" id="track" tabindex="0" aria-label="Photos of Blackstart, scroll sideways">
+      <figure class="card"><div class="ph"><img src="img/p/palm-900.jpg?v=2" srcset="img/p/palm-900.jpg?v=2 900w, img/p/palm-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" decoding="async" alt="Blackstart resting in an open palm" draggable="false"></div><figcaption><b>44.7 × 20.4 × 9 mm, 55 g</b><span>01 / 05</span></figcaption></figure>
+      <figure class="card"><div class="ph"><img src="img/p/hold-900.jpg?v=2" srcset="img/p/hold-900.jpg?v=2 900w, img/p/hold-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" decoding="async" alt="Blackstart held between thumb and finger against black" draggable="false"></div><figcaption><b>Solid 316L stainless</b><span>02 / 05</span></figcaption></figure>
+      <figure class="card"><div class="ph"><img src="img/p/lamp-900.jpg?v=2" srcset="img/p/lamp-900.jpg?v=2 900w, img/p/lamp-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a walnut desk under a warm lamp" draggable="false"></div><figcaption><b>Laser-marked body</b><span>03 / 05</span></figcaption></figure>
+      <figure class="card"><div class="ph"><img src="img/p/cabin-900.jpg?v=2" srcset="img/p/cabin-900.jpg?v=2 900w, img/p/cabin-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a cabin windowsill with snow outside" draggable="false"></div><figcaption><b>Magnetic cap, fits either end</b><span>04 / 05</span></figcaption></figure>
+      <figure class="card"><div class="ph"><img src="img/p/book-900.jpg?v=2" srcset="img/p/book-900.jpg?v=2 900w, img/p/book-1400.jpg?v=2 1400w" sizes="(max-width: 699px) 78vw, 430px" width="1400" height="1875" loading="lazy" decoding="async" alt="Blackstart on a desk beside a cloth-bound book" draggable="false"></div><figcaption><b>Bead-blasted finish</b><span>05 / 05</span></figcaption></figure>
+    </div>
+    <div class="wrap"><div class="reel-bar"><i id="rbar"></i></div></div>
+  </section>
+
   <figure class="bleed parts">
     <div class="parts-pan" id="ppan"><div class="parts-stage" id="parts"><img class="rise" src="img/parts-1600.jpg?v=2" srcset="img/parts-1000.jpg?v=2 1000w, img/parts-1600.jpg?v=2 1600w, img/parts-2400.jpg?v=2 2400w" sizes="(max-width: 699px) 190vw, 100vw" width="2400" height="1350" loading="lazy" decoding="async" alt="Every part laid out: steel body, cover and cap, the 256 GB board with its USB-C plug, thermal pad, four screws and six magnets"><button type="button" class="hs" data-i="0" style="left:22.8%;top:33.1%" aria-label="Body: 316L stainless, machined from solid">01</button><button type="button" class="hs" data-i="1" style="left:57.3%;top:33.1%" aria-label="Cover: Steel, held by four screws">02</button><button type="button" class="hs" data-i="2" style="left:90.5%;top:33.1%" aria-label="Cap: Solid steel, held by magnets">03</button><button type="button" class="hs" data-i="3" style="left:20.4%;top:73.0%" aria-label="256 GB board: One chip and the USB-C plug">04</button><button type="button" class="hs" data-i="4" style="left:55.6%;top:73.0%" aria-label="Thermal pad: Presses the board down">05</button><button type="button" class="hs" data-i="5" style="left:70.3%;top:60.0%" aria-label="Screws ×4: M1.6, flush">06</button><button type="button" class="hs" data-i="6" style="left:85.3%;top:60.0%" aria-label="Magnets ×6: Hold the cap on either end">07</button><div class="hs-tip" id="hstip"><b></b><span></span></div></div></div>
     <div class="wrap"><p class="pan-hint" aria-hidden="true"><i></i>Swipe to see every part</p><ul class="parts-key" id="pkey"><li data-i="0"><b>01</b>Body</li><li data-i="1"><b>02</b>Cover</li><li data-i="2"><b>03</b>Cap</li><li data-i="3"><b>04</b>256 GB board</li><li data-i="4"><b>05</b>Thermal pad</li><li data-i="5"><b>06</b>Screws ×4</li><li data-i="6"><b>07</b>Magnets ×6</li></ul></div>
@@ -788,6 +836,7 @@ footer a:hover{color:var(--fg)}
       <dl>
         <div><dt>Capacity</dt><dd>256 GB</dd></div>
         <div><dt>Library</dt><dd>224.6 GB, preloaded</dd></div>
+        <div><dt>Your files</dt><dd>Room for your own, with AES-256 password protection</dd></div>
         <div><dt>Connector</dt><dd>USB-C</dd></div>
         <div><dt>Size</dt><dd>44.7 × 20.4 × 9 mm, capped</dd></div>
         <div><dt>Weight</dt><dd>55 g</dd></div>
@@ -806,6 +855,7 @@ footer a:hover{color:var(--fg)}
       <div class="qa">
         <details><summary>Isn't this content free online?</summary><p>Most of it is published openly. Blackstart gathers it, checks every file and makes it searchable in one place, on any computer, with or without a connection.</p></details>
         <details><summary>How do I open it?</summary><p>Plug it in and double-click Open Library (Mac, Windows or Linux). The library opens in your browser. On Android, use the Kiwix app included on the drive.</p></details>
+        <details><summary>Can I keep my own files on it?</summary><p>Yes. There is room on the drive for your own files, and you can lock them with a password. Locked files are encrypted with AES-256.</p></details>
         <details><summary>Is there an account or subscription?</summary><p>No. No account, no subscription, no tracking.</p></details>
         <details><summary>How do updates work?</summary><p>When the library is updated, you can download the new version, or have a refreshed drive sent at cost.</p></details>
         <details><summary>What is the Download version?</summary><p>The same library for $49. You bring a 256 GB drive.</p></details>
@@ -870,13 +920,24 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   /* hero film: the drive takes itself apart down to the chip and goes back together, on a loop.
      The poster shows first; the film fades in once it can play. Paused while off screen. */
   var stage = document.getElementById('stage'), film = document.getElementById('film'), ctl = document.getElementById('filmctl');
-  var userPaused = false, heroVisible = true;
+  var userPaused = false, heroVisible = true, filmGo = false;
+  /* load-in (see head): afterLit(ms, fn) runs fn ms after the drive starts coming up, or at once when there is no load-in */
+  var BS = window.__bs, booting = !!BS && document.documentElement.classList.contains('boot');
+  function afterLit(ms, fn) {
+    if (!booting) { fn(); return; }
+    var run = function () { setTimeout(fn, Math.max(0, ms - (performance.now() - BS.t))); };
+    if (BS.t != null) run(); else document.addEventListener('bs:lit', run, { once: true });
+  }
   function setCtl() { var p = film.paused; ctl.classList.toggle('paused', p); ctl.querySelector('span').textContent = p ? 'Play' : 'Pause'; ctl.setAttribute('aria-label', p ? 'Play the film' : 'Pause the film'); }
-  function tryPlay() { if (userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
+  function tryPlay() { if (!filmGo || userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
   if (!reduce) {
-    var big = Math.max(innerWidth, innerHeight * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;
-    film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=20';
-    film.preload = 'auto';
+    /* the film starts loading once the photo is up and plays once the text is in; its first second is the same still as the photo */
+    afterLit(0, function () {
+      var big = Math.max(innerWidth, innerHeight * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;
+      film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=20';
+      film.preload = 'auto';
+    });
+    afterLit(2100, function () { filmGo = true; tryPlay(); });
     film.addEventListener('playing', function () { stage.classList.add('on'); setCtl(); });
     film.addEventListener('pause', setCtl);
     film.addEventListener('canplay', tryPlay, { once: true });
@@ -931,7 +992,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
     var li = document.createElement('li'); li.style.setProperty('--c', cols[i]);
     li.innerHTML = '<span><b></b></span>'; li.querySelector('b').textContent = s[0]; li.firstChild.appendChild(document.createTextNode(s[1].toFixed(1) + ' GB')); legend.appendChild(li);
   });
-  var free = document.createElement('li'); free.style.setProperty('--c', '#1c1c20'); free.innerHTML = '<span><b>Free</b>31.4 GB</span>'; legend.appendChild(free);
+  var free = document.createElement('li'); free.style.setProperty('--c', '#1c1c20'); free.innerHTML = '<span><b>Free</b>For your own files</span>'; legend.appendChild(free);
   var capnow = document.querySelector('.cap-head span:last-child'), capDefault = capnow.innerHTML, segs = meter.querySelectorAll('i'), legs = legend.querySelectorAll('li');
   function capShow(k) {
     meter.classList.toggle('hovering', k >= 0);
@@ -1035,6 +1096,11 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   /* photo reel: drag with the mouse, arrows, a slight parallax inside each frame */
   var track = document.getElementById('track'), rprev = document.getElementById('rprev'), rnext = document.getElementById('rnext'), rbar = document.getElementById('rbar');
   var cards = Array.prototype.slice.call(track.querySelectorAll('.card'));
+  cards.forEach(function (c, i) {   // cards arrive in sequence; each photo fades in once it has loaded
+    c.style.setProperty('--i', i);
+    var im = c.querySelector('img'), f = function () { im.classList.add('ld'); };
+    if (im.complete) f(); else { im.addEventListener('load', f, { once: true }); im.addEventListener('error', f, { once: true }); }
+  });
   function reelPaint() {
     var max = track.scrollWidth - track.clientWidth, p = max > 0 ? track.scrollLeft / max : 0, vis = max > 0 ? track.clientWidth / track.scrollWidth : 1;
     rbar.style.width = (vis * 100) + '%'; rbar.style.transform = 'translateX(' + (p * (1 / vis - 1) * 100) + '%)';
@@ -1108,9 +1174,16 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   document.querySelectorAll('main h2:not(.eyebrow)').forEach(function (h) { h.classList.add('rv'); });
   document.querySelectorAll('.specs dl > div, .qa details').forEach(function (el, i, all) { el.style.setProperty('--i', Array.prototype.indexOf.call(el.parentNode.children, el)); });
   document.querySelectorAll('#parts .hs').forEach(function (b, i) { b.style.setProperty('--i', i); });
-  var rise = document.querySelectorAll('.rise, .rv, .eyebrow, .specs dl, .qa, .blueprint, #parts');
+  var rise = document.querySelectorAll('.rise, .rv, .eyebrow, .specs dl, .qa, .blueprint, #parts, #track');
+  function arrive(el) {   // a photo waits until it has loaded, so it never fades in half drawn
+    var f = function () { el.classList.add('in'); };
+    if (el.tagName === 'IMG' && !el.complete) { el.addEventListener('load', f, { once: true }); el.addEventListener('error', f, { once: true }); } else f();
+  }
   if (reduce || !('IntersectionObserver' in window)) rise.forEach(function (el) { el.classList.add('in'); });
-  else { var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' }); rise.forEach(function (el) { io.observe(el); }); }
+  else {
+    var io = new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) { arrive(e.target); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -8% 0px' });
+    afterLit(1900, function () { rise.forEach(function (el) { io.observe(el); }); });   // anything already on screen waits for the hero text
+  }
 
   /* scroll: header progress, hero depth, slow drift on the full-bleed photo */
   var inuse = document.querySelector('.inuse img'), sq = 0;
