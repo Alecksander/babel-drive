@@ -108,6 +108,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .boot .tty:not(.ready){visibility:hidden}
 /* at the top of the page the big wordmark is the brand, so the header keeps its small one back until the page has scrolled */
 .top .mark{display:none}   /* the big wordmark right under it is the brand */
+.top .wrap{justify-content:center}   /* with the mark gone, the links sit centred like everything under them */
 .stage{position:relative;grid-row:2;min-height:0;margin:clamp(4px,1vh,16px) 0;-webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
 .stage img,.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:50% 50%}
 .stage video{opacity:0;transition:opacity 1.2s ease}
