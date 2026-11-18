@@ -21,11 +21,11 @@
 <link rel="preload" as="image" href="img/hero/poster-2560.jpg?v=16" imagesrcset="img/hero/poster-1280.jpg?v=16 1280w, img/hero/poster-2560.jpg?v=16 1920w" imagesizes="(min-width: 900px) 90vw, 100vw" fetchpriority="high">
 <script>(function(){var d=document.documentElement,c=d.classList,st=/[?&]static/.test(location.search);c.add("js");
 if(st){c.add("static");d.style.setProperty("--shotvh",((location.search.match(/vh=(\d+)/)||[])[1]||900)+"px")}
-/* Load-in. The page stays dark until the hero photo and the fonts are ready (3 s at most), then everything comes up together.
+/* Load-in. The page stays dark until the hero photo and the fonts are ready (1.5 s at most; was 3 s, cut Nov 18 for ad traffic on slow phones, Alex: "Yes, cut to 1.5s"), then everything comes up together.
    html.boot = load-in in use, .wait = it is taking a moment (standby light on), .lit = go, .late = started before the photo arrived.
    The trigger sits right after the hero photo in the body; the styles are under "load-in" in the stylesheet. */
 var B=window.__bs={t:null,go:function(){if(B.t!=null)return;B.t=performance.now();c.add("lit");setTimeout(function(){c.remove("wait")},700);try{document.dispatchEvent(new Event("bs:lit"))}catch(e){}}};
-if(!st&&!matchMedia("(prefers-reduced-motion: reduce)").matches){c.add("boot");setTimeout(function(){if(B.t==null)c.add("wait")},450);setTimeout(function(){if(B.t==null){c.add("late");B.go()}},3000)}
+if(!st&&!matchMedia("(prefers-reduced-motion: reduce)").matches){c.add("boot");setTimeout(function(){if(B.t==null)c.add("wait")},450);setTimeout(function(){if(B.t==null){c.add("late");B.go()}},1500)}
 })()</script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="application/ld+json">
