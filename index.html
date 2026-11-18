@@ -959,7 +959,7 @@ var HS = [["Body", "304 stainless, machined from solid"], ["Cover", "Steel, held
   function tryPlay() { if (!filmGo || userPaused || !heroVisible) return; var p = film.play(); if (p && p.catch) p.catch(function () {}); }
   if (!reduce) {
     /* the film starts loading once the photo is up and plays once the text is in; its first second is the same still as the photo */
-    afterLit(0, function () {
+    afterLit(500, function () {   // half a second after the photo is up, so the 1.7 MB film doesn't race the photo (speed, Nov 18); it only plays at 2 s anyway
       var sr = stage.getBoundingClientRect(), big = Math.max(sr.width, sr.height * 1.6) * Math.min(devicePixelRatio || 1, 2) > 1700;   // the film's own box (cover, 16:10), not the window: phones were pulling the 4 MB file for a 390 px hero (speed audit, Nov 18)
       film.src = 'img/hero/blackstart-' + (big ? '2560' : '1280') + '.mp4?v=20';
       film.preload = 'auto';
