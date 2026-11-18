@@ -136,7 +136,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .wait .hero::before{animation:standby 1.5s ease-in-out infinite alternate}
 @keyframes standby{from{filter:brightness(.4)}to{filter:brightness(1)}}
 .lit .stage{animation:power 1.6s var(--ease) both}
-@keyframes power{0%{opacity:0;transform:scale(1.05)}100%{opacity:1;transform:none}}
+@keyframes power{0%{opacity:.01;transform:scale(1.05)}100%{opacity:1;transform:none}}   /* .01, not 0: looks the same on black, but browsers skip a photo first painted fully transparent, so the hero never counted as the page's main paint (speed, Nov 18) */
 .lit .stage img{animation:pull 1.3s var(--ease) both}
 @keyframes pull{0%{filter:blur(14px)}100%{filter:none}}
 .stage{background:var(--bg);overflow:hidden}   /* the light band starts and ends outside the stage: clip it, or the page scrolls sideways */
@@ -668,7 +668,8 @@ footer .f-base{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;g
     var hold=+((location.search.match(/[?&]hold=(\d+)/)||[])[1]||0);
     var shot=new Promise(function(r){if(im.complete)r();else{im.addEventListener("load",r);im.addEventListener("error",r)}})
       .then(function(){return im.decode?Promise.race([im.decode().catch(function(){}),wait(400)]):0}).then(function(){im.classList.add("ld")});   /* a hidden tab can leave decode() pending */
-    var F=document.fonts,type=F&&F.load?Promise.all(['300 expanded 16px Archivo','700 expanded 16px Archivo','400 16px Geist','500 16px Geist','400 12px "Geist Mono"','500 12px "Geist Mono"'].map(function(f){return F.load(f,"BLACKSTART 256 GB")})).catch(function(){}):Promise.resolve();
+    var F=document.fonts,core=[];if(F&&F.forEach)F.forEach(function(f){if(/^"?(Archivo|Geist|Geist Mono)"?$/.test(f.family)&&/^u\+0*20-0*7e\b/i.test(f.unicodeRange||""))core.push(f)});   /* the store's small core font files only (speed, Nov 18): fonts.load() would also fetch the full files */
+    var type=core.length?Promise.all(core.map(function(f){return f.load()})).catch(function(){}):F&&F.load?Promise.all(['300 expanded 16px Archivo','700 expanded 16px Archivo','400 16px Geist','500 16px Geist','400 12px "Geist Mono"','500 12px "Geist Mono"'].map(function(f){return F.load(f,"BLACKSTART 256 GB")})).catch(function(){}):Promise.resolve();
     Promise.all([shot,Promise.race([type,wait(1500)]),wait(hold)]).then(B.go);
     })()</script>
 
@@ -838,7 +839,7 @@ footer .f-base{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;g
     <div class="wrap">
       <div class="film-head"><h2 class="eyebrow" id="film-h" style="margin:0">Film</h2><p>0:41 · Sound on</p></div>
       <div class="player" id="player">
-        <video id="video" src="babel-drive-film.mp4" poster="babel-drive-film-poster.jpg" preload="none" playsinline></video>
+        <video id="video" src="babel-drive-film.mp4" data-poster="babel-drive-film-poster.jpg" preload="none" playsinline></video>
         <button class="play" type="button" id="play"><i></i>Play</button>
       </div>
     </div>
@@ -1223,6 +1224,9 @@ var HS = [["Body", "304 stainless, machined from solid"], ["Cover", "Steel, held
 
   /* film */
   var video = document.getElementById('video'), player = document.getElementById('player');
+  /* the film's poster loads as the section comes near, not with the first screen (speed, Nov 18); looks the same by the time it is on screen */
+  (function () { var ps = video.getAttribute('data-poster'); if (!ps) return; if (!('IntersectionObserver' in window)) { video.poster = ps; return; }
+    new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { video.poster = ps; o.disconnect(); } }, { rootMargin: '1500px 0px' }).observe(player); })();
   document.getElementById('play').addEventListener('click', function () {
     video.controls = true; player.classList.add('playing'); video.preload = 'auto';
     var p = video.play(); if (p && p.catch) p.catch(function () { player.classList.remove('playing'); });
