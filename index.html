@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Blackstart · Babel Drive</title>
-<meta name="description" content="Blackstart is a 256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, maps of the world, and more.">
+<meta name="description" content="Blackstart is a 256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, maps of North America, and more.">
 <link rel="canonical" href="https://babeldrives.com/">
 <meta property="og:type" content="product">
 <meta property="og:title" content="Blackstart · Babel Drive">
-<meta property="og:description" content="English Wikipedia, wikiHow, 2,000+ books and manuals, maps of the world, and more. 256 GB, solid steel.">
+<meta property="og:description" content="English Wikipedia, wikiHow, 2,000+ books and manuals, maps of North America, and more. 256 GB, solid steel.">
 <meta property="og:image" content="https://babeldrives.com/img/og.jpg">
 <meta property="og:url" content="https://babeldrives.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -30,7 +30,7 @@ if(!st&&!matchMedia("(prefers-reduced-motion: reduce)").matches){c.add("boot");s
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Product","name":"Blackstart","brand":{"@type":"Brand","name":"Babel Drive"},
-"description":"256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, maps of the world, and more.",
+"description":"256 GB solid-steel USB-C drive with English Wikipedia, wikiHow, 2,000+ books and manuals, maps of North America, and more.",
 "image":"https://babeldrives.com/img/hero/poster-2560.jpg?v=16",
 "offers":[{"@type":"Offer","name":"Blackstart 256 GB drive","price":"199","priceCurrency":"USD","availability":"https://schema.org/PreOrder"},
 {"@type":"Offer","name":"Blackstart download","price":"49","priceCurrency":"USD","availability":"https://schema.org/PreOrder"}]}
@@ -421,10 +421,14 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .end .fmt{justify-content:center}
 .end-img{position:relative;margin-top:clamp(8px,2vw,24px);display:flex;justify-content:center}
 .end-img img{flex:none;width:min(1300px,140%);max-width:none;-webkit-mask-image:radial-gradient(70% 72% at 50% 50%,#000 55%,transparent 100%);mask-image:radial-gradient(70% 72% at 50% 50%,#000 55%,transparent 100%)}
-footer{border-top:1px solid var(--line);padding-block:30px calc(30px + env(safe-area-inset-bottom,0px))}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px 32px;font:400 12px/1.6 var(--mono);color:var(--mute)}
-footer a{color:var(--fg2);text-decoration:none}
+footer{border-top:1px solid var(--line);padding-block:clamp(40px,5vw,60px) calc(30px + env(safe-area-inset-bottom,0px))}
+footer .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto auto auto;gap:36px clamp(40px,6vw,104px);font:400 12px/1.6 var(--mono);color:var(--mute)}
+footer a{color:var(--fg2);text-decoration:none;transition:color .2s}
 footer a:hover{color:var(--fg)}
+footer .f-brand p{margin:16px 0 0;max-width:36ch}
+footer .f-col{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+footer .f-base{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:12px 32px;padding-top:22px;border-top:1px solid var(--line)}
+@media (max-width:799px){footer .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px 24px}footer .f-brand,footer .f-contact{grid-column:1/-1}}
 @media (max-width:899px){footer{padding-bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
 
 
@@ -678,9 +682,9 @@ footer a:hover{color:var(--fg)}
         <a class="btn" href="#join" data-go-join>Join the waitlist</a>
       </div>
       <ul class="specline" aria-label="Key specs" style="grid-column:1/-1">
-        <li><b>256 GB</b></li><li>USB-C</li><li>316L stainless</li><li>55 g</li><li>44.7 × 20.4 × 9 mm</li>
+        <li><b>256 GB</b></li><li>USB-C</li><li>304 stainless</li><li>65 g</li><li>44.7 × 24.2 × 9 mm</li>
       </ul>
-      <p class="lede">English Wikipedia, wikiHow, 2,000+ books and manuals, maps of the world, and more.</p>
+      <p class="lede">English Wikipedia, wikiHow, 2,000+ books and manuals, maps of North America, and more.</p>
     </div>
   </section>
 
@@ -693,14 +697,14 @@ footer a:hover{color:var(--fg)}
         <li><b data-n="6.8" data-d="1">6.8<small>M</small></b><span>English Wikipedia articles, with images</span></li>
         <li><b data-n="2101">2,101</b><span>Books, manuals and archives in the catalog</span></li>
         <li><b data-n="29">29</b><span>Stack Exchange Q&amp;A archives</span></li>
-        <li><b>World</b><span>Maps of every continent</span></li>
+        <li><b data-n="22.7" data-d="1">22.7<small>GB</small></b><span>Street maps of the US, Canada and Mexico</span></li>
       </ul>
       <div class="cap" id="cap">
         <div class="cap-head"><span><b>256 GB</b> drive</span><span>224.6 GB used</span></div>
         <div class="meter" role="img" aria-label="How the 256 GB is used: Wikipedia 127.4 GB, historical books 25.5 GB, reference wikis 24.8 GB, maps 22.7 GB, Q&amp;A archives 13.9 GB, dictionary 9.2 GB, books, manuals and software 1.2 GB. The rest is free for your own files"></div>
         <ul class="legend" id="legend"></ul>
       </div>
-      <p class="inside"><b>Inside</b>English Wikipedia · wikiHow · Wiktionary · Wikibooks · Wikivoyage · Wikisource · World Factbook · 29 Stack Exchange archives · 2,000+ books and manuals · World maps · and more</p>
+      <p class="inside"><b>Inside</b>English Wikipedia · wikiHow · Wiktionary · Wikibooks · Wikivoyage · Wikisource · World Factbook · 29 Stack Exchange archives · 2,000+ books and manuals · North America maps · and more</p>
       <p class="atc rise"><a href="#join" data-go-join>Add to cart</a></p>
     </div>
   </section>
@@ -743,7 +747,7 @@ footer a:hover{color:var(--fg)}
         <p class="lede">Search, Wikipedia and maps open in your browser. Nothing to install, no account.</p>
         <ul class="facts">
           <li><b>Search</b><span>One box across every archive</span></li>
-          <li><b>Maps</b><span>World map viewer</span></li>
+          <li><b>Maps</b><span>North America map viewer</span></li>
           <li><b>Runs on</b><span>Mac, Windows, Linux, Android</span></li>
           <li><b>Formats</b><span>Open formats: ZIM, PDF, EPUB, HTML</span></li>
           <li><b>Your files</b><span>Room on the drive to add your own</span></li>
@@ -784,7 +788,7 @@ footer a:hover{color:var(--fg)}
           <p class="eyebrow">Design</p>
           <h2 id="design-h">Solid steel. <em>Small batches.</em></h2>
         </div>
-        <p class="lede">Machined from solid 316L stainless. The cap is held by magnets and fits either end.</p>
+        <p class="lede">Machined from solid 304 stainless. The cap is held by magnets and fits either end.</p>
       </div>
       <figure class="shot big">
         <div class="zoom"><img class="rise" src="img/plug-1600.jpg?v=2" srcset="img/plug-1000.jpg?v=2 1000w, img/plug-1600.jpg?v=2 1600w, img/plug-2400.jpg?v=2 2400w" sizes="(min-width: 1360px) 1280px, 92vw" width="2400" height="1500" loading="lazy" decoding="async" alt="Close-up of the USB-C plug held in the steel body"></div>
@@ -813,12 +817,12 @@ footer a:hover{color:var(--fg)}
     <div class="wrap draw-grid">
       <div>
         <p class="eyebrow">Dimensions</p>
-        <h2 id="dim-h">55 grams <em>of steel.</em></h2>
+        <h2 id="dim-h">65 grams <em>of steel.</em></h2>
         <ul class="dims">
           <li><b data-n="44.7" data-d="1">44.7</b><span>Length, mm</span></li>
-          <li><b data-n="20.4" data-d="1">20.4</b><span>Width, mm</span></li>
+          <li><b data-n="24.2" data-d="1">24.2</b><span>Width, mm</span></li>
           <li><b data-n="9.0" data-d="1">9.0</b><span>Height, mm</span></li>
-          <li><b data-n="55" data-d="0">55</b><span>Weight, g</span></li>
+          <li><b data-n="65" data-d="0">65</b><span>Weight, g</span></li>
         </ul>
       </div>
       <div class="blueprint rise"><div id="drawing"></div></div>
@@ -826,7 +830,7 @@ footer a:hover{color:var(--fg)}
   </section>
 
   <figure class="bleed parts">
-    <div class="parts-pan" id="ppan"><div class="parts-stage" id="parts"><img class="rise" src="img/parts-1600.jpg?v=2" srcset="img/parts-1000.jpg?v=2 1000w, img/parts-1600.jpg?v=2 1600w, img/parts-2400.jpg?v=2 2400w" sizes="(max-width: 699px) 190vw, 100vw" width="2400" height="1350" loading="lazy" decoding="async" alt="Every part laid out: steel body, cover and cap, the 256 GB board with its USB-C plug, thermal pad, four screws and six magnets"><button type="button" class="hs" data-i="0" style="left:22.8%;top:33.1%" aria-label="Body: 316L stainless, machined from solid">01</button><button type="button" class="hs" data-i="1" style="left:57.3%;top:33.1%" aria-label="Cover: Steel, held by four screws">02</button><button type="button" class="hs" data-i="2" style="left:90.5%;top:33.1%" aria-label="Cap: Solid steel, held by magnets">03</button><button type="button" class="hs" data-i="3" style="left:20.4%;top:73.0%" aria-label="256 GB board: One chip and the USB-C plug">04</button><button type="button" class="hs" data-i="4" style="left:55.6%;top:73.0%" aria-label="Thermal pad: Presses the board down">05</button><button type="button" class="hs" data-i="5" style="left:70.3%;top:60.0%" aria-label="Screws ×4: M1.6, flush">06</button><button type="button" class="hs" data-i="6" style="left:85.3%;top:60.0%" aria-label="Magnets ×6: Hold the cap on either end">07</button><div class="hs-tip" id="hstip"><b></b><span></span></div></div></div>
+    <div class="parts-pan" id="ppan"><div class="parts-stage" id="parts"><img class="rise" src="img/parts-1600.jpg?v=2" srcset="img/parts-1000.jpg?v=2 1000w, img/parts-1600.jpg?v=2 1600w, img/parts-2400.jpg?v=2 2400w" sizes="(max-width: 699px) 190vw, 100vw" width="2400" height="1350" loading="lazy" decoding="async" alt="Every part laid out: steel body, cover and cap, the 256 GB board with its USB-C plug, thermal pad, four screws and six magnets"><button type="button" class="hs" data-i="0" style="left:22.8%;top:33.1%" aria-label="Body: 304 stainless, machined from solid">01</button><button type="button" class="hs" data-i="1" style="left:57.3%;top:33.1%" aria-label="Cover: Steel, held by four screws">02</button><button type="button" class="hs" data-i="2" style="left:90.5%;top:33.1%" aria-label="Cap: Solid steel, held by magnets">03</button><button type="button" class="hs" data-i="3" style="left:20.4%;top:73.0%" aria-label="256 GB board: One chip and the USB-C plug">04</button><button type="button" class="hs" data-i="4" style="left:55.6%;top:73.0%" aria-label="Thermal pad: Presses the board down">05</button><button type="button" class="hs" data-i="5" style="left:70.3%;top:60.0%" aria-label="Screws ×4: M1.6, flush">06</button><button type="button" class="hs" data-i="6" style="left:85.3%;top:60.0%" aria-label="Magnets ×6: Hold the cap on either end">07</button><div class="hs-tip" id="hstip"><b></b><span></span></div></div></div>
     <div class="wrap"><p class="pan-hint" aria-hidden="true"><i></i>Swipe to see every part</p><ul class="parts-key" id="pkey"><li data-i="0"><b>01</b>Body</li><li data-i="1"><b>02</b>Cover</li><li data-i="2"><b>03</b>Cap</li><li data-i="3"><b>04</b>256 GB board</li><li data-i="4"><b>05</b>Thermal pad</li><li data-i="5"><b>06</b>Screws ×4</li><li data-i="6"><b>07</b>Magnets ×6</li></ul></div>
   </figure>
 
@@ -843,7 +847,7 @@ footer a:hover{color:var(--fg)}
   <section class="sec" aria-label="Promises" style="padding-top:0">
     <div class="wrap">
       <ul class="three">
-        <li><b>Lifetime updates</b><span>Every library update, included with every purchase.</span></li>
+        <li><b>Free updates for life</b><span>Every new library version, free to download for the life of your drive.</span></li>
         <li><b>Small batches</b><span>Machined and assembled a batch at a time.</span></li>
         <li><b>30-day returns</b><span>For any reason.</span></li>
       </ul>
@@ -858,13 +862,13 @@ footer a:hover{color:var(--fg)}
         <div><dt>Library</dt><dd>224.6 GB, preloaded</dd></div>
         <div><dt>Your files</dt><dd>Room for your own, with AES-256 password protection</dd></div>
         <div><dt>Connector</dt><dd>USB-C</dd></div>
-        <div><dt>Size</dt><dd>44.7 × 20.4 × 9 mm, capped</dd></div>
-        <div><dt>Weight</dt><dd>55 g</dd></div>
-        <div><dt>Body</dt><dd>316L stainless steel, bead-blasted</dd></div>
+        <div><dt>Size</dt><dd>44.7 × 24.2 × 9 mm, capped</dd></div>
+        <div><dt>Weight</dt><dd>65 g</dd></div>
+        <div><dt>Body</dt><dd>304 stainless steel, bead-blasted</dd></div>
         <div><dt>Cap</dt><dd>Stainless steel, held by magnets, fits either end</dd></div>
         <div><dt>Software</dt><dd>Search and map viewer for Mac, Windows and Linux. Kiwix app for Android.</dd></div>
         <div><dt>Works with</dt><dd>Mac, Windows, Linux, Android, iPad and iPhone with USB-C</dd></div>
-        <div><dt>Updates</dt><dd>Lifetime</dd></div>
+        <div><dt>Updates</dt><dd>Free for the life of your drive</dd></div>
       </dl>
       <p class="atc rise" style="grid-column:2"><a href="#join" data-go-join>Add to cart</a></p>
     </div>
@@ -878,7 +882,7 @@ footer a:hover{color:var(--fg)}
         <details><summary>How do I open it?</summary><p>Plug it in and double-click Open Library (Mac, Windows or Linux). The library opens in your browser. On Android, use the Kiwix app included on the drive.</p></details>
         <details><summary>Can I keep my own files on it?</summary><p>Yes. There is room on the drive for your own files, and you can lock them with a password. Locked files are encrypted with AES-256.</p></details>
         <details><summary>Is there an account or subscription?</summary><p>No. No account, no subscription, no tracking.</p></details>
-        <details><summary>How do updates work?</summary><p>When the library is updated, you can download the new version, or have a refreshed drive sent at cost.</p></details>
+        <details><summary>How do updates work?</summary><p>When the library is updated, you can download the new version free, or have a refreshed drive sent at cost.</p></details>
         <details><summary>What is the Download version?</summary><p>The same library for $49. You bring a 256 GB drive.</p></details>
         <details><summary>When does it ship?</summary><p>Blackstart is made in small batches. The waitlist gets one email when the next batch opens. No payment until then.</p></details>
         <details><summary>Shipping and returns?</summary><p>Ships from the US, tracked. Free US shipping, or Priority for $24.99. 30-day returns.</p></details>
@@ -911,10 +915,11 @@ footer a:hover{color:var(--fg)}
 
 <footer>
   <div class="wrap">
-    <span class="mark" style="font-size:11px">BABEL DRIVE</span>
-    <span>Library content is openly licensed or public domain. Every source is listed on the drive in SOURCES.csv.</span>
-    <a href="mailto:library@babeldrives.com">library@babeldrives.com</a>
-    <span>© 2026 Babel Drive</span>
+    <div class="f-brand"><span class="mark" style="font-size:11px">BABEL DRIVE</span><p>Built from open sources. Every source and license is listed on the drive in SOURCES.csv.</p></div>
+    <nav class="f-col" aria-label="Social"><a href="https://www.tiktok.com/@babeldrives" target="_blank" rel="noopener me">TikTok</a><a href="https://www.instagram.com/babeldrive" target="_blank" rel="noopener me">Instagram</a><a href="https://www.facebook.com/profile.php?id=61596301367341" target="_blank" rel="noopener me">Facebook</a></nav>
+    <nav class="f-col" aria-label="Policies"><!--policies--></nav>
+    <div class="f-col f-contact"><a href="mailto:library@babeldrives.com">library@babeldrives.com</a></div>
+    <div class="f-base"><span>© 2026 Babel Drive</span></div>
   </div>
 </footer>
 
@@ -924,7 +929,7 @@ footer a:hover{color:var(--fg)}
 </div>
 
 <script>
-var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, held by four screws"], ["Cap", "Solid steel, held by magnets"], ["256 GB board", "One chip and the USB-C plug"], ["Thermal pad", "Presses the board down"], ["Screws ×4", "M1.6, flush"], ["Magnets ×6", "Hold the cap on either end"]];
+var HS = [["Body", "304 stainless, machined from solid"], ["Cover", "Steel, held by four screws"], ["Cap", "Solid steel, held by magnets"], ["256 GB board", "One chip and the USB-C plug"], ["Thermal pad", "Presses the board down"], ["Screws ×4", "M1.6, flush"], ["Magnets ×6", "Hold the cap on either end"]];
 (function () {
   var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]static/.test(location.search);   // ?static: preview shots without motion
   var fine = matchMedia('(pointer: fine)').matches;
@@ -1077,7 +1082,7 @@ var HS = [["Body", "316L stainless, machined from solid"], ["Cover", "Steel, hel
   });
 
   /* live library window over the real title list: subjects, types and search */
-  var DEFAULTS = ['wikipedia (english', 'world maps', 'complete guide to home canning', 'emergency disinfection of drinking water', 'atp 3-50.21 survival', 'cert basic training', "the ship's medicine chest", 'wood handbook', 'amateur radio q&a', 'the mechanical engineers', 'topographic map symbols', 'electrical engineering q&a'];
+  var DEFAULTS = ['wikipedia (english', 'north america maps', 'complete guide to home canning', 'emergency disinfection of drinking water', 'atp 3-50.21 survival', 'cert basic training', "the ship's medicine chest", 'wood handbook', 'amateur radio q&a', 'the mechanical engineers', 'topographic map symbols', 'electrical engineering q&a'];
   var KIND_ORDER = [3, 1, 0, 2];   // archives, manuals, books, historical
   var q = document.getElementById('q'), out = document.getElementById('results'), qcount = document.getElementById('qcount');
   var subjEl = document.getElementById('subj'), subjM = document.getElementById('subjm'), kindsEl = document.getElementById('kinds'), now = document.getElementById('appnow');
