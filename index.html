@@ -108,11 +108,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .boot .tty:not(.ready){visibility:hidden}
 /* a second line shares its spot. The first is typed once; after that the two trade places by fading, the way the button's label does */
 /* one fades out, then the other fades in: the lines differ in length, so a straight crossfade showed both at once */
-.tty .ta,.tty .tb{grid-area:1/1;transition:opacity .4s ease}
+.tty .ta,.tty .tb,.tty .tc{grid-area:1/1;transition:opacity .4s ease}
 .tty .ta{transition-delay:.4s}
-.tty .tb{opacity:0}
-.tty.alt .ta{opacity:0;transition-delay:0s}
+.tty .tb,.tty .tc{opacity:0}
+.tty.alt .ta,.tty.s2 .ta{opacity:0;transition-delay:0s}
 .tty.alt .tb{opacity:1;transition-delay:.4s}
+.tty.s2 .tc{opacity:1;transition-delay:.4s}
 /* at the top of the page the big wordmark is the brand, so the header keeps its small one back until the page has scrolled */
 .top .mark{display:none}   /* the big wordmark right under it is the brand */
 .top .wrap{justify-content:flex-end}
@@ -676,7 +677,7 @@ footer .f-base{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;g
     <div class="hero-foot wrap">
       <div class="name">
         <p class="model">Blackstart</p>
-        <p class="tty" id="tty" aria-label="Our largest library yet. Only 50 made."><span class="ta" aria-hidden="true">Our largest library <em>yet</em></span><span class="tb" aria-hidden="true">Only 50 made</span></p>
+        <p class="tty" id="tty" aria-label="Our largest library yet. Only 50 made. Works with no internet."><span class="ta" aria-hidden="true">Our largest library <em>yet</em></span><span class="tb" aria-hidden="true">Only 50 made</span><span class="tc" aria-hidden="true">Works with <em>no internet</em></span></p>
       </div>
       <div class="buy">
         <p class="price"><b>$199</b>256 GB drive</p>
@@ -988,7 +989,7 @@ var HS = [["Body", "304 stainless, machined from solid"], ["Cover", "Steel, held
       });
     })(line);
     tty.classList.add('ready');
-    var trade = function () { if (/[?&]static/.test(location.search)) return; setInterval(function () { tty.classList.toggle('alt'); }, 7000); };
+    var trade = function () { if (/[?&]static/.test(location.search)) return; var st = 0, hold = [14000, 7000, 10000]; (function step() { setTimeout(function () { st = (st + 1) % 3; tty.classList.toggle('alt', st === 1); tty.classList.toggle('s2', st === 2); step(); }, hold[st]); })(); };   // Nov 20 (Alex): start on the current line, then "Only 50 made", then hold "Works with no internet", and back
     if (reduce || !booting) { chars.forEach(function (u) { u.classList.add('on'); }); trade(); return; }
     afterLit(700 + 1000 + 200, function () {   // the wipe's delay and length, then a breath
       var i = 0;
